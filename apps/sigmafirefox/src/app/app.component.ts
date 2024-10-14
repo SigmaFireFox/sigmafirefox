@@ -7,7 +7,6 @@ import { ButtonComponent, ButtonConfig } from '@sigmafirefox/buttons';
   imports: [RouterModule, ButtonComponent],
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
 })
 export class AppComponent {
   title = 'sigmafirefox';
