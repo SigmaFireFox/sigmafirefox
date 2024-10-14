@@ -21,7 +21,7 @@
             "input": "apps/sigmafirefox/public"
           }
         ],
-        "styles": ["apps/sigmafirefox/src/styles.css"],
+        "styles": ["apps/sigmafirefox/src/styles.scss"],
         "scripts": []
       },
       "configurations": {

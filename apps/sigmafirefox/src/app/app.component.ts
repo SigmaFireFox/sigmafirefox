@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { NxWelcomeComponent } from './nx-welcome.component';
 import { ButtonComponent, ButtonConfig } from '@sigmafirefox/buttons';
 
 @Component({
   standalone: true,
-  imports: [NxWelcomeComponent, RouterModule, ButtonComponent],
+  imports: [RouterModule, ButtonComponent],
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
