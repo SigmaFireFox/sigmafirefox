@@ -1,6 +1,17 @@
 .standard-button {
+  position: relative;
   height: 30px;
   border-radius: 15px;
   border: none;
   min-width: 120px;
+  cursor: pointer;
+}
+
+.standard-button:hover {
+font-weight: bolder;
+}
+
+.standard-button:active {
+  transform: translateY(2px);
+  filter: brightness(85%);
 }

@@ -10,5 +10,5 @@ import { ButtonConfig } from './button.model';
   styleUrl: './button.component.scss',
 })
 export class ButtonComponent {
-  @Input() config: ButtonConfig | undefined
+  @Input() config: ButtonConfig | undefined;
 }
