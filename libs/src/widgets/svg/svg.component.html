@@ -1,0 +1,11 @@
+<div *ngIf="config" class="svg-container">
+  <svg 
+    class="themed-svg" 
+    preserveAspectRatio="xMidYMid meet" 
+    viewBox="-10 -20 150 150">
+    <svg:g *ngFor="let path of config.paths">
+      <svg:path [attr.d]=path/>
+    </svg:g>
+</svg>
+</div>
+<!-- {{config?.paths}} -->
