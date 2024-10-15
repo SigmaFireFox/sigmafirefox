@@ -6,6 +6,13 @@
 
 [Learn more about this workspace setup and its capabilities](https://nx.dev/getting-started/tutorials/angular-monorepo-tutorial?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects) or run `npx nx graph` to visually explore what was created. Now, let's get you up to speed!
 
+## New Projects
+
+May require to add angular materials
+
+```sh
+npx nx g @angular/material:ng-add --project=project-name
+
 ## Run tasks
 
 To run the dev server for your app, use:
