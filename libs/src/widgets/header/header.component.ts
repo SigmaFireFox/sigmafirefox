@@ -11,5 +11,4 @@ import { HeaderConfig } from './header.model';
 })
 export class HeaderComponent {
   @Input() config: HeaderConfig | undefined;
-
 }

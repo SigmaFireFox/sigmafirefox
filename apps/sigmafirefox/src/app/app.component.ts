@@ -9,11 +9,20 @@ import {
   HeaderComponent,
   HeaderConfig,
   HeaderFontSize,
+  IconComponent,
+  IconConfig,
+  IconSize,
 } from '@sigmafirefox/buttons';
 
 @Component({
   standalone: true,
-  imports: [RouterModule, ButtonComponent, ContentComponent, HeaderComponent],
+  imports: [
+    RouterModule,
+    ButtonComponent,
+    ContentComponent,
+    HeaderComponent,
+    IconComponent,
+  ],
   selector: 'app-root',
   templateUrl: './app.component.html',
 })
@@ -22,8 +31,8 @@ export class AppComponent {
 
   headerConfig: HeaderConfig = {
     size: HeaderFontSize.Medium,
-    content: "Welcome to SigmaFireFox Library Sandbox"
-  }
+    content: 'Welcome to SigmaFireFox Library Sandbox',
+  };
 
   buttonConfig: ButtonConfig = {
     name: 'button',
@@ -37,5 +46,10 @@ export class AppComponent {
       "It's typically set up in paragraphs",
       'The paragraphs should self organise and have a nice padding',
     ],
+  };
+
+  iconConfig: IconConfig = {
+    size: IconSize.Medium,
+    name: 'home'
   };
 }
