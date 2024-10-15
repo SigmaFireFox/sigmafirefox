@@ -12,6 +12,7 @@ May require to add angular materials
 
 ```sh
 npx nx g @angular/material:ng-add --project=project-name
+```
 
 ## Run tasks
 
