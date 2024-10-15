@@ -1,0 +1,14 @@
+.input {
+  position: relative;
+  height: 30px;
+  border-radius: 15px;
+  border: none;
+  min-width: 240px;
+  cursor: pointer;
+  background-color: #E3E3E3;
+  text-indent: 0.5rem;
+}
+
+.input:focus {
+  outline: 1px solid black;
+}
