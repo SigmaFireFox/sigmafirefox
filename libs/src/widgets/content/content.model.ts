@@ -1,10 +1,10 @@
-export enum FontSize {
+export enum ContentFontSize {
   Small,
   Medium,
   Large
 }
 
 export interface ContentConfig {
-  size: FontSize
+  size: ContentFontSize
   content: string[]
 }
