@@ -13,6 +13,7 @@ import {
   IconComponent,
   IconConfig,
   IconSize,
+  InputComponent,
   SvgComponent,
   SvgConfig,
 } from '@sigmafirefox/widgets';
@@ -26,7 +27,8 @@ import {
     HeaderComponent,
     IconComponent,
     SvgComponent,
-    LogoComponent
+    LogoComponent,
+    InputComponent
   ],
   selector: 'app-root',
   templateUrl: './app.component.html',

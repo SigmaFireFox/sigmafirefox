@@ -8,3 +8,5 @@ export * from './icon/icon.component';
 export * from './icon/icon.model'
 export * from './svg/svg.component';
 export * from './svg/svg.model'
+export * from './input/input.component';
+export * from './input/input.model'
