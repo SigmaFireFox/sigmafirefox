@@ -15,7 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@sigmafirefox/widgets": ["libs/src/widgets/index.ts"]
+      "@sigmafirefox/widgets": ["libs/src/widgets/index.ts"],
+      "@sigmafirefox/components": ["libs/src/components/index.ts"]
+
     }
   },
   "exclude": ["node_modules", "tmp"]
