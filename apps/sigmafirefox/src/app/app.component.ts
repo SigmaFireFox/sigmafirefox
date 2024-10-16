@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { FieldComponent, FieldConfig, LogoComponent, LogoConfig } from '@sigmafirefox/components';
+import { FieldComponent, FieldConfig, LogoComponent, LogoConfig, StarRaterComponent, StarRaterConfig } from '@sigmafirefox/components';
 import {
   ButtonComponent,
   ButtonConfig,
@@ -29,7 +29,8 @@ import {
     SvgComponent,
     LogoComponent,
     InputComponent,
-    FieldComponent
+    FieldComponent,
+    StarRaterComponent
   ],
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -74,5 +75,15 @@ export class AppComponent {
 
   fieldConfig: FieldConfig = {
     label: 'A field label'
+  }
+
+  starRaterConfig5: StarRaterConfig = {
+    rating: 5
+  }
+  starRaterConfig4pt5: StarRaterConfig = {
+    rating: 4.5
+  }
+  starRaterConfig4pt4: StarRaterConfig = {
+    rating: 4.4
   }
 }
