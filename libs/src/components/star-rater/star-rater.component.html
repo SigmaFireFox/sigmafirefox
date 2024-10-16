@@ -1,0 +1,5 @@
+<div *ngIf="config" class="star-rating">
+  <sff-icon *ngFor="let star of stars.fullStars" [config]="fullStar"></sff-icon>
+  <sff-icon *ngFor="let star of stars.halfStars" [config]="halfStar"></sff-icon>
+  <sff-icon *ngFor="let star of stars.emptyStars" [config]="emptyStar"></sff-icon>
+</div>
