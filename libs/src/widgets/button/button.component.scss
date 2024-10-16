@@ -15,3 +15,7 @@
   transform: translateY(2px);
   filter: brightness(85%);
 }
+
+.standard-button:focus {
+  outline: 1px solid black;
+}

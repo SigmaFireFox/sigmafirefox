@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { LogoComponent, LogoConfig } from '@sigmafirefox/components';
+import { FieldComponent, FieldConfig, LogoComponent, LogoConfig } from '@sigmafirefox/components';
 import {
   ButtonComponent,
   ButtonConfig,
@@ -28,7 +28,8 @@ import {
     IconComponent,
     SvgComponent,
     LogoComponent,
-    InputComponent
+    InputComponent,
+    FieldComponent
   ],
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -37,7 +38,7 @@ export class AppComponent {
   title = 'sigmafirefox';
 
   headerConfig: HeaderConfig = {
-    size: HeaderFontSize.Medium,
+    size: HeaderFontSize.Large,
     content: 'Welcome to SigmaFireFox Library Sandbox',
   };
 
@@ -69,5 +70,9 @@ export class AppComponent {
   logoConfig: LogoConfig = {
     logo: this.svgConfig,
     text: 'Some name here'
+  }
+
+  fieldConfig: FieldConfig = {
+    label: 'A field label'
   }
 }
