@@ -1,0 +1,8 @@
+<div *ngIf="config" class="display-card">
+  <div *ngFor="let item of config.content" [ngSwitch]="item.type">
+    <sff-icon *ngSwitchCase="displayCardContentType.Icon" [config]="item.iconContent"></sff-icon>
+    <sff-header *ngSwitchCase="displayCardContentType.Header" [config]="item.headerConfig"></sff-header>
+    <sff-content *ngSwitchCase="displayCardContentType.Content" [config]="item.contentConfig"></sff-content>
+    <sff-star-rater *ngSwitchCase="displayCardContentType.StarRater" [config]="item.starRaterConfig"></sff-star-rater>
+  </div>
+</div>
