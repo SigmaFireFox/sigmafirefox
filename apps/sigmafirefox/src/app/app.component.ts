@@ -1,6 +1,13 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { FieldComponent, FieldConfig, LogoComponent, LogoConfig, StarRaterComponent, StarRaterConfig } from '@sigmafirefox/components';
+import {
+  FieldComponent,
+  FieldConfig,
+  LogoComponent,
+  LogoConfig,
+  StarRaterComponent,
+  StarRaterConfig,
+} from '@sigmafirefox/components';
 import {
   ButtonComponent,
   ButtonConfig,
@@ -16,6 +23,7 @@ import {
   InputComponent,
   SvgComponent,
   SvgConfig,
+  TextareaComponent,
 } from '@sigmafirefox/widgets';
 
 @Component({
@@ -30,7 +38,8 @@ import {
     LogoComponent,
     InputComponent,
     FieldComponent,
-    StarRaterComponent
+    StarRaterComponent,
+    TextareaComponent
   ],
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -70,20 +79,20 @@ export class AppComponent {
 
   logoConfig: LogoConfig = {
     logo: this.svgConfig,
-    text: 'Some name here'
-  }
+    text: 'Some name here',
+  };
 
   fieldConfig: FieldConfig = {
-    label: 'A field label'
-  }
+    label: 'A field label',
+  };
 
   starRaterConfig5: StarRaterConfig = {
-    rating: 5
-  }
+    rating: 5,
+  };
   starRaterConfig4pt5: StarRaterConfig = {
-    rating: 4.5
-  }
+    rating: 4.5,
+  };
   starRaterConfig4pt4: StarRaterConfig = {
-    rating: 4.4
-  }
+    rating: 4.4,
+  };
 }
