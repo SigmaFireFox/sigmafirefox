@@ -105,7 +105,7 @@ export class WidgetsComponent {
     {
       size: ContentFontSize.Small,
       content: [
-        'The is small content',
+        'This is small content',
         "It's typically set up in paragraphs",
         'The paragraphs should self organise and have a nice padding',
       ],
@@ -113,7 +113,7 @@ export class WidgetsComponent {
     {
       size: ContentFontSize.Medium,
       content: [
-        'The is medium content',
+        'This is medium content',
         "It's typically set up in paragraphs",
         'The paragraphs should self organise and have a nice padding',
       ],
@@ -121,7 +121,7 @@ export class WidgetsComponent {
     {
       size: ContentFontSize.Large,
       content: [
-        'The is large content',
+        'This is large content',
         "It's typically set up in paragraphs",
         'The paragraphs should self organise and have a nice padding',
       ],

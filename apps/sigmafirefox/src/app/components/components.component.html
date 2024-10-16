@@ -11,5 +11,7 @@
 <sff-star-rater [config]="starRaterConfig4pt5"></sff-star-rater>
 <sff-star-rater [config]="starRaterConfig4pt4"></sff-star-rater>
 
-<h3>Display card</h3>
-<sff-display-card [config]="displayCardConfig"></sff-display-card>
+<h3>Display cards</h3>
+<div class="display-cards-container">
+  <sff-display-card *ngFor="let displayCardConfig of displayCardConfigs" [config]="displayCardConfig"></sff-display-card>
+</div>

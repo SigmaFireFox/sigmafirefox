@@ -1,4 +1,4 @@
-<div *ngIf="config" class="display-card">
+<div *ngIf="config" [ngStyle]="customStyling" class="display-card">
   <div *ngFor="let item of config.content" [ngSwitch]="item.type">
     <sff-icon *ngSwitchCase="displayCardContentType.Icon" [config]="item.iconContent"></sff-icon>
     <sff-header *ngSwitchCase="displayCardContentType.Header" [config]="item.headerConfig"></sff-header>
