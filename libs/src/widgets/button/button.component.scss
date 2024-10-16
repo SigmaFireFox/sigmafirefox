@@ -8,7 +8,7 @@
 }
 
 .standard-button:hover {
-  transform: scale(1.05);
+  transform: scale(1.02);
 }
 
 .standard-button:active {
@@ -18,20 +18,4 @@
 
 .standard-button:focus {
   outline: 1px solid black;
-}
-
-.small {
-  width: 120px;
-}
-
-.medium {
-  width: 240px;
-}
-
-.large {
-  width: 100%;
-}
-
-.large:hover {
-  transform: scale(1.01);
 }
