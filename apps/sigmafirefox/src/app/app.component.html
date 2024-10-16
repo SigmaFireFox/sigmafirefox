@@ -29,7 +29,7 @@
 <sff-content *ngFor="let contentConfig of contentConfigs" [config]="contentConfig"></sff-content>
 
 <h3>Icons</h3>
-<sff-icon [config]="iconConfig"></sff-icon>
+<sff-icon *ngFor="let iconConfig of iconConfigs" [config]="iconConfig"></sff-icon>
 
 <h3>SVG</h3>
 <sff-svg [config]="svgConfig"></sff-svg>

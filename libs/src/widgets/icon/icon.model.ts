@@ -1,7 +1,8 @@
 export enum IconSize {
   Small,
   Medium,
-  Large
+  Large,
+  XLarge
 }
 
 export interface IconConfig {

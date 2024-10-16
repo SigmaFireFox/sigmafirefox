@@ -141,10 +141,24 @@ export class AppComponent {
     },
   ];
 
-  iconConfig: IconConfig = {
-    size: IconSize.Medium,
-    name: 'home',
-  };
+  iconConfigs: IconConfig[] = [
+    {
+      size: IconSize.Small,
+      name: 'home',
+    },
+    {
+      size: IconSize.Medium,
+      name: 'home',
+    },
+    {
+      size: IconSize.Large,
+      name: 'home',
+    },
+    {
+      size: IconSize.XLarge,
+      name: 'home',
+    },
+  ];
 
   svgConfig: SvgConfig = {
     paths: [
