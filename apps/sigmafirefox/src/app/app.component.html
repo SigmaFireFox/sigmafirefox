@@ -19,7 +19,7 @@
 <h2>Widgets</h2>
 
 <h3>Buttons</h3>
-<sff-button [config]="buttonConfig"></sff-button>
+<sff-button *ngFor="let buttonConfig of buttonConfigs" [config]="buttonConfig"></sff-button>
 
 <h3>Content</h3>
 <sff-content [config]="contentConfig"></sff-content>

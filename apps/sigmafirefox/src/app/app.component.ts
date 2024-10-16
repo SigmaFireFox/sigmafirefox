@@ -13,6 +13,8 @@ import {
 import {
   ButtonComponent,
   ButtonConfig,
+  ButtonSize,
+  ButtonType,
   ContentComponent,
   ContentConfig,
   ContentFontSize,
@@ -45,7 +47,7 @@ import {
     FieldComponent,
     StarRaterComponent,
     TextareaComponent,
-    ImageComponent
+    ImageComponent,
   ],
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -58,10 +60,44 @@ export class AppComponent {
     content: 'Welcome to SigmaFireFox Library Sandbox',
   };
 
-  buttonConfig: ButtonConfig = {
-    name: 'button',
-    text: 'Test',
-  };
+  buttonConfigs: ButtonConfig[] = [
+    {
+      name: 'button',
+      text: 'Primary Small',
+      type: ButtonType.Primary,
+      size: ButtonSize.Small,
+    },
+    {
+      name: 'button',
+      text: 'Primary Medium',
+      type: ButtonType.Primary,
+      size: ButtonSize.Medium,
+    },
+    {
+      name: 'button',
+      text: 'Primary Large (100%) of available width',
+      type: ButtonType.Primary,
+      size: ButtonSize.Large,
+    },
+    {
+      name: 'button',
+      text: 'Secondary Small',
+      type: ButtonType.Secondary,
+      size: ButtonSize.Small,
+    },
+    {
+      name: 'button',
+      text: 'Secondary Medium',
+      type: ButtonType.Secondary,
+      size: ButtonSize.Medium,
+    },
+    {
+      name: 'button',
+      text: 'Secondary Large (100%) of available width',
+      type: ButtonType.Secondary,
+      size: ButtonSize.Large,
+    },
+  ];
 
   contentConfig: ContentConfig = {
     size: ContentFontSize.Medium,
@@ -111,6 +147,6 @@ export class AppComponent {
 
   imageConfig: ImageConfig = {
     url: 'https://picsum.photos/id/237/200/300',
-    alt: 'A cute puppy'
-  }
+    alt: 'A cute puppy',
+  };
 }

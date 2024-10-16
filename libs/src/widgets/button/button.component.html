@@ -1,1 +1,12 @@
-<button *ngIf="config" class="standard-button primary">{{config.text}}</button>
+<div *ngIf="config" [ngSwitch]="config.type">
+  <div *ngSwitchCase="buttonType.Primary" [ngSwitch]="config.size">
+    <button *ngSwitchCase="buttonSize.Small" class="standard-button small primary">{{config.text}}</button>
+    <button *ngSwitchCase="buttonSize.Medium" class="standard-button medium primary">{{config.text}}</button>
+    <button *ngSwitchCase="buttonSize.Large" class="standard-button large primary">{{config.text}}</button>
+  </div>
+  <div *ngSwitchCase="buttonType.Secondary" [ngSwitch]="config.size">
+    <button *ngSwitchCase="buttonSize.Small" class="standard-button small secondary">{{config.text}}</button>
+    <button *ngSwitchCase="buttonSize.Medium" class="standard-button medium secondary">{{config.text}}</button>
+    <button *ngSwitchCase="buttonSize.Large" class="standard-button large secondary">{{config.text}}</button>
+  </div>
+</div>

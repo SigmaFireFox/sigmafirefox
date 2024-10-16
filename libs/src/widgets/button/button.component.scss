@@ -3,8 +3,8 @@
   height: 30px;
   border-radius: 15px;
   border: none;
-  min-width: 120px;
   cursor: pointer;
+  margin: 0.25rem;
 }
 
 .standard-button:hover {
@@ -18,4 +18,20 @@
 
 .standard-button:focus {
   outline: 1px solid black;
+}
+
+.small {
+  width: 120px;
+}
+
+.medium {
+  width: 240px;
+}
+
+.large {
+  width: 100%;
+}
+
+.large:hover {
+  transform: scale(1.01);
 }
