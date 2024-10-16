@@ -1,8 +1,10 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import {
   FieldComponent,
   FieldConfig,
+  FieldType,
   LogoComponent,
   LogoConfig,
   StarRaterComponent,
@@ -29,6 +31,7 @@ import {
 @Component({
   standalone: true,
   imports: [
+    CommonModule,
     RouterModule,
     ButtonComponent,
     ContentComponent,
@@ -39,7 +42,7 @@ import {
     InputComponent,
     FieldComponent,
     StarRaterComponent,
-    TextareaComponent
+    TextareaComponent,
   ],
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -82,9 +85,16 @@ export class AppComponent {
     text: 'Some name here',
   };
 
-  fieldConfig: FieldConfig = {
-    label: 'A field label',
-  };
+  fieldConfigs: FieldConfig[] = [
+    {
+      type: FieldType.Input,
+      label: 'An input field',
+    },
+    {
+      type: FieldType.Textarea,
+      label: 'An textarea field',
+    },
+  ];
 
   starRaterConfig5: StarRaterConfig = {
     rating: 5,

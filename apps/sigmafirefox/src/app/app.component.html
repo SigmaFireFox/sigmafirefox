@@ -6,8 +6,8 @@
 <h3>Logo</h3>
 <sff-logo [config]="logoConfig"></sff-logo>
 
-<h3>Field</h3>
-<sff-field [config]="fieldConfig"></sff-field>
+<h3>Fields</h3>
+<sff-field *ngFor="let fieldConfig of fieldConfigs" [config]="fieldConfig"></sff-field>
 
 <h3>Star rater</h3>
 <sff-star-rater [config]="starRaterConfig5"></sff-star-rater>
