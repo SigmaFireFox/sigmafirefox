@@ -22,6 +22,8 @@ import {
   IconComponent,
   IconConfig,
   IconSize,
+  ImageComponent,
+  ImageConfig,
   InputComponent,
   SvgComponent,
   SvgConfig,
@@ -43,6 +45,7 @@ import {
     FieldComponent,
     StarRaterComponent,
     TextareaComponent,
+    ImageComponent
   ],
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -105,4 +108,9 @@ export class AppComponent {
   starRaterConfig4pt4: StarRaterConfig = {
     rating: 4.4,
   };
+
+  imageConfig: ImageConfig = {
+    url: 'https://picsum.photos/id/237/200/300',
+    alt: 'A cute puppy'
+  }
 }

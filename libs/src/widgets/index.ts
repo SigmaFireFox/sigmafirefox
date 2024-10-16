@@ -12,3 +12,5 @@ export * from './input/input.component';
 export * from './input/input.model'
 export * from './textarea/textarea.component';
 export * from './textarea/textarea.model'
+export * from './image/image.component';
+export * from './image/image.model'
