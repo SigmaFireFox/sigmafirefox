@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { RouteRelationshipType } from './navigation.model';
+import { NavlinkConfig } from '../../widgets/navlink/navlink.model';
 
 @Injectable({
   providedIn: 'root',
@@ -8,27 +9,28 @@ import { RouteRelationshipType } from './navigation.model';
 export class NavigationService {
   constructor(private router: Router, protected route: ActivatedRoute) {}
 
-  navTo(routeRelation: RouteRelationshipType, route: string){
+  navTo(navlink: NavlinkConfig){
     let param: unknown[] = []
-    switch (routeRelation) {
+    switch (navlink.relationship) {
       case RouteRelationshipType.Absolute :{
-        param = [`"${route}"`]
+        param = [`${navlink.route}`]
         break
       }
       case RouteRelationshipType.Parent :{
-        param = [`"../../${route}"`]
+        param = [`../../${navlink.route}`]
         break
       }
       case RouteRelationshipType.Sibling :{
-        param = [`"../${route}"`]
+        param = [`../${navlink.route}`]
         break
       }
       case RouteRelationshipType.Child :{
-        param = [`./"${route}"`]
+        param = [`./${navlink.route}`]
         break
       }
     }
 
+    console.log(param)
     this.router.navigate(param, {relativeTo: this.route});
   }
 }

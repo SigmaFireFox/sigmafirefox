@@ -14,3 +14,5 @@ export * from './textarea/textarea.component';
 export * from './textarea/textarea.model'
 export * from './image/image.component';
 export * from './image/image.model'
+export * from './navlink/navlink.component';
+export * from './navlink/navlink.model'

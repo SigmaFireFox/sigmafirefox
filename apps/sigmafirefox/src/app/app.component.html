@@ -1,50 +1,8 @@
 <sff-header [config]="headerConfig"></sff-header>
-
-<!-- ***************** Components ***************** -->
-<h2>Components</h2>
-
-<h3>Logo</h3>
-<sff-logo [config]="logoConfig"></sff-logo>
-
-<h3>Fields</h3>
-<sff-field *ngFor="let fieldConfig of fieldConfigs" [config]="fieldConfig"></sff-field>
-
-<h3>Star rater</h3>
-<sff-star-rater [config]="starRaterConfig5"></sff-star-rater>
-<sff-star-rater [config]="starRaterConfig4pt5"></sff-star-rater>
-<sff-star-rater [config]="starRaterConfig4pt4"></sff-star-rater>
-
-<h3>Display card</h3>
-<sff-display-card [config]="displayCardConfig"></sff-display-card>
-
-
-<!-- ***************** Widgets ***************** -->
-<h2>Widgets</h2>
-
-<h3>Headers</h3>
-<sff-header *ngFor="let headerConfig of headerConfigs" [config]="headerConfig"></sff-header>
-
-
-<h3>Buttons</h3>
-<sff-button *ngFor="let buttonConfig of buttonConfigs" [config]="buttonConfig"></sff-button>
-
-<h3>Content</h3>
-<sff-content *ngFor="let contentConfig of contentConfigs" [config]="contentConfig"></sff-content>
-
-<h3>Icons</h3>
-<sff-icon *ngFor="let iconConfig of iconConfigs" [config]="iconConfig"></sff-icon>
-
-<h3>SVG</h3>
-<sff-svg [config]="svgConfig"></sff-svg>
-
-<h3>TextArea</h3>
-<sff-textarea></sff-textarea>
-
-<h3>Input</h3>
-<sff-input></sff-input>
-
-<h3>Image</h3>
-<sff-image [config]="imageConfig"></sff-image>
-
+<div class="navlinks-container">
+  <sff-navlink [config]="componentsNavLink"></sff-navlink>
+  <sff-navlink [config]="widgetsNavLink"></sff-navlink>
+</div>
 
 <router-outlet></router-outlet>
+
