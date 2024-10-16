@@ -1,0 +1,17 @@
+.textarea {
+  position: relative;
+  height: 60px;
+  border-radius: 15px;
+  border: none;
+  min-width: 240px;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.textarea:focus {
+  outline: 1px solid black;
+}
+
+textarea {
+  resize: vertical;
+}
