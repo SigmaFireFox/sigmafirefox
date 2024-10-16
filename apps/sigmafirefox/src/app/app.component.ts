@@ -2,6 +2,10 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import {
+  DisplayCardComponent,
+  DisplayCardConfig,
+  DisplayCardContentType,
+  DisplayCardSize,
   FieldComponent,
   FieldConfig,
   FieldType,
@@ -49,6 +53,7 @@ import {
     StarRaterComponent,
     TextareaComponent,
     ImageComponent,
+    DisplayCardComponent,
   ],
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -176,22 +181,22 @@ export class AppComponent {
     {
       type: FieldType.Input,
       label: 'An input field - External label',
-      labelPosition: LabelPosition.External
+      labelPosition: LabelPosition.External,
     },
     {
       type: FieldType.Textarea,
       label: 'An textarea field - External label',
-      labelPosition: LabelPosition.External
+      labelPosition: LabelPosition.External,
     },
     {
       type: FieldType.Input,
       label: 'An input field - Internal label',
-      labelPosition: LabelPosition.Internal
+      labelPosition: LabelPosition.Internal,
     },
     {
       type: FieldType.Textarea,
       label: 'An textarea field - Internal label',
-      labelPosition: LabelPosition.Internal
+      labelPosition: LabelPosition.Internal,
     },
   ];
 
@@ -208,5 +213,42 @@ export class AppComponent {
   imageConfig: ImageConfig = {
     url: 'https://picsum.photos/id/237/200/300',
     alt: 'A cute puppy',
+  };
+
+  displayCardConfig: DisplayCardConfig = {
+    size: DisplayCardSize.Medium,
+    content: [
+      {
+        type: DisplayCardContentType.Icon,
+        iconContent: {
+          size: IconSize.Medium,
+          name: 'polymer',
+        },
+      },
+      {
+        type: DisplayCardContentType.Header,
+        headerConfig: {
+          size: HeaderFontSize.Medium,
+          content: 'This is a medium header',
+        },
+      },
+      {
+        type: DisplayCardContentType.Content,
+        contentConfig: {
+          size: ContentFontSize.Medium,
+          content: [
+            'The is medium content',
+            "It's typically set up in paragraphs",
+            'The paragraphs should self organise and have a nice padding',
+          ],
+        },
+      },
+      {
+        type: DisplayCardContentType.StarRater,
+        starRaterConfig: {
+          rating: 5,
+        },
+      },
+    ],
   };
 }

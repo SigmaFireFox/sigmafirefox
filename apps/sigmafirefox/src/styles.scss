@@ -44,6 +44,7 @@ $Vivid-Lime-Green: #a3ce19;
 $Bitter-Lemon: #cdce19;
 $Rich-Black: #030303;
 $Platinum: #E3E3E3;
+$Eggshell: #F2F2CE;
 
 .primary {
   background-color: $Vivid-Lime-Green;
@@ -59,6 +60,10 @@ $Platinum: #E3E3E3;
 
 .input, .textarea, .internal {
   background-color: $Platinum;
+}
+
+.display-card {
+  background-color: $Eggshell;
 }
 
 .font {

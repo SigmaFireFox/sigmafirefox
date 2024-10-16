@@ -6,4 +6,5 @@ export interface StarArrays {
   fullStars: string[]
   halfStars: string[]
   emptyStars: string[]
+  color?: string
 }
