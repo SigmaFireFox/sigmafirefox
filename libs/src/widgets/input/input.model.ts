@@ -1,3 +1,4 @@
 export interface InputConfig {
-  placeholder: string
+  placeholder?: string
+  isInternalLabel?: boolean
 }

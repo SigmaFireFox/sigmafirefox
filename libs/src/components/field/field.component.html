@@ -1,5 +1,40 @@
-<div class="field-container" *ngIf="config" [ngSwitch]="config.type">
-  <sff-header [config]="labelConfig"></sff-header>
-  <sff-input *ngSwitchCase="fieldType.Input"></sff-input>
-  <sff-textarea *ngSwitchCase="fieldType.Textarea"></sff-textarea>
+<div *ngIf="config" [ngSwitch]="config.labelPosition">
+
+  <div 
+    *ngSwitchCase="labelPosition.External" 
+    class="field-container external" 
+    [ngSwitch]="config.type">
+    <sff-header [config]="labelConfig"></sff-header>
+    <sff-input *ngSwitchCase="fieldType.Input"></sff-input>
+    <sff-textarea *ngSwitchCase="fieldType.Textarea"></sff-textarea>
+  </div>
+
+  <div 
+    *ngSwitchCase="labelPosition.Internal" 
+    class="field-container internal" 
+    [ngStyle]="customStyling" 
+    (focus)="onFocus()" 
+    (blur)="onBlur()"
+    [ngSwitch]="config.type" > 
+
+      <sff-header 
+        [config]="labelConfig">
+      </sff-header>
+      
+      <sff-input 
+        *ngSwitchCase="fieldType.Input" 
+        [config]="childConfig" 
+        (focusEvent)="onFocus()"
+        (blurEvent)="onBlur()">
+      </sff-input>
+
+      <sff-textarea 
+        *ngSwitchCase="fieldType.Textarea" 
+        [config]="childConfig" 
+        (focusEvent)="onFocus()"
+        (blurEvent)="onBlur()">
+      </sff-textarea>
+
+  </div>
+
 </div>

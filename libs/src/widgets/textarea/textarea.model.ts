@@ -1,3 +1,4 @@
 export interface TextAreaConfig {
-  placeholder: string
+  placeholder?: string
+  isInternalLabel?: boolean
 }

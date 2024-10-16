@@ -1,1 +1,5 @@
-<input class="input">
+<input 
+  [ngClass]="config?.isInternalLabel ? 'internal' : 'external'" 
+  class="input" 
+  (focus)="onFocus()"
+  (blur)="onBlur()">

@@ -5,6 +5,7 @@ import {
   FieldComponent,
   FieldConfig,
   FieldType,
+  LabelPosition,
   LogoComponent,
   LogoConfig,
   StarRaterComponent,
@@ -174,11 +175,23 @@ export class AppComponent {
   fieldConfigs: FieldConfig[] = [
     {
       type: FieldType.Input,
-      label: 'An input field',
+      label: 'An input field - External label',
+      labelPosition: LabelPosition.External
     },
     {
       type: FieldType.Textarea,
-      label: 'An textarea field',
+      label: 'An textarea field - External label',
+      labelPosition: LabelPosition.External
+    },
+    {
+      type: FieldType.Input,
+      label: 'An input field - Internal label',
+      labelPosition: LabelPosition.Internal
+    },
+    {
+      type: FieldType.Textarea,
+      label: 'An textarea field - Internal label',
+      labelPosition: LabelPosition.Internal
     },
   ];
 

@@ -3,11 +3,21 @@
   height: 30px;
   border-radius: 15px;
   border: none;
-  min-width: 240px;
+  min-width: 248px;
   cursor: pointer;
   text-indent: 0.5rem;
 }
 
-.input:focus {
+.internal {
+  text-indent: 0;
+  min-width: 240px;
+  height: 20px;
+}
+
+.external:focus {
   outline: 1px solid black;
+}
+
+.internal:focus {
+  outline: none
 }

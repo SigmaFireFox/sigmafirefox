@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { InputConfig } from './input.model';
 
 @Component({
   selector: 'sff-input',
@@ -8,4 +9,16 @@ import { CommonModule } from '@angular/common';
   templateUrl: './input.component.html',
   styleUrl: './input.component.scss',
 })
-export class InputComponent {}
+export class InputComponent {
+  @Input() config: InputConfig | undefined;
+  @Output() focusEvent: EventEmitter<void> = new EventEmitter();
+  @Output() blurEvent: EventEmitter<void> = new EventEmitter();
+
+  onFocus() {
+    this.focusEvent.emit()
+  }
+
+  onBlur() {
+    this.blurEvent.emit()
+  }
+}

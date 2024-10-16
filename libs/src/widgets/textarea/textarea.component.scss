@@ -3,13 +3,22 @@
   height: 60px;
   border-radius: 15px;
   border: none;
-  width: 228px;
+  width: 236px;
   cursor: pointer;
   padding: 10px;
 }
 
-.textarea:focus {
+.internal {
+  width: 244px;
+  padding: 2px;
+}
+
+.external:focus {
   outline: 1px solid black;
+}
+
+.internal:focus {
+  outline: none
 }
 
 textarea {
