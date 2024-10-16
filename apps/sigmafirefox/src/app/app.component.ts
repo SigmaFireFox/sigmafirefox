@@ -99,14 +99,32 @@ export class AppComponent {
     },
   ];
 
-  contentConfig: ContentConfig = {
-    size: ContentFontSize.Medium,
-    content: [
-      'The is content',
-      "It's typically set up in paragraphs",
-      'The paragraphs should self organise and have a nice padding',
-    ],
-  };
+  contentConfigs: ContentConfig[] = [
+    {
+      size: ContentFontSize.Small,
+      content: [
+        'The is small content',
+        "It's typically set up in paragraphs",
+        'The paragraphs should self organise and have a nice padding',
+      ],
+    },
+    {
+      size: ContentFontSize.Medium,
+      content: [
+        'The is medium content',
+        "It's typically set up in paragraphs",
+        'The paragraphs should self organise and have a nice padding',
+      ],
+    },
+    {
+      size: ContentFontSize.Large,
+      content: [
+        'The is large content',
+        "It's typically set up in paragraphs",
+        'The paragraphs should self organise and have a nice padding',
+      ],
+    },
+  ];
 
   iconConfig: IconConfig = {
     size: IconSize.Medium,

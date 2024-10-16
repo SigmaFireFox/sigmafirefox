@@ -22,7 +22,7 @@
 <sff-button *ngFor="let buttonConfig of buttonConfigs" [config]="buttonConfig"></sff-button>
 
 <h3>Content</h3>
-<sff-content [config]="contentConfig"></sff-content>
+<sff-content *ngFor="let contentConfig of contentConfigs" [config]="contentConfig"></sff-content>
 
 <h3>Icons</h3>
 <sff-icon [config]="iconConfig"></sff-icon>

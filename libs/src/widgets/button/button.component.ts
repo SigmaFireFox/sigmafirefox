@@ -13,8 +13,6 @@ export class ButtonComponent implements OnInit{
   @Input() config: ButtonConfig | undefined;
 
   buttonType = ButtonType
-  buttonSize = ButtonSize
-
   customStyling: object | undefined
 
   ngOnInit(){
