@@ -18,6 +18,10 @@
 <!-- ***************** Widgets ***************** -->
 <h2>Widgets</h2>
 
+<h3>Headers</h3>
+<sff-header *ngFor="let headerConfig of headerConfigs" [config]="headerConfig"></sff-header>
+
+
 <h3>Buttons</h3>
 <sff-button *ngFor="let buttonConfig of buttonConfigs" [config]="buttonConfig"></sff-button>
 

@@ -60,6 +60,21 @@ export class AppComponent {
     content: 'Welcome to SigmaFireFox Library Sandbox',
   };
 
+  headerConfigs: HeaderConfig[] = [
+    {
+      size: HeaderFontSize.Small,
+      content: 'This is a small header',
+    },
+    {
+      size: HeaderFontSize.Medium,
+      content: 'This is a medium header',
+    },
+    {
+      size: HeaderFontSize.Large,
+      content: 'This is a large header',
+    },
+  ];
+
   buttonConfigs: ButtonConfig[] = [
     {
       name: 'button',
