@@ -35,16 +35,19 @@ $sigmafirefox-theme: mat.define-theme((color: (theme-type: light,
 
 html, body {
   height: 100%;
-  margin: 1rem;
+  margin: 0;
 }
 
 // ******************************   Shared lib components and widgets theming   ******************************
 
-$Vivid-Lime-Green: #a3ce19;
-$Bitter-Lemon: #cdce19;
+$Vivid-Lime-Green: #A3CE19;
+$Bitter-Lemon: #CDCE19;
 $Rich-Black: #030303;
 $Platinum: #E3E3E3;
 $Eggshell: #F2F2CE;
+$Charleston-Green: #282828;
+$White: #FFFFFF;
+
 
 .primary {
   background-color: $Vivid-Lime-Green;
@@ -60,6 +63,11 @@ $Eggshell: #F2F2CE;
 
 .input, .textarea, .internal {
   background-color: $Platinum;
+}
+
+.footer-container {
+  background-color: $Charleston-Green;
+  color: $White;
 }
 
 .display-card {

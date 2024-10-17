@@ -5,14 +5,14 @@ import {
   HeaderConfig,
   HeaderFontSize,
   NavlinkComponent,
-  NavlinkConfig,
 } from '@sigmafirefox/widgets';
 import { RouteRelationshipType } from '@sigmafirefox/services';
 import { RouterModule } from '@angular/router';
+import { FooterComponent, FooterConfig } from '@sigmafirefox/components';
 
 @Component({
   standalone: true,
-  imports: [RouterModule, HeaderComponent, NavlinkComponent],
+  imports: [RouterModule, HeaderComponent, NavlinkComponent, FooterComponent],
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
@@ -23,21 +23,27 @@ export class AppComponent {
     content: 'Welcome to SigmaFireFox Library Sandbox',
   };
 
-  componentsNavLink: NavlinkConfig = {
-    relationship: RouteRelationshipType.Child,
-    route: 'components',
-    content: { size: ContentFontSize.Medium, content: ['View Components'] },
-  };
-
-  widgetsNavLink: NavlinkConfig = {
-    relationship: RouteRelationshipType.Child,
-    route: 'widgets',
-    content: { size: ContentFontSize.Medium, content: ['View Widgets'] },
-  };
-
-  formsNavLink: NavlinkConfig = {
-    relationship: RouteRelationshipType.Child,
-    route: 'forms',
-    content: { size: ContentFontSize.Medium, content: ['View Forms'] },
+  footerConfig: FooterConfig = {
+    navlinks: [
+      {
+        relationship: RouteRelationshipType.Child,
+        route: 'components',
+        content: { size: ContentFontSize.Medium, content: ['View Components'] },
+      },
+      {
+        relationship: RouteRelationshipType.Child,
+        route: 'widgets',
+        content: { size: ContentFontSize.Medium, content: ['View Widgets'] },
+      },
+      {
+        relationship: RouteRelationshipType.Child,
+        route: 'forms',
+        content: { size: ContentFontSize.Medium, content: ['View Forms'] },
+      },
+    ],
+    content: {
+      size: ContentFontSize.Small,
+      content: ['Copyright SigmaFireFox 2024'],
+    },
   };
 }

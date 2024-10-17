@@ -1,9 +1,10 @@
-<sff-header [config]="headerConfig"></sff-header>
-<div class="navlinks-container">
-  <sff-navlink [config]="componentsNavLink"></sff-navlink>
-  <sff-navlink [config]="widgetsNavLink"></sff-navlink>
-  <sff-navlink [config]="formsNavLink"></sff-navlink>
+<div class="page-container">
+  <div class="content-container"> 
+    <sff-header [config]="headerConfig"></sff-header>
+
+    <router-outlet></router-outlet>
+
+  </div>
+
+  <sff-footer [config]="footerConfig"></sff-footer>
 </div>
-
-<router-outlet></router-outlet>
-
