@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import {
   LogoComponent,
@@ -18,6 +18,7 @@ import {
   CtaBannerComponent,
   CtaBannerConfig,
 } from '@sigmafirefox/components';
+import { CardGridComponent, CardGridConfig } from '@sigmafirefox/compositions';
 import {
   IconSize,
   HeaderFontSize,
@@ -37,11 +38,12 @@ import {
     StarRaterComponent,
     DisplayCardComponent,
     CtaBannerComponent,
+    CardGridComponent,
   ],
   templateUrl: './components.component.html',
   styleUrl: './components.component.scss',
 })
-export class ComponentsComponent {
+export class ComponentsComponent implements OnInit {
   title = 'sigmafirefox';
 
   logoConfig: LogoConfig = {
@@ -234,4 +236,28 @@ export class ComponentsComponent {
       },
     ],
   };
+
+  cardGridMediumConfig: CardGridConfig = {
+    cards: [],
+  };
+
+  cardGridSmallConfig: CardGridConfig = {
+    cards: [],
+  };
+
+  cardGridSmallTransparentConfig: CardGridConfig = {
+    cards: [],
+  };
+
+  ngOnInit() {
+    for (let i = 0; i < 10; i++) {
+      this.cardGridMediumConfig.cards.push(this.displayCardConfigs[0]);
+    }
+    for (let i = 0; i < 10; i++) {
+      this.cardGridSmallConfig.cards.push(this.displayCardConfigs[1]);
+    }
+    for (let i = 0; i < 10; i++) {
+      this.cardGridSmallTransparentConfig.cards.push(this.displayCardConfigs[2]);
+    }
+  }
 }

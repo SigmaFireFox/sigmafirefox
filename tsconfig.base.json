@@ -16,6 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@sigmafirefox/components": ["libs/src/components/index.ts"],
+      "@sigmafirefox/compositions": ["libs/src/compositions/index.ts"],
       "@sigmafirefox/services": ["libs/src/services/index.ts"],
       "@sigmafirefox/widgets": ["libs/src/widgets/index.ts"]
     }
