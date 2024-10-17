@@ -1,0 +1,10 @@
+<div *ngIf="config" class="banner-container">
+  <sff-image class="banner-image" [config]="config.image"></sff-image>
+  <div class="banner-content" [ngStyle]="customStyling">
+    <sff-header [config]="config.header"></sff-header>
+    <sff-content [config]="config.content"></sff-content>
+    <div class="buttons-container">
+      <sff-button *ngFor="let buttonConfig of config.buttons" [config]="buttonConfig"></sff-button>
+    </div>
+  </div>
+</div>

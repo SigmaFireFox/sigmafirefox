@@ -1,0 +1,28 @@
+.banner-container {
+  display: flex;
+  width: 100%;
+
+  .banner-image {
+    display: flex;
+    width: 100%;
+  }
+
+  .banner-content {
+    position:absolute;
+    z-index: 2;
+    height: calc(240px - 2rem);
+    max-width: 20rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 1rem;
+
+    .buttons-container {
+      display: flex;
+      flex-direction: row;
+      margin: 0.5rem 0;
+    }
+  }
+}
