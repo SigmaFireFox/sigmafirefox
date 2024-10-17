@@ -30,7 +30,6 @@ export class NavigationService {
       }
     }
 
-    console.log(param)
     this.router.navigate(param, {relativeTo: this.route});
   }
 }
