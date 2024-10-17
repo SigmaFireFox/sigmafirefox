@@ -15,11 +15,15 @@ import {
   LogoConfig,
   StarRaterConfig,
   StarSize,
+  CtaBannerComponent,
+  CtaBannerConfig,
 } from '@sigmafirefox/components';
 import {
   IconSize,
   HeaderFontSize,
   ContentFontSize,
+  ButtonType,
+  ButtonSize,
 } from '@sigmafirefox/widgets';
 
 @Component({
@@ -32,6 +36,7 @@ import {
     FieldComponent,
     StarRaterComponent,
     DisplayCardComponent,
+    CtaBannerComponent,
   ],
   templateUrl: './components.component.html',
   styleUrl: './components.component.scss',
@@ -196,5 +201,37 @@ export class ComponentsComponent {
           },
         },
       ],
-    },  ];
+    },
+  ];
+
+  ctaBannerConfig: CtaBannerConfig = {
+    image: {
+      url: 'https://picsum.photos/id/85/1600/240',
+      alt: 'A tractor',
+    },
+    contentLeft: '60%',
+    header: { size: HeaderFontSize.Medium, content: 'This is the header' },
+    content: {
+      size: ContentFontSize.Small,
+      content: [
+        'This is small content',
+        "It's typically set up in paragraphs",
+        'The paragraphs should self organise and have a nice padding',
+      ],
+    },
+    buttons: [
+      {
+        name: 'button',
+        text: 'Primary Small',
+        type: ButtonType.Primary,
+        size: ButtonSize.Small,
+      },
+      {
+        name: 'button',
+        text: 'Secondary Small',
+        type: ButtonType.Secondary,
+        size: ButtonSize.Small,
+      },
+    ],
+  };
 }

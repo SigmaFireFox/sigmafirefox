@@ -7,4 +7,5 @@ export enum ContentFontSize {
 export interface ContentConfig {
   size: ContentFontSize
   content: string[]
+  isNavLink?: boolean
 }

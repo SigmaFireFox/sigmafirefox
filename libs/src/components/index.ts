@@ -6,3 +6,5 @@ export * from './star-rater/star-rater.component';
 export * from './star-rater/star-rater.model'
 export * from './display-card/display-card.component';
 export * from './display-card/display-card.model'
+export * from './cta-banner/cta-banner.component';
+export * from './cta-banner/cta-banner.model'

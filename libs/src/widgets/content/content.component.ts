@@ -12,7 +12,7 @@ import { ContentConfig, ContentFontSize } from './content.model';
 export class ContentComponent implements OnInit {
   @Input() config: ContentConfig | undefined;
 
-  customStyling: object | undefined;
+  customStyling: { [key: string]: string } = {};
 
   ngOnInit() {
     if (!this.config) return;
