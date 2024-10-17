@@ -12,3 +12,5 @@ export * from './form/form.component';
 export * from './form/form.model'
 export * from './footer/footer.component';
 export * from './footer/footer.model'
+export * from './navbar/navbar.component';
+export * from './navbar/navbar.model'
