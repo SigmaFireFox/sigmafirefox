@@ -1,0 +1,6 @@
+<div *ngIf="config" class="footer-container">
+  <div class="navlinks-container">
+    <sff-navlink class="navlink" *ngFor="let navlink of config.navlinks" [config]="navlink"></sff-navlink>
+  </div>
+  <sff-content [config]="config.content"></sff-content>
+</div>
