@@ -7,16 +7,22 @@
     <div class="label-container">
       <sff-header [config]="labelConfig"></sff-header>
     </div>
-    <sff-input *ngSwitchCase="fieldType.Input"></sff-input>
-    <sff-textarea *ngSwitchCase="fieldType.Textarea"></sff-textarea>
+    <sff-input 
+      *ngSwitchCase="fieldType.Input"
+      (focusEvent)="onFocus(true)"
+      (blurEvent)="onBlur(true, $event)">
+    </sff-input>
+    <sff-textarea 
+      *ngSwitchCase="fieldType.Textarea"
+      (focusEvent)="onFocus(true)"
+      (blurEvent)="onBlur(true, $event)">
+    </sff-textarea>
   </div>
 
   <div 
     *ngSwitchCase="labelPosition.Internal" 
     class="field-container internal" 
     [ngStyle]="customStyling" 
-    (focus)="onFocus()" 
-    (blur)="onBlur()"
     [ngSwitch]="config.type" > 
 
       <sff-header 
@@ -26,15 +32,15 @@
       <sff-input 
         *ngSwitchCase="fieldType.Input" 
         [config]="childConfig" 
-        (focusEvent)="onFocus()"
-        (blurEvent)="onBlur()">
+        (focusEvent)="onFocus(true)"
+        (blurEvent)="onBlur(true, $event)">
       </sff-input>
 
       <sff-textarea 
         *ngSwitchCase="fieldType.Textarea" 
         [config]="childConfig" 
-        (focusEvent)="onFocus()"
-        (blurEvent)="onBlur()">
+        (focusEvent)="onFocus(true)"
+        (blurEvent)="onBlur(true, $event)">
       </sff-textarea>
 
   </div>

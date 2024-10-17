@@ -1,6 +1,16 @@
 <div *ngIf="config" [ngSwitch]="config.type">
-  <button *ngSwitchCase="buttonType.Primary" [ngStyle]="customStyling"
-    class="standard-button primary">{{config.text}}</button>
-  <button *ngSwitchCase="buttonType.Secondary" [ngStyle]="customStyling"
-    class="standard-button secondary">{{config.text}}</button>
+  <button 
+    *ngSwitchCase="buttonType.Primary" 
+    [ngStyle]="customStyling"
+    class="standard-button primary"
+    (click)="onClick()">
+    {{config.text}}
+  </button>
+  <button 
+    *ngSwitchCase="buttonType.Secondary" 
+    [ngStyle]="customStyling"
+    class="standard-button secondary"
+    (click)="onClick()">
+    {{config.text}}
+  </button>
 </div>

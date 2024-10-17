@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ButtonConfig, ButtonSize, ButtonType } from './button.model';
 
@@ -11,6 +11,8 @@ import { ButtonConfig, ButtonSize, ButtonType } from './button.model';
 })
 export class ButtonComponent implements OnInit{
   @Input() config: ButtonConfig | undefined;
+  @Output() clicked: EventEmitter<void> = new EventEmitter();
+
 
   buttonType = ButtonType
   customStyling: object | undefined
@@ -39,5 +41,9 @@ export class ButtonComponent implements OnInit{
       'width': width,
       'margin': margin
     }
+  }
+
+  onClick(){
+    this.clicked.emit()
   }
 }

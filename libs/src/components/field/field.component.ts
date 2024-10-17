@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FieldConfig, FieldType, LabelPosition } from './field.model';
 import { HeaderComponent } from '../../widgets/header/header.component';
@@ -20,6 +20,8 @@ import { TextAreaConfig } from '../../widgets/textarea/textarea.model';
 })
 export class FieldComponent implements OnInit {
   @Input() config: FieldConfig | undefined;
+  @Output() updatedValue: EventEmitter<string> = new EventEmitter();
+
 
   labelConfig: HeaderConfig | undefined;
   labelPosition = LabelPosition;
@@ -38,17 +40,18 @@ export class FieldComponent implements OnInit {
     };
   }
 
-  onFocus() {
-    console.log('Focus')
-    this.customStyling = {
-      outline: '1px solid black',
-    };
+  onFocus(isInternalLabel: boolean | undefined) {
+    if (isInternalLabel)
+      this.customStyling = {
+        outline: '1px solid black',
+      };
   }
-  
-  onBlur() {
-    console.log('Blur')
-    this.customStyling = {
-      outline: 'none',
-    };
+
+  onBlur(isInternalLabel: boolean | undefined, value: string) {
+    if (isInternalLabel)
+      this.customStyling = {
+        outline: 'none',
+      };
+    this.updatedValue.emit(value)
   }
 }

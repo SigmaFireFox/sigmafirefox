@@ -1,5 +1,8 @@
 <input 
   [ngClass]="config?.isInternalLabel ? 'internal' : 'external'" 
   class="input" 
+  [(ngModel)]="value"
   (focus)="onFocus()"
-  (blur)="onBlur()">
+  (blur)="onBlur()"
+  
+  >

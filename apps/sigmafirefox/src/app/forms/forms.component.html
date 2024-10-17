@@ -7,5 +7,5 @@
 
 <h3>Single column form - Constrained</h3>
 <div class="narrow-column">
-  <sff-form [config]="formConfig"></sff-form>
+  <sff-form [config]="formConfig" (formSubmitted)="onFormSubmitted($event)"></sff-form>
 </div>

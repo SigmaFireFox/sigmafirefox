@@ -3,7 +3,7 @@
   height: 30px;
   border-radius: 15px;
   border: none;
-  width: 100%;
+  width: calc(100% - 0.4rem);
   cursor: pointer;
   text-indent: 0.5rem;
 }

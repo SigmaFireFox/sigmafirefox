@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 import {
   FieldType,
   FormComponent,
@@ -18,33 +19,53 @@ export class FormsComponent {
   formConfig: FormConfig = {
     fields: [
       {
-        type: FieldType.Input,
-        label: 'An input field - External label',
-        labelPosition: LabelPosition.External,
+        name: 'Field1',
+        config: {
+          type: FieldType.Input,
+          label: 'An input field - External label',
+          labelPosition: LabelPosition.External,
+        },
       },
       {
-        type: FieldType.Textarea,
-        label: 'An textarea field - External label',
-        labelPosition: LabelPosition.External,
+        name: 'Field2',
+        config: {
+          type: FieldType.Textarea,
+          label: 'An textarea field - External label',
+          labelPosition: LabelPosition.External,
+        },
       },
       {
-        type: FieldType.Input,
-        label: 'An input field - Internal label',
-        labelPosition: LabelPosition.Internal,
+        name: 'Field3',
+        config: {
+          type: FieldType.Input,
+          label: 'An input field - Internal label',
+          labelPosition: LabelPosition.Internal,
+        },
       },
       {
-        type: FieldType.Textarea,
-        label: 'An textarea field - Internal label',
-        labelPosition: LabelPosition.Internal,
+        name: 'Field4',
+        config: {
+          type: FieldType.Textarea,
+          label: 'An textarea field - Internal label',
+          labelPosition: LabelPosition.Internal,
+        },
       },
     ],
     buttons: [
       {
-        name: 'button',
-        text: 'Primary Large (100%) of available width',
-        type: ButtonType.Primary,
-        size: ButtonSize.Large,
+        config: {
+          name: 'button',
+          text: 'Primary Large (100%) of available width',
+          type: ButtonType.Primary,
+          size: ButtonSize.Large,
+        },
+        isSubmit: true,
       },
     ],
   };
+
+  onFormSubmitted(form: FormGroup){
+    console.log('Form submitted')
+    console.log(form.value)
+  }
 }
