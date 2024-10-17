@@ -18,6 +18,7 @@ export class ButtonComponent implements OnInit{
   ngOnInit(){
     if (!this.config) return
     let width = ''
+    let margin = ''
     switch (this.config.size) {
       case ButtonSize.Small: {
         width = '7.5rem'
@@ -29,11 +30,14 @@ export class ButtonComponent implements OnInit{
       }
       case ButtonSize.Large: {
         width = '98%'
+        margin = '1%'
+        
       }
     }
 
     this.customStyling = {
       'width': width,
+      'margin': margin
     }
   }
 }

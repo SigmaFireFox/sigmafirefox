@@ -34,4 +34,10 @@ export class AppComponent {
     route: 'widgets',
     content: { size: ContentFontSize.Medium, content: ['View Widgets'] },
   };
+
+  formsNavLink: NavlinkConfig = {
+    relationship: RouteRelationshipType.Child,
+    route: 'forms',
+    content: { size: ContentFontSize.Medium, content: ['View Forms'] },
+  };
 }

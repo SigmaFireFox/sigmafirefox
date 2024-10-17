@@ -4,7 +4,9 @@
     *ngSwitchCase="labelPosition.External" 
     class="field-container external" 
     [ngSwitch]="config.type">
-    <sff-header [config]="labelConfig"></sff-header>
+    <div class="label-container">
+      <sff-header [config]="labelConfig"></sff-header>
+    </div>
     <sff-input *ngSwitchCase="fieldType.Input"></sff-input>
     <sff-textarea *ngSwitchCase="fieldType.Textarea"></sff-textarea>
   </div>

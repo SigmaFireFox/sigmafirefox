@@ -1,9 +1,16 @@
 .field-container {
-  margin: 1rem 0;
-  width: fit-content;
+  margin-top: 1rem;
+  width: 100%;
   border-radius: 15px;
+}
+
+.external {
+  .label-container {
+    margin: 0 0.25rem;
+  }
 }
 
 .internal {
   padding: 0.5rem;
+  width: calc(100% - 1rem);
 }
