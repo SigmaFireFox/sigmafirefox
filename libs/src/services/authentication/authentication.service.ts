@@ -7,7 +7,7 @@ import {
   signOut,
   signInWithPopup,
   GoogleAuthProvider,
-  FacebookAuthProvider
+  FacebookAuthProvider,
 } from 'firebase/auth';
 
 @Injectable({
@@ -74,7 +74,7 @@ export class AuthenticationService {
       .then((result) => {
         // This gives you a Google Access Token. You can use it to access the Google API.
         const credential = GoogleAuthProvider.credentialFromResult(result);
-        if (!credential) return 
+        if (!credential) return;
         // const token = credential.accessToken;
         // The signed-in user info.
         // const user = result.user;
@@ -89,7 +89,7 @@ export class AuthenticationService {
         // const email = error.customData.email;
         // The AuthCredential type that was used.
         const credential = GoogleAuthProvider.credentialFromError(error);
-        if (!credential) return 
+        if (!credential) return;
         // ...
       });
   }
@@ -97,27 +97,26 @@ export class AuthenticationService {
   signInWithFacebook() {
     const provider = new FacebookAuthProvider();
     signInWithPopup(this.auth, provider)
-  .then((result) => {
-    // This gives you a Facebook Access Token. You can use it to access the Facebook API.
-    const credential = FacebookAuthProvider.credentialFromResult(result);
-    if (!credential) return 
-    // const accessToken = credential.accessToken;
-    // The signed-in user info.
-    // const user = result.user;
-    // IdP data available using getAdditionalUserInfo(result)
-    // ...
-  })
-  .catch((error) => {
-    // Handle Errors here.
-    // const errorCode = error.code;
-    // const errorMessage = error.message;
-    // The email of the user's account used.
-    // const email = error.customData.email;
-    // The AuthCredential type that was used.
-    const credential = FacebookAuthProvider.credentialFromError(error);
-    if (!credential) return 
-    // ...
-  });
+      .then((result) => {
+        // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+        const credential = FacebookAuthProvider.credentialFromResult(result);
+        if (!credential) return;
+        // const accessToken = credential.accessToken;
+        // The signed-in user info.
+        // const user = result.user;
+        // IdP data available using getAdditionalUserInfo(result)
+        // ...
+      })
+      .catch((error) => {
+        // Handle Errors here.
+        // const errorCode = error.code;
+        // const errorMessage = error.message;
+        // The email of the user's account used.
+        // const email = error.customData.email;
+        // The AuthCredential type that was used.
+        const credential = FacebookAuthProvider.credentialFromError(error);
+        if (!credential) return;
+        // ...
+      });
   }
-
 }
