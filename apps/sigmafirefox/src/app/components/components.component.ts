@@ -18,7 +18,12 @@ import {
   CtaBannerComponent,
   CtaBannerConfig,
 } from '@sigmafirefox/components';
-import { CardGridComponent, CardGridConfig } from '@sigmafirefox/compositions';
+import {
+  CardGridComponent,
+  CardGridConfig,
+  CarouselComponent,
+  CarouselConfig,
+} from '@sigmafirefox/compositions';
 import {
   IconSize,
   HeaderFontSize,
@@ -39,6 +44,7 @@ import {
     DisplayCardComponent,
     CtaBannerComponent,
     CardGridComponent,
+    CarouselComponent,
   ],
   templateUrl: './components.component.html',
   styleUrl: './components.component.scss',
@@ -54,7 +60,7 @@ export class ComponentsComponent implements OnInit {
     },
     text: {
       size: HeaderFontSize.Medium,
-      content: 'SigmaFireFox'
+      content: 'SigmaFireFox',
     },
   };
 
@@ -252,15 +258,57 @@ export class ComponentsComponent implements OnInit {
     cards: [],
   };
 
+  carouselConfig: CarouselConfig = {
+    itemsDisplayed: 5,
+    cards: [],
+  };
+
   ngOnInit() {
     for (let i = 0; i < 10; i++) {
       this.cardGridMediumConfig.cards.push(this.displayCardConfigs[0]);
-    }
-    for (let i = 0; i < 10; i++) {
       this.cardGridSmallConfig.cards.push(this.displayCardConfigs[1]);
-    }
-    for (let i = 0; i < 10; i++) {
-      this.cardGridSmallTransparentConfig.cards.push(this.displayCardConfigs[2]);
+      this.cardGridSmallTransparentConfig.cards.push(
+        this.displayCardConfigs[2]
+      );
+
+      this.carouselConfig.cards.push({
+        size: DisplayCardSize.Small,
+        isTransparent: true,
+        content: [
+          {
+            type: DisplayCardContentType.Icon,
+            iconContent: {
+              size: IconSize.Small,
+              name: 'polymer',
+            },
+          },
+          {
+            type: DisplayCardContentType.Header,
+            headerConfig: {
+              size: HeaderFontSize.Small,
+              content: `Card ${i}`,
+            },
+          },
+          {
+            type: DisplayCardContentType.Content,
+            contentConfig: {
+              size: ContentFontSize.Small,
+              content: [
+                'This is small content',
+                "It's typically set up in paragraphs",
+                'The paragraphs should self organise and have a nice padding',
+              ],
+            },
+          },
+          {
+            type: DisplayCardContentType.StarRater,
+            starRaterConfig: {
+              size: StarSize.Small,
+              rating: 5,
+            },
+          },
+        ],
+      });
     }
   }
 }
