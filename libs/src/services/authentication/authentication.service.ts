@@ -8,6 +8,7 @@ import {
   signInWithPopup,
   GoogleAuthProvider,
   FacebookAuthProvider,
+  sendPasswordResetEmail
 } from 'firebase/auth';
 
 @Injectable({
@@ -57,6 +58,25 @@ export class AuthenticationService {
       }
     });
   }
+
+  getSignedInUserProfile(){
+    const user = this.auth.currentUser;
+
+    if (user !== null) {
+      // The user object has basic properties such as display name, email, etc.
+      const displayName = user.displayName;
+      const email = user.email;
+      const photoURL = user.photoURL;
+      const emailVerified = user.emailVerified;
+    
+      // The user's ID, unique to the Firebase project. Do NOT use
+      // this value to authenticate with your backend server, if
+      // you have one. Use User.getToken() instead.
+      const uid = user.uid;
+      console.log(displayName, email, photoURL, emailVerified, uid)
+    }
+  }
+
   signOut() {
     signOut(this.auth)
       .then(() => {
@@ -118,5 +138,19 @@ export class AuthenticationService {
         if (!credential) return;
         // ...
       });
+  }
+
+  resetPassword(email: string){
+    sendPasswordResetEmail(this.auth, email)
+  .then(() => {
+    // Password reset email sent!
+    // ..
+  })
+  .catch((error) => {
+    // const errorCode = error.code;
+    // const errorMessage = error.message;
+    console.log(error);
+    // ..
+  });
   }
 }
