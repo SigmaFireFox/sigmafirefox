@@ -1,0 +1,11 @@
+<div class="carousel">
+  <button class="button" (click)='getPrev()'>
+    <sff-icon [config]="prevIcon"></sff-icon>
+  </button>
+
+  <sff-card-grid [config]="getCards()"></sff-card-grid>
+
+  <button class="button" (click)='getNext()'>
+    <sff-icon [config]="nextIcon"></sff-icon>
+  </button>
+</div>

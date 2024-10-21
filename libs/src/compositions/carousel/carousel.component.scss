@@ -1,0 +1,18 @@
+.carousel {
+  margin: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  .button {
+    height: 5rem;
+    border: none;
+    background-color: #F2F2CE;
+  }
+
+  .button:hover {
+    cursor: pointer;
+    background-color: #CDCE19;
+  }
+}
