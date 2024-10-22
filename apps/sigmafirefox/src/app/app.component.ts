@@ -58,6 +58,11 @@ export class AppComponent {
         content: ['Compositions'],
       },
     },
+    {
+      relationship: RouteRelationshipType.Child,
+      route: 'modals',
+      content: { size: ContentFontSize.Medium, content: ['Modals'] },
+    },
   ];
 
   navbarConfig: NavbarConfig = {
