@@ -1,0 +1,11 @@
+<div *ngIf="config" class="back-drop">
+  <div class="modal-card">
+    <div *ngFor="let item of config.content" [ngSwitch]="item.type">
+      <sff-icon *ngSwitchCase="modalContentType.Icon" [config]="item.iconContent"></sff-icon>
+      <sff-header *ngSwitchCase="modalContentType.Header" [config]="item.headerConfig"></sff-header>
+      <sff-content *ngSwitchCase="modalContentType.Content" [config]="item.contentConfig"></sff-content>
+      <sff-form *ngSwitchCase="modalContentType.Form" [config]="item.formConfig"></sff-form>
+      <sff-star-rater *ngSwitchCase="modalContentType.StarRater" [config]="item.starRaterConfig"></sff-star-rater>
+    </div>
+  </div>
+</div>

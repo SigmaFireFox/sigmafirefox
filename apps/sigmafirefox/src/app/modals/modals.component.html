@@ -1,0 +1,5 @@
+<h2>Modals</h2>
+
+<sff-button [config]="modalFormButton" (clicked)="this.showModalForm = true"></sff-button>
+<sff-modal *ngIf="showModalForm" [config]="modalFormConfig" ></sff-modal>
+
