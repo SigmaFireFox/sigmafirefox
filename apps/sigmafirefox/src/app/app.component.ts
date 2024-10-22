@@ -34,6 +34,32 @@ export class AppComponent {
     content: 'Welcome to SigmaFireFox Library Sandbox',
   };
 
+  sampleNavLinks = [
+    {
+      relationship: RouteRelationshipType.Child,
+      route: 'widgets',
+      content: { size: ContentFontSize.Medium, content: ['Widgets'] },
+    },
+    {
+      relationship: RouteRelationshipType.Child,
+      route: 'components',
+      content: { size: ContentFontSize.Medium, content: ['Components'] },
+    },
+    {
+      relationship: RouteRelationshipType.Child,
+      route: 'forms',
+      content: { size: ContentFontSize.Medium, content: ['Forms'] },
+    },
+    {
+      relationship: RouteRelationshipType.Child,
+      route: 'compositions',
+      content: {
+        size: ContentFontSize.Medium,
+        content: ['Compositions'],
+      },
+    },
+  ];
+
   navbarConfig: NavbarConfig = {
     logo: {
       logo: {
@@ -43,46 +69,14 @@ export class AppComponent {
       },
       text: {
         size: HeaderFontSize.Medium,
-        content: 'SigmaFireFox'
+        content: 'SigmaFireFox',
       },
     },
-    navlinks: [
-      {
-        relationship: RouteRelationshipType.Child,
-        route: 'components',
-        content: { size: ContentFontSize.Medium, content: ['View Components'] },
-      },
-      {
-        relationship: RouteRelationshipType.Child,
-        route: 'widgets',
-        content: { size: ContentFontSize.Medium, content: ['View Widgets'] },
-      },
-      {
-        relationship: RouteRelationshipType.Child,
-        route: 'forms',
-        content: { size: ContentFontSize.Medium, content: ['View Forms'] },
-      },
-    ],
+    navlinks: this.sampleNavLinks,
   };
 
   footerConfig: FooterConfig = {
-    navlinks: [
-      {
-        relationship: RouteRelationshipType.Child,
-        route: 'components',
-        content: { size: ContentFontSize.Medium, content: ['View Components'] },
-      },
-      {
-        relationship: RouteRelationshipType.Child,
-        route: 'widgets',
-        content: { size: ContentFontSize.Medium, content: ['View Widgets'] },
-      },
-      {
-        relationship: RouteRelationshipType.Child,
-        route: 'forms',
-        content: { size: ContentFontSize.Medium, content: ['View Forms'] },
-      },
-    ],
+    navlinks: this.sampleNavLinks,
     content: {
       size: ContentFontSize.Small,
       content: ['Copyright SigmaFireFox 2024'],
