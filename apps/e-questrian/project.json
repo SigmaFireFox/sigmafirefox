@@ -21,7 +21,7 @@
             "input": "apps/e-questrian/public"
           }
         ],
-        "styles": ["apps/e-questrian/src/styles.css"],
+        "styles": ["apps/e-questrian/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
