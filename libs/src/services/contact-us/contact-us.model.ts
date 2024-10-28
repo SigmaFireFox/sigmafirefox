@@ -1,1 +1,5 @@
-export enum DummyContactUs {}
+export interface ContactUsForm {
+  name: string;
+  email: string;
+  message: string;
+}
