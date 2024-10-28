@@ -1,0 +1,18 @@
+$Rich-Black: #030303;
+$Eggshell: #F2F2CE;
+$Charleston-Green: #282828;
+$White: #FFFFFF;
+
+.navbar-container {
+  background-color: $Charleston-Green;
+  color: $White;
+
+  .navlinks-container .navlink:hover {
+    background-color: $Eggshell;
+    color: $Rich-Black;
+  }
+
+  .logo-container .svg-container .themed-svg {
+    fill: $White !important;
+  }
+}
