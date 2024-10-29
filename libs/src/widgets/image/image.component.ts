@@ -14,6 +14,7 @@ export class ImageComponent implements OnInit {
   customStyling: { [key: string]: string } = {};
 
   ngOnInit() {
+    console.log(this.config)
     if (!this.config) return;
     if (this.config.height) this.customStyling['height'] = this.config.height;
     if (this.config.width) this.customStyling['width'] = this.config.width;

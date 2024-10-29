@@ -21,7 +21,7 @@ export class CtaBannerComponent implements OnInit {
   ngOnInit(){
     if (!this.config) return
     this.config.image.width = '100%'
-    this.config.image.height = '240px'
+    this.config.image.height = this.config.image.height || '240px'
     this.config.image.rounded = true
     this.customStyling['left'] = this.config.contentLeft
   }
