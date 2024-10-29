@@ -73,7 +73,7 @@ export class LandingComponent {
     image: {
       url: 'landing-banners.png',
       alt: 'A tractor',
-      height: '300x',
+      height: '300px',
     },
     contentLeft: '70%',
     header: { size: HeaderFontSize.Large, content: 'Welcome to eQuestrian' },
