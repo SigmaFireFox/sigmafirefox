@@ -3,9 +3,9 @@ import { CommonModule } from '@angular/common';
 
 import { PubicSiteRoutingModule } from './pubic-site-routing.module';
 import { LandingComponent } from './pages/landing/landing.component';
-import { SignInComponent } from './pages/sign-in/SignIn.component';
-import { RegisterComponent } from './pages/register/Register.component';
-import { ForgotPasswordComponent } from './pages/forgot-password/ForgotPassword.component';
+import { SignInComponent } from './pages/sign-in/sign-in.component';
+import { RegisterComponent } from './pages/register/register.component';
+import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 
 
 @NgModule({
