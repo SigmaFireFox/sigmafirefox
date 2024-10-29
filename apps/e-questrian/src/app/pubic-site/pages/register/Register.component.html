@@ -1,1 +1,13 @@
-<p>Register works!</p>
+<div class="page-container">
+  <!-- Form on left half of page  -->
+  <div class="form-container">
+    <sff-form class="form" [config]="formConfig" (formSubmitted)="onFormSubmitted($event)"></sff-form>
+  </div>
+  
+  <!-- Image on right half of page  -->
+   <div class="image-container">
+    <sff-image  [config]="imageConfig"></sff-image>
+   </div>
+</div>
+
+

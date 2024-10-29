@@ -74,8 +74,8 @@ export class LandingComponent {
 
   ctaBannerConfig: CtaBannerConfig = {
     image: {
-      url: 'landing-banners.png',
-      alt: 'A tractor',
+      url: 'landing-banner-image.png',
+      alt: 'Landing page banner image',
       height: '300px',
     },
     contentLeft: '70%',

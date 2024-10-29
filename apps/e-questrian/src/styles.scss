@@ -35,12 +35,28 @@ $eQuestrian-theme: mat.define-theme((
 // Comment out the line below if you want to use the deprecated `color` inputs.
 // @include mat.color-variants-backwards-compatibility($eQuestrian-theme);
 
+// *******************************************   General styling   *******************************************
+
+html,
+body {
+  height: 100vh;
+  margin: 0;
+}
+
+// ******************************   Shared lib components and widgets theming   ******************************
+
+
+
+
+
+// ******************************   Shared lib components and widgets theming   ******************************
+
 $Vivid-Lime-Green: #A3CE19;
 $Bitter-Lemon: #CDCE19;
 $Rich-Black: #030303;
-$Charleston-Green: #282828;
 $Platinum: #E3E3E3;
 $Eggshell: #F2F2CE;
+$Charleston-Green: #282828;
 $White: #FFFFFF;
 
 
@@ -56,6 +72,12 @@ $White: #FFFFFF;
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.input,
+.textarea,
+.internal {
+  background-color: $Platinum;
+}
+
 .footer-container,
 .navbar-container {
   background-color: $Charleston-Green;
@@ -65,12 +87,16 @@ $White: #FFFFFF;
     background-color: $Eggshell;
     color: $Rich-Black;
   }
+}
 
-  .logo-container .svg-container .themed-svg {
-    fill: $White !important;
-  }
+.navbar-container .logo-container .svg-container .themed-svg {
+  fill: white !important;
 }
 
 .display-card {
   background-color: $Eggshell;
+}
+
+.font {
+  font-family: Arial, Helvetica, sans-serif;
 }
