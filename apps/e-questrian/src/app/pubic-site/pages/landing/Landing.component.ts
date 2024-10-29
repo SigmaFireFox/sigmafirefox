@@ -5,6 +5,8 @@ import {
   CtaBannerConfig,
   DisplayCardContentType,
   DisplayCardSize,
+  FooterComponent,
+  FooterConfig,
   NavbarComponent,
   NavbarConfig,
   StarSize,
@@ -33,6 +35,7 @@ import {
     CtaBannerComponent,
     CardGridComponent,
     CarouselComponent,
+    FooterComponent
   ],
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.scss',
@@ -54,7 +57,7 @@ export class LandingComponent {
       {
         relationship: RouteRelationshipType.None,
         route: 'contact',
-        content: { size: ContentFontSize.Medium, content: ['Contact'] },
+        content: { size: ContentFontSize.Medium, content: ['Contact Us'] },
       },
       {
         relationship: RouteRelationshipType.Sibling,
@@ -127,11 +130,34 @@ export class LandingComponent {
               ],
             },
           },
+        ],
+      },
+      {
+        size: DisplayCardSize.Medium,
+        content: [
           {
-            type: DisplayCardContentType.StarRater,
-            starRaterConfig: {
-              size: StarSize.Medium,
-              rating: 5,
+            type: DisplayCardContentType.Icon,
+            iconContent: {
+              size: IconSize.Medium,
+              name: 'polymer',
+            },
+          },
+          {
+            type: DisplayCardContentType.Header,
+            headerConfig: {
+              size: HeaderFontSize.Medium,
+              content: 'This is a medium header',
+            },
+          },
+          {
+            type: DisplayCardContentType.Content,
+            contentConfig: {
+              size: ContentFontSize.Medium,
+              content: [
+                'This is medium content',
+                "It's typically set up in paragraphs",
+                'The paragraphs should self organise and have a nice padding',
+              ],
             },
           },
         ],
@@ -164,13 +190,6 @@ export class LandingComponent {
               ],
             },
           },
-          {
-            type: DisplayCardContentType.StarRater,
-            starRaterConfig: {
-              size: StarSize.Medium,
-              rating: 5,
-            },
-          },
         ],
       },
       {
@@ -201,13 +220,6 @@ export class LandingComponent {
               ],
             },
           },
-          {
-            type: DisplayCardContentType.StarRater,
-            starRaterConfig: {
-              size: StarSize.Medium,
-              rating: 5,
-            },
-          },
         ],
       },
       {
@@ -236,50 +248,6 @@ export class LandingComponent {
                 "It's typically set up in paragraphs",
                 'The paragraphs should self organise and have a nice padding',
               ],
-            },
-          },
-          {
-            type: DisplayCardContentType.StarRater,
-            starRaterConfig: {
-              size: StarSize.Medium,
-              rating: 5,
-            },
-          },
-        ],
-      },
-      {
-        size: DisplayCardSize.Medium,
-        content: [
-          {
-            type: DisplayCardContentType.Icon,
-            iconContent: {
-              size: IconSize.Medium,
-              name: 'polymer',
-            },
-          },
-          {
-            type: DisplayCardContentType.Header,
-            headerConfig: {
-              size: HeaderFontSize.Medium,
-              content: 'This is a medium header',
-            },
-          },
-          {
-            type: DisplayCardContentType.Content,
-            contentConfig: {
-              size: ContentFontSize.Medium,
-              content: [
-                'This is medium content',
-                "It's typically set up in paragraphs",
-                'The paragraphs should self organise and have a nice padding',
-              ],
-            },
-          },
-          {
-            type: DisplayCardContentType.StarRater,
-            starRaterConfig: {
-              size: StarSize.Medium,
-              rating: 5,
             },
           },
         ],
@@ -595,6 +563,14 @@ export class LandingComponent {
         ],
       },
     ],
+  };
+
+  footerConfig: FooterConfig = {
+    navlinks: [],
+    content: {
+      size: ContentFontSize.Small,
+      content: ['© 2024 SigmaFireFox. All rights reserved.'],
+    },
   };
 
   showContactUsModal = false;
