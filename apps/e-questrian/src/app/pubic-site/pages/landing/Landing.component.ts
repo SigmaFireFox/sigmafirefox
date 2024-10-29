@@ -1,13 +1,23 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NavbarComponent, NavbarConfig } from '@sigmafirefox/components';
-import { ContentFontSize, HeaderFontSize } from '@sigmafirefox/widgets';
+import {
+  CtaBannerComponent,
+  CtaBannerConfig,
+  NavbarComponent,
+  NavbarConfig,
+} from '@sigmafirefox/components';
+import {
+  ButtonSize,
+  ButtonType,
+  ContentFontSize,
+  HeaderFontSize,
+} from '@sigmafirefox/widgets';
 import { RouteRelationshipType } from '@sigmafirefox/services';
 
 @Component({
   selector: 'app-landing',
   standalone: true,
-  imports: [CommonModule, NavbarComponent],
+  imports: [CommonModule, NavbarComponent, CtaBannerComponent],
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.scss',
 })
@@ -39,6 +49,35 @@ export class LandingComponent {
         relationship: RouteRelationshipType.Sibling,
         route: 'sign-in',
         content: { size: ContentFontSize.Medium, content: ['Sign in'] },
+      },
+    ],
+  };
+
+  ctaBannerConfig: CtaBannerConfig = {
+    image: {
+      url: 'landing-banners.png',
+      alt: 'A tractor',
+    },
+    contentLeft: '65%',
+    header: { size: HeaderFontSize.Medium, content: 'Welcome to e-Questrain' },
+    content: {
+      size: ContentFontSize.Medium,
+      content: [
+        'The future of e-Questrian business management',
+      ],
+    },
+    buttons: [
+      {
+        name: 'button',
+        text: 'Sign in',
+        type: ButtonType.Primary,
+        size: ButtonSize.Small,
+      },
+      {
+        name: 'button',
+        text: 'Register',
+        type: ButtonType.Secondary,
+        size: ButtonSize.Small,
       },
     ],
   };
