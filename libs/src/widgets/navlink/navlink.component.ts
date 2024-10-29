@@ -1,8 +1,9 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ContentComponent } from "../content/content.component";
 import { NavlinkConfig } from './navlink.model';
 import { NavigationService } from '../../services/navigation/navigation.service';
+import { RouteRelationshipType } from '../../services/navigation/navigation.model';
 
 @Component({
   selector: 'sff-navlink',
@@ -13,6 +14,7 @@ import { NavigationService } from '../../services/navigation/navigation.service'
 })
 export class NavlinkComponent implements OnInit {
   @Input() config: NavlinkConfig | undefined;
+  @Output() clicked: EventEmitter<string> = new EventEmitter();
 
   constructor(private navService: NavigationService){}
 
@@ -23,6 +25,9 @@ export class NavlinkComponent implements OnInit {
 
   onClick(){
     if (!this.config) return
+    if (this.config.relationship === RouteRelationshipType.None) 
+      return this.clicked.emit(this.config.route)
     this.navService.navTo(this.config)  
   }
 }
+

@@ -2,5 +2,6 @@ export enum RouteRelationshipType {
   Parent,
   Sibling,
   Child,
-  Absolute
+  Absolute,
+  None
 }

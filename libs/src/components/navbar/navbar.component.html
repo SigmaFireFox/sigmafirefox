@@ -2,6 +2,11 @@
   <sff-logo [config]="config.logo"></sff-logo>
 
   <div class="navlinks-container">
-    <sff-navlink class="navlink" *ngFor="let navlink of config.navlinks" [config]="navlink"></sff-navlink>
+    <sff-navlink 
+      class="navlink" 
+      *ngFor="let navlink of config.navlinks" 
+      [config]="navlink"
+      (clicked)="onNavbarClicked($event)">
+    </sff-navlink>
   </div>
 </div>

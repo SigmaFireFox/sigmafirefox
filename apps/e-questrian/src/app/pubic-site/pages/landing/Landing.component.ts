@@ -8,8 +8,8 @@ import { RouteRelationshipType } from '@sigmafirefox/services';
   selector: 'app-landing',
   standalone: true,
   imports: [CommonModule, NavbarComponent],
-  templateUrl: './Landing.component.html',
-  styleUrl: './Landing.component.scss',
+  templateUrl: './landing.component.html',
+  styleUrl: './landing.component.scss',
 })
 export class LandingComponent {
   navbarConfig: NavbarConfig = {
@@ -21,38 +21,36 @@ export class LandingComponent {
       },
       text: {
         size: HeaderFontSize.Medium,
-        content: 'SigmaFireFox',
+        content: 'e-Questrian',
       },
     },
     navlinks: [
       {
-        relationship: RouteRelationshipType.Child,
-        route: 'widgets',
-        content: { size: ContentFontSize.Medium, content: ['Widgets'] },
+        relationship: RouteRelationshipType.None,
+        route: 'contact',
+        content: { size: ContentFontSize.Medium, content: ['Contact'] },
       },
       {
-        relationship: RouteRelationshipType.Child,
-        route: 'components',
-        content: { size: ContentFontSize.Medium, content: ['Components'] },
+        relationship: RouteRelationshipType.Sibling,
+        route: 'register',
+        content: { size: ContentFontSize.Medium, content: ['Register'] },
       },
       {
-        relationship: RouteRelationshipType.Child,
-        route: 'forms',
-        content: { size: ContentFontSize.Medium, content: ['Forms'] },
-      },
-      {
-        relationship: RouteRelationshipType.Child,
-        route: 'compositions',
-        content: {
-          size: ContentFontSize.Medium,
-          content: ['Compositions'],
-        },
-      },
-      {
-        relationship: RouteRelationshipType.Child,
-        route: 'modals',
-        content: { size: ContentFontSize.Medium, content: ['Modals'] },
+        relationship: RouteRelationshipType.Sibling,
+        route: 'sign-in',
+        content: { size: ContentFontSize.Medium, content: ['Sign in'] },
       },
     ],
   };
+
+  showContactUsModal = false;
+
+  navlinkClicked(navlinkName: string) {
+    switch (navlinkName) {
+      case 'contact': {
+        this.showContactUsModal = true;
+        break;
+      }
+    }
+  }
 }
