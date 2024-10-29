@@ -17,12 +17,23 @@ import {
   IconSize,
 } from '@sigmafirefox/widgets';
 import { RouteRelationshipType } from '@sigmafirefox/services';
-import { CardGridComponent, CardGridConfig } from '@sigmafirefox/compositions';
+import {
+  CardGridComponent,
+  CardGridConfig,
+  CarouselComponent,
+  CarouselConfig,
+} from '@sigmafirefox/compositions';
 
 @Component({
   selector: 'app-landing',
   standalone: true,
-  imports: [CommonModule, NavbarComponent, CtaBannerComponent, CardGridComponent],
+  imports: [
+    CommonModule,
+    NavbarComponent,
+    CtaBannerComponent,
+    CardGridComponent,
+    CarouselComponent,
+  ],
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.scss',
 })
@@ -36,7 +47,7 @@ export class LandingComponent {
       },
       text: {
         size: HeaderFontSize.Medium,
-        content: 'e-Questrian',
+        content: 'eQuestrian',
       },
     },
     navlinks: [
@@ -62,23 +73,23 @@ export class LandingComponent {
     image: {
       url: 'landing-banners.png',
       alt: 'A tractor',
-      height: '350px',
+      height: '300x',
     },
-    contentLeft: '65%',
-    header: { size: HeaderFontSize.Medium, content: 'Welcome to e-Questrain' },
+    contentLeft: '70%',
+    header: { size: HeaderFontSize.Large, content: 'Welcome to eQuestrian' },
     content: {
-      size: ContentFontSize.Medium,
-      content: ['The future of e-Questrian business management'],
+      size: ContentFontSize.Large,
+      content: ['The future of eQuestrian business management'],
     },
     buttons: [
       {
-        name: 'button',
+        name: 'sign-in',
         text: 'Sign in',
         type: ButtonType.Primary,
         size: ButtonSize.Small,
       },
       {
-        name: 'button',
+        name: 'register',
         text: 'Register',
         type: ButtonType.Secondary,
         size: ButtonSize.Small,
@@ -268,6 +279,316 @@ export class LandingComponent {
             type: DisplayCardContentType.StarRater,
             starRaterConfig: {
               size: StarSize.Medium,
+              rating: 5,
+            },
+          },
+        ],
+      },
+    ],
+  };
+
+  carouselConfig: CarouselConfig = {
+    itemsDisplayed: 5,
+    cards: [
+      {
+        size: DisplayCardSize.Small,
+        isTransparent: true,
+        content: [
+          {
+            type: DisplayCardContentType.Icon,
+            iconContent: {
+              size: IconSize.Small,
+              name: 'polymer',
+            },
+          },
+          {
+            type: DisplayCardContentType.Header,
+            headerConfig: {
+              size: HeaderFontSize.Small,
+              content: `Card 1`,
+            },
+          },
+          {
+            type: DisplayCardContentType.Content,
+            contentConfig: {
+              size: ContentFontSize.Small,
+              content: [
+                'This is small content',
+                "It's typically set up in paragraphs",
+                'The paragraphs should self organise and have a nice padding',
+              ],
+            },
+          },
+          {
+            type: DisplayCardContentType.StarRater,
+            starRaterConfig: {
+              size: StarSize.Small,
+              rating: 5,
+            },
+          },
+        ],
+      },
+      {
+        size: DisplayCardSize.Small,
+        isTransparent: true,
+        content: [
+          {
+            type: DisplayCardContentType.Icon,
+            iconContent: {
+              size: IconSize.Small,
+              name: 'polymer',
+            },
+          },
+          {
+            type: DisplayCardContentType.Header,
+            headerConfig: {
+              size: HeaderFontSize.Small,
+              content: `Card 1`,
+            },
+          },
+          {
+            type: DisplayCardContentType.Content,
+            contentConfig: {
+              size: ContentFontSize.Small,
+              content: [
+                'This is small content',
+                "It's typically set up in paragraphs",
+                'The paragraphs should self organise and have a nice padding',
+              ],
+            },
+          },
+          {
+            type: DisplayCardContentType.StarRater,
+            starRaterConfig: {
+              size: StarSize.Small,
+              rating: 5,
+            },
+          },
+        ],
+      },
+      {
+        size: DisplayCardSize.Small,
+        isTransparent: true,
+        content: [
+          {
+            type: DisplayCardContentType.Icon,
+            iconContent: {
+              size: IconSize.Small,
+              name: 'polymer',
+            },
+          },
+          {
+            type: DisplayCardContentType.Header,
+            headerConfig: {
+              size: HeaderFontSize.Small,
+              content: `Card 1`,
+            },
+          },
+          {
+            type: DisplayCardContentType.Content,
+            contentConfig: {
+              size: ContentFontSize.Small,
+              content: [
+                'This is small content',
+                "It's typically set up in paragraphs",
+                'The paragraphs should self organise and have a nice padding',
+              ],
+            },
+          },
+          {
+            type: DisplayCardContentType.StarRater,
+            starRaterConfig: {
+              size: StarSize.Small,
+              rating: 5,
+            },
+          },
+        ],
+      },
+      {
+        size: DisplayCardSize.Small,
+        isTransparent: true,
+        content: [
+          {
+            type: DisplayCardContentType.Icon,
+            iconContent: {
+              size: IconSize.Small,
+              name: 'polymer',
+            },
+          },
+          {
+            type: DisplayCardContentType.Header,
+            headerConfig: {
+              size: HeaderFontSize.Small,
+              content: `Card 1`,
+            },
+          },
+          {
+            type: DisplayCardContentType.Content,
+            contentConfig: {
+              size: ContentFontSize.Small,
+              content: [
+                'This is small content',
+                "It's typically set up in paragraphs",
+                'The paragraphs should self organise and have a nice padding',
+              ],
+            },
+          },
+          {
+            type: DisplayCardContentType.StarRater,
+            starRaterConfig: {
+              size: StarSize.Small,
+              rating: 5,
+            },
+          },
+        ],
+      },
+      {
+        size: DisplayCardSize.Small,
+        isTransparent: true,
+        content: [
+          {
+            type: DisplayCardContentType.Icon,
+            iconContent: {
+              size: IconSize.Small,
+              name: 'polymer',
+            },
+          },
+          {
+            type: DisplayCardContentType.Header,
+            headerConfig: {
+              size: HeaderFontSize.Small,
+              content: `Card 1`,
+            },
+          },
+          {
+            type: DisplayCardContentType.Content,
+            contentConfig: {
+              size: ContentFontSize.Small,
+              content: [
+                'This is small content',
+                "It's typically set up in paragraphs",
+                'The paragraphs should self organise and have a nice padding',
+              ],
+            },
+          },
+          {
+            type: DisplayCardContentType.StarRater,
+            starRaterConfig: {
+              size: StarSize.Small,
+              rating: 5,
+            },
+          },
+        ],
+      },
+      {
+        size: DisplayCardSize.Small,
+        isTransparent: true,
+        content: [
+          {
+            type: DisplayCardContentType.Icon,
+            iconContent: {
+              size: IconSize.Small,
+              name: 'polymer',
+            },
+          },
+          {
+            type: DisplayCardContentType.Header,
+            headerConfig: {
+              size: HeaderFontSize.Small,
+              content: `Card 1`,
+            },
+          },
+          {
+            type: DisplayCardContentType.Content,
+            contentConfig: {
+              size: ContentFontSize.Small,
+              content: [
+                'This is small content',
+                "It's typically set up in paragraphs",
+                'The paragraphs should self organise and have a nice padding',
+              ],
+            },
+          },
+          {
+            type: DisplayCardContentType.StarRater,
+            starRaterConfig: {
+              size: StarSize.Small,
+              rating: 5,
+            },
+          },
+        ],
+      },
+      {
+        size: DisplayCardSize.Small,
+        isTransparent: true,
+        content: [
+          {
+            type: DisplayCardContentType.Icon,
+            iconContent: {
+              size: IconSize.Small,
+              name: 'polymer',
+            },
+          },
+          {
+            type: DisplayCardContentType.Header,
+            headerConfig: {
+              size: HeaderFontSize.Small,
+              content: `Card 1`,
+            },
+          },
+          {
+            type: DisplayCardContentType.Content,
+            contentConfig: {
+              size: ContentFontSize.Small,
+              content: [
+                'This is small content',
+                "It's typically set up in paragraphs",
+                'The paragraphs should self organise and have a nice padding',
+              ],
+            },
+          },
+          {
+            type: DisplayCardContentType.StarRater,
+            starRaterConfig: {
+              size: StarSize.Small,
+              rating: 5,
+            },
+          },
+        ],
+      },
+      {
+        size: DisplayCardSize.Small,
+        isTransparent: true,
+        content: [
+          {
+            type: DisplayCardContentType.Icon,
+            iconContent: {
+              size: IconSize.Small,
+              name: 'polymer',
+            },
+          },
+          {
+            type: DisplayCardContentType.Header,
+            headerConfig: {
+              size: HeaderFontSize.Small,
+              content: `Card 1`,
+            },
+          },
+          {
+            type: DisplayCardContentType.Content,
+            contentConfig: {
+              size: ContentFontSize.Small,
+              content: [
+                'This is small content',
+                "It's typically set up in paragraphs",
+                'The paragraphs should self organise and have a nice padding',
+              ],
+            },
+          },
+          {
+            type: DisplayCardContentType.StarRater,
+            starRaterConfig: {
+              size: StarSize.Small,
               rating: 5,
             },
           },
