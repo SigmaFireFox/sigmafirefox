@@ -1,13 +1,38 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ButtonSize, ButtonType, ImageComponent, ImageConfig } from '@sigmafirefox/widgets';
+import {
+  ButtonConfig,
+  ButtonSize,
+  ButtonType,
+  ContentComponent,
+  ContentConfig,
+  ContentFontSize,
+  HeaderComponent,
+  HeaderConfig,
+  HeaderFontSize,
+  ImageComponent,
+  ImageConfig,
+} from '@sigmafirefox/widgets';
 import { FormGroup } from '@angular/forms';
-import { FormConfig, FieldType, LabelPosition, FormComponent } from '@sigmafirefox/components';
+import {
+  FormConfig,
+  FieldType,
+  LabelPosition,
+  FormComponent,
+} from '@sigmafirefox/components';
+import { ButtonComponent } from '@sigmafirefox/widgets';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [CommonModule, ImageComponent, FormComponent],
+  imports: [
+    CommonModule,
+    ImageComponent,
+    FormComponent,
+    ContentComponent,
+    HeaderComponent,
+    ButtonComponent
+],
   templateUrl: './register.component.html',
   styleUrl: './register.component.scss',
 })
@@ -17,8 +42,33 @@ export class RegisterComponent {
     alt: 'Register page side image',
     height: '100%',
     width: '50%',
-    left: '50%'
+    left: '50%',
   };
+
+  topContent: ContentConfig = {
+    size: ContentFontSize.Large,
+    content: ['Join our eQuestrian community'],
+  };
+
+  header: HeaderConfig = {
+    size: HeaderFontSize.Large,
+    content: 'Register'
+  }
+
+  thirdPartyButtons: ButtonConfig[] = [
+    {
+      name: 'facebook',
+      text: 'Continue with Facebook',
+      type: ButtonType.Secondary,
+      size: ButtonSize.CTA_Large,
+    },
+    {
+      name: 'apple',
+      text: 'Continue with Apple',
+      type: ButtonType.Secondary,
+      size: ButtonSize.CTA_Large,
+    }
+  ]
 
   formConfig: FormConfig = {
     fields: [
@@ -26,31 +76,15 @@ export class RegisterComponent {
         name: 'Field1',
         config: {
           type: FieldType.Input,
-          label: 'An input field - External label',
-          labelPosition: LabelPosition.External,
-        },
-      },
-      {
-        name: 'Field2',
-        config: {
-          type: FieldType.Textarea,
-          label: 'An textarea field - External label',
-          labelPosition: LabelPosition.External,
-        },
-      },
-      {
-        name: 'Field3',
-        config: {
-          type: FieldType.Input,
-          label: 'An input field - Internal label',
+          label: 'Email',
           labelPosition: LabelPosition.Internal,
         },
       },
       {
-        name: 'Field4',
+        name: 'Field1',
         config: {
-          type: FieldType.Textarea,
-          label: 'An textarea field - Internal label',
+          type: FieldType.Input,
+          label: 'Password',
           labelPosition: LabelPosition.Internal,
         },
       },
@@ -58,18 +92,33 @@ export class RegisterComponent {
     buttons: [
       {
         config: {
-          name: 'button',
-          text: 'Primary Large (100%) of available width',
+          name: 'register',
+          text: 'Register',
           type: ButtonType.Primary,
-          size: ButtonSize.Large,
+          size: ButtonSize.CTA_Large,
         },
         isSubmit: true,
       },
     ],
   };
 
-  onFormSubmitted(form: FormGroup){
-    console.log('Form submitted')
-    console.log(form.value)
+  buttonContent: ContentConfig = {
+    size: ContentFontSize.Medium,
+    content: ['Already a registered user?'],
+  };
+
+  altActionButtons: ButtonConfig[] = [
+    {
+      name: 'sign-in',
+      text: 'Sign in',
+      type: ButtonType.Secondary,
+      size: ButtonSize.CTA_Large,
+    },
+  ]
+
+
+  onFormSubmitted(form: FormGroup) {
+    console.log('Form submitted');
+    console.log(form.value);
   }
 }

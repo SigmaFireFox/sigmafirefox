@@ -1,4 +1,4 @@
-<div *ngIf="config" [ngSwitch]="config.type">
+<div class="buttons-container" *ngIf="config" [ngSwitch]="config.type">
   <button 
     *ngSwitchCase="buttonType.Primary" 
     [ngStyle]="customStyling"

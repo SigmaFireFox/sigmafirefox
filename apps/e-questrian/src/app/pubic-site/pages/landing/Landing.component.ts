@@ -89,13 +89,13 @@ export class LandingComponent {
         name: 'sign-in',
         text: 'Sign in',
         type: ButtonType.Primary,
-        size: ButtonSize.Small,
+        size: ButtonSize.CTA_Small,
       },
       {
         name: 'register',
         text: 'Register',
         type: ButtonType.Secondary,
-        size: ButtonSize.Small,
+        size: ButtonSize.CTA_Small,
       },
     ],
   };
