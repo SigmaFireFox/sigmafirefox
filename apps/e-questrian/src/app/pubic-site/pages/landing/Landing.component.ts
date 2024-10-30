@@ -5,8 +5,10 @@ import {
   CtaBannerConfig,
   DisplayCardContentType,
   DisplayCardSize,
+  FieldType,
   FooterComponent,
   FooterConfig,
+  LabelPosition,
   NavbarComponent,
   NavbarConfig,
   StarSize,
@@ -24,7 +26,12 @@ import {
   CardGridConfig,
   CarouselComponent,
   CarouselConfig,
+  ModalComponent,
+  ModalConfig,
+  ModalContentType,
+  ModalSize,
 } from '@sigmafirefox/compositions';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-landing',
@@ -35,7 +42,8 @@ import {
     CtaBannerComponent,
     CardGridComponent,
     CarouselComponent,
-    FooterComponent
+    FooterComponent,
+    ModalComponent,
   ],
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.scss',
@@ -573,6 +581,61 @@ export class LandingComponent {
     },
   };
 
+  contactUsModalConfig: ModalConfig = {
+    size: ModalSize.Medium,
+    content: [
+      {
+        type: ModalContentType.Header,
+        headerConfig: {
+          size: HeaderFontSize.Medium,
+          content: 'Contact us',
+        },
+      },
+      {
+        type: ModalContentType.Form,
+        formConfig: {
+          fields: [
+            {
+              name: 'name',
+              config: {
+                label: 'Name',
+                labelPosition: LabelPosition.External,
+                type: FieldType.Input,
+              },
+            },
+            {
+              name: 'Email',
+              config: {
+                label: 'Email',
+                labelPosition: LabelPosition.External,
+                type: FieldType.Input,
+              },
+            },
+            {
+              name: 'message',
+              config: {
+                label: 'Message',
+                labelPosition: LabelPosition.External,
+                type: FieldType.Textarea,
+              },
+            },
+          ],
+          buttons: [
+            {
+              config: {
+                name: 'submit',
+                text: 'Submit',
+                type: ButtonType.Primary,
+                size: ButtonSize.Small,
+              },
+              isSubmit: true,
+            },
+          ],
+        },
+      },
+    ],
+  };
+
   showContactUsModal = false;
 
   navlinkClicked(navlinkName: string) {
@@ -582,5 +645,10 @@ export class LandingComponent {
         break;
       }
     }
+  }
+
+  onFormSubmitted(form: FormGroup){
+    console.log(form.value)
+    this.showContactUsModal = false;
   }
 }

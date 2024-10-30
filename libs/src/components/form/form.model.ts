@@ -9,7 +9,6 @@ export interface FormField {
 export interface FormButton {
   config: ButtonConfig
   isSubmit?: boolean
-
 }
 export interface FormConfig {
   fields: FormField[]

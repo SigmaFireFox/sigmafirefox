@@ -4,7 +4,7 @@
       <sff-icon *ngSwitchCase="modalContentType.Icon" [config]="item.iconContent"></sff-icon>
       <sff-header *ngSwitchCase="modalContentType.Header" [config]="item.headerConfig"></sff-header>
       <sff-content *ngSwitchCase="modalContentType.Content" [config]="item.contentConfig"></sff-content>
-      <sff-form *ngSwitchCase="modalContentType.Form" [config]="item.formConfig"></sff-form>
+      <sff-form *ngSwitchCase="modalContentType.Form" [config]="item.formConfig" (formSubmitted)="onFormSubmitted($event)"></sff-form>
       <sff-star-rater *ngSwitchCase="modalContentType.StarRater" [config]="item.starRaterConfig"></sff-star-rater>
     </div>
   </div>

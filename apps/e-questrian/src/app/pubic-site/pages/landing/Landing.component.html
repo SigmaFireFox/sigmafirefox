@@ -6,3 +6,5 @@
 </div>
 <sff-footer [config]="footerConfig"></sff-footer>
 
+<sff-modal *ngIf="showContactUsModal" [config]="contactUsModalConfig" (formSubmitted)="onFormSubmitted($event)"></sff-modal>
+
