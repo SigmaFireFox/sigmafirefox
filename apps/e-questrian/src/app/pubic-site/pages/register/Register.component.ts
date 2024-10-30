@@ -19,8 +19,11 @@ import {
   FieldType,
   LabelPosition,
   FormComponent,
+  FooterConfig,
+  FooterComponent,
 } from '@sigmafirefox/components';
 import { ButtonComponent } from '@sigmafirefox/widgets';
+import { RouteRelationshipType } from '@sigmafirefox/services';
 
 @Component({
   selector: 'app-register',
@@ -31,7 +34,8 @@ import { ButtonComponent } from '@sigmafirefox/widgets';
     FormComponent,
     ContentComponent,
     HeaderComponent,
-    ButtonComponent
+    ButtonComponent, 
+    FooterComponent
 ],
   templateUrl: './register.component.html',
   styleUrl: './register.component.scss',
@@ -115,6 +119,30 @@ export class RegisterComponent {
       size: ButtonSize.CTA_Large,
     },
   ]
+
+  footerConfig: FooterConfig = {
+    navlinks: [
+      {
+        relationship: RouteRelationshipType.Parent,
+        route: '',
+        content: { size: ContentFontSize.Medium, content: ['Features'] },
+      },
+      {
+        relationship: RouteRelationshipType.Parent,
+        route: '',
+        content: { size: ContentFontSize.Medium, content: ['Testimonials'] },
+      },
+      {
+        relationship: RouteRelationshipType.None,
+        route: 'contact',
+        content: { size: ContentFontSize.Medium, content: ['Contact us'] },
+      },
+    ],
+    content: {
+      size: ContentFontSize.Small,
+      content: ['© 2024 SigmaFireFox. All rights reserved.'],
+    },
+  };
 
 
   onFormSubmitted(form: FormGroup) {
