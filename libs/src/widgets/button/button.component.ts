@@ -22,6 +22,7 @@ export class ButtonComponent implements OnInit {
     let height = '';
     let margin = '';
     let radius = ''
+    let fontSize = ''
     switch (this.config.size) {
       case ButtonSize.Small: {
         width = '7.5rem';
@@ -52,7 +53,8 @@ export class ButtonComponent implements OnInit {
         width = '98%';
         margin = '1% 0';
         height = '3rem';
-        radius = '1.5rem'
+        radius = '1.5rem';
+        fontSize = '1rem';
         break;
       }
         }
@@ -62,6 +64,7 @@ export class ButtonComponent implements OnInit {
       margin: margin,
       height: height,
       'border-radius': radius,
+      'font-size': fontSize
 
     };
   }
