@@ -4,5 +4,5 @@ import { ContentConfig } from "../content/content.model";
 export interface NavlinkConfig {
   relationship: RouteRelationshipType
   route: string
-  content: ContentConfig
+  content?: ContentConfig
 }

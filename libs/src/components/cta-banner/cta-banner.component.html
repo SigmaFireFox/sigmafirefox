@@ -4,7 +4,11 @@
     <sff-header [config]="config.header"></sff-header>
     <sff-content [config]="config.content"></sff-content>
     <div class="buttons-container">
-      <sff-button *ngFor="let buttonConfig of config.buttons" [config]="buttonConfig"></sff-button>
+      <sff-button 
+        *ngFor="let button of config.buttons" 
+        [config]="button" 
+        (clicked)="onButtonClicked(button)">
+      </sff-button>
     </div>
   </div>
 </div>

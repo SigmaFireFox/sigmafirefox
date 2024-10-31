@@ -4,7 +4,7 @@
     [config]="field.config" 
     (updatedValue)="onFieldValueUpdate(field, $event)"
     ></sff-field>
-  <div class="buttons-container">
+  <div [ngStyle]="customStyling" class="buttons-container ">
     <sff-button 
       *ngFor="let button of config.buttons" 
       [config]="button.config"

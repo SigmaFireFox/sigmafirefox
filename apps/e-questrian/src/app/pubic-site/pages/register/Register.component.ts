@@ -21,6 +21,7 @@ import {
   FormComponent,
   FooterConfig,
   FooterComponent,
+  FormButtonAlignment,
 } from '@sigmafirefox/components';
 import { ButtonComponent } from '@sigmafirefox/widgets';
 import { RouteRelationshipType } from '@sigmafirefox/services';
@@ -101,6 +102,7 @@ export class RegisterComponent {
           type: ButtonType.Primary,
           size: ButtonSize.CTA_Large,
         },
+        alignment: FormButtonAlignment.Full,
         isSubmit: true,
       },
     ],

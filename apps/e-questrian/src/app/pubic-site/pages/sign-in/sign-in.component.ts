@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormComponent, FooterComponent, FieldType, FooterConfig, FormConfig, LabelPosition } from '@sigmafirefox/components';
+import { FormComponent, FooterComponent, FieldType, FooterConfig, FormConfig, LabelPosition, FormButtonAlignment } from '@sigmafirefox/components';
 import {
   ImageComponent,
   ContentComponent,
@@ -89,11 +89,12 @@ export class SignInComponent {
     buttons: [
       {
         config: {
-          name: 'register',
-          text: 'Register',
+          name: 'sign-in',
+          text: 'Sign in',
           type: ButtonType.Primary,
           size: ButtonSize.CTA_Large,
         },
+        alignment: FormButtonAlignment.Full,
         isSubmit: true,
       },
     ],

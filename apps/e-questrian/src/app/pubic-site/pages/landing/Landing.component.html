@@ -1,10 +1,13 @@
 <sff-navbar [config]="navbarConfig" (navlinkClicked)="navlinkClicked($event)"></sff-navbar>
 <div class="content-container">
-  <sff-cta-banner [config]="ctaBannerConfig"></sff-cta-banner>
+  <sff-cta-banner [config]="ctaBannerConfig" (buttonClicked)="onCTABannerButtonClicked($event)"></sff-cta-banner>
   <sff-card-grid [config]="featureCards"></sff-card-grid>
   <sff-carousel [config]="carouselConfig"></sff-carousel>
 </div>
 <sff-footer [config]="footerConfig"></sff-footer>
 
-<sff-modal *ngIf="showContactUsModal" [config]="contactUsModalConfig" (formSubmitted)="onFormSubmitted($event)"></sff-modal>
-
+<sff-modal 
+  *ngIf="showContactUsModal" 
+  [config]="contactUsModalConfig"
+  (formSubmitted)="onFormSubmitted($event)">
+</sff-modal>

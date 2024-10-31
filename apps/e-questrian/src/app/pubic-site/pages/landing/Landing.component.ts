@@ -8,19 +8,24 @@ import {
   FieldType,
   FooterComponent,
   FooterConfig,
+  FormButtonAlignment,
   LabelPosition,
   NavbarComponent,
   NavbarConfig,
   StarSize,
 } from '@sigmafirefox/components';
 import {
+  ButtonConfig,
   ButtonSize,
   ButtonType,
   ContentFontSize,
   HeaderFontSize,
   IconSize,
 } from '@sigmafirefox/widgets';
-import { RouteRelationshipType } from '@sigmafirefox/services';
+import {
+  NavigationService,
+  RouteRelationshipType,
+} from '@sigmafirefox/services';
 import {
   CardGridComponent,
   CardGridConfig,
@@ -90,7 +95,7 @@ export class LandingComponent {
     header: { size: HeaderFontSize.Large, content: 'Welcome to eQuestrian' },
     content: {
       size: ContentFontSize.Large,
-      content: ['The future of eQuestrian business management'],
+      content: ['The eQuestrian business management system of choice'],
     },
     buttons: [
       {
@@ -266,6 +271,82 @@ export class LandingComponent {
   carouselConfig: CarouselConfig = {
     itemsDisplayed: 5,
     cards: [
+      {
+        size: DisplayCardSize.Small,
+        isTransparent: true,
+        content: [
+          {
+            type: DisplayCardContentType.Icon,
+            iconContent: {
+              size: IconSize.Small,
+              name: 'polymer',
+            },
+          },
+          {
+            type: DisplayCardContentType.Header,
+            headerConfig: {
+              size: HeaderFontSize.Small,
+              content: `Emily R.`,
+            },
+          },
+          {
+            type: DisplayCardContentType.Content,
+            contentConfig: {
+              size: ContentFontSize.Small,
+              content: [
+                `"Fantastic tool! Simplified my stable's scheduling, \
+                billing, and communication.`,
+                `Highly recommend!"`
+              ],
+            },
+          },
+          {
+            type: DisplayCardContentType.StarRater,
+            starRaterConfig: {
+              size: StarSize.Small,
+              rating: 5,
+            },
+          },
+        ],
+      },
+      {
+        size: DisplayCardSize.Small,
+        isTransparent: true,
+        content: [
+          {
+            type: DisplayCardContentType.Icon,
+            iconContent: {
+              size: IconSize.Small,
+              name: 'polymer',
+            },
+          },
+          {
+            type: DisplayCardContentType.Header,
+            headerConfig: {
+              size: HeaderFontSize.Small,
+              content: `Card 1`,
+            },
+          },
+          {
+            type: DisplayCardContentType.Content,
+            contentConfig: {
+              size: ContentFontSize.Small,
+              content: [
+                'This is small content',
+                "It's typically set up in paragraphs",
+                'The paragraphs should self organise and have a nice padding',
+              ],
+            },
+          },
+          {
+            type: DisplayCardContentType.StarRater,
+            starRaterConfig: {
+              size: StarSize.Small,
+              rating: 5,
+            },
+          },
+        ],
+      },
       {
         size: DisplayCardSize.Small,
         isTransparent: true,
@@ -628,6 +709,7 @@ export class LandingComponent {
                 type: ButtonType.Primary,
                 size: ButtonSize.Small,
               },
+              alignment: FormButtonAlignment.Right,
               isSubmit: true,
             },
           ],
@@ -638,6 +720,8 @@ export class LandingComponent {
 
   showContactUsModal = false;
 
+  constructor(private navService: NavigationService) {}
+
   navlinkClicked(navlinkName: string) {
     switch (navlinkName) {
       case 'contact': {
@@ -647,8 +731,27 @@ export class LandingComponent {
     }
   }
 
-  onFormSubmitted(form: FormGroup){
-    console.log(form.value)
+  onCTABannerButtonClicked(button: ButtonConfig) {
+    switch (button.name) {
+      case 'register': {
+        this.navService.navTo({
+          relationship: RouteRelationshipType.Child,
+          route: 'register',
+        });
+        break;
+      }
+      case 'sign-in': {
+        this.navService.navTo({
+          relationship: RouteRelationshipType.Child,
+          route: 'sign-in',
+        });
+        break;
+      }
+    }
+  }
+
+  onFormSubmitted(form: FormGroup) {
+    console.log(form.value);
     this.showContactUsModal = false;
   }
 }

@@ -19,7 +19,7 @@ export class NavlinkComponent implements OnInit {
   constructor(private navService: NavigationService){}
 
   ngOnInit(){
-    if (!this.config) return
+    if (!this.config?.content) return
     this.config.content.isNavLink = true
   }
 
