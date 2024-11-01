@@ -35,12 +35,12 @@ export class DisplayCardComponent implements OnInit {
     let width = '';
     switch (this.config.size) {
       case DisplayCardSize.Small: {
-        height = '12rem';
+        height = '10rem';
         width = '9rem';
         break;
       }
       case DisplayCardSize.Medium: {
-        height = '18rem';
+        height = '16rem';
         width = '15rem';
         break;
       }

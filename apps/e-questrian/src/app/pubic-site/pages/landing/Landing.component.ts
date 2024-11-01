@@ -279,7 +279,7 @@ export class LandingComponent {
             type: DisplayCardContentType.Icon,
             iconContent: {
               size: IconSize.Small,
-              name: 'polymer',
+              name: 'person_pin',
             },
           },
           {
@@ -296,7 +296,7 @@ export class LandingComponent {
               content: [
                 `"Fantastic tool! Simplified my stable's scheduling, \
                 billing, and communication.`,
-                `Highly recommend!"`
+                `Highly recommend!"`,
               ],
             },
           },
@@ -317,14 +317,14 @@ export class LandingComponent {
             type: DisplayCardContentType.Icon,
             iconContent: {
               size: IconSize.Small,
-              name: 'polymer',
+              name: 'person_pin',
             },
           },
           {
             type: DisplayCardContentType.Header,
             headerConfig: {
               size: HeaderFontSize.Small,
-              content: `Card 1`,
+              content: `Sarah K.`,
             },
           },
           {
@@ -332,9 +332,7 @@ export class LandingComponent {
             contentConfig: {
               size: ContentFontSize.Small,
               content: [
-                'This is small content',
-                "It's typically set up in paragraphs",
-                'The paragraphs should self organise and have a nice padding',
+                'Game-changer for my riding school! Easy to use, efficient, and organized.',
               ],
             },
           },
@@ -355,14 +353,14 @@ export class LandingComponent {
             type: DisplayCardContentType.Icon,
             iconContent: {
               size: IconSize.Small,
-              name: 'polymer',
+              name: 'person_pin',
             },
           },
           {
             type: DisplayCardContentType.Header,
             headerConfig: {
               size: HeaderFontSize.Small,
-              content: `Card 1`,
+              content: `Mark H`,
             },
           },
           {
@@ -370,9 +368,8 @@ export class LandingComponent {
             contentConfig: {
               size: ContentFontSize.Small,
               content: [
-                'This is small content',
-                "It's typically set up in paragraphs",
-                'The paragraphs should self organise and have a nice padding',
+                'Love how this system streamlines my equine business operations. \
+                Support team is top-notch!',
               ],
             },
           },
@@ -393,14 +390,14 @@ export class LandingComponent {
             type: DisplayCardContentType.Icon,
             iconContent: {
               size: IconSize.Small,
-              name: 'polymer',
+              name: 'person_pin',
             },
           },
           {
             type: DisplayCardContentType.Header,
             headerConfig: {
               size: HeaderFontSize.Small,
-              content: `Card 1`,
+              content: `Rachel G.`,
             },
           },
           {
@@ -408,9 +405,8 @@ export class LandingComponent {
             contentConfig: {
               size: ContentFontSize.Small,
               content: [
-                'This is small content',
-                "It's typically set up in paragraphs",
-                'The paragraphs should self organise and have a nice padding',
+                "Transformed my horse boarding facility's management. \
+                User-friendly and customizable!",
               ],
             },
           },
@@ -431,14 +427,14 @@ export class LandingComponent {
             type: DisplayCardContentType.Icon,
             iconContent: {
               size: IconSize.Small,
-              name: 'polymer',
+              name: 'person_pin',
             },
           },
           {
             type: DisplayCardContentType.Header,
             headerConfig: {
               size: HeaderFontSize.Small,
-              content: `Card 1`,
+              content: `James B`,
             },
           },
           {
@@ -446,9 +442,8 @@ export class LandingComponent {
             contentConfig: {
               size: ContentFontSize.Small,
               content: [
-                'This is small content',
-                "It's typically set up in paragraphs",
-                'The paragraphs should self organise and have a nice padding',
+                'Impressive features, intuitive interface. \
+                Increased productivity and reduced stress!',
               ],
             },
           },
@@ -469,14 +464,14 @@ export class LandingComponent {
             type: DisplayCardContentType.Icon,
             iconContent: {
               size: IconSize.Small,
-              name: 'polymer',
+              name: 'person_pin',
             },
           },
           {
             type: DisplayCardContentType.Header,
             headerConfig: {
               size: HeaderFontSize.Small,
-              content: `Card 1`,
+              content: `Karen W.`,
             },
           },
           {
@@ -484,9 +479,8 @@ export class LandingComponent {
             contentConfig: {
               size: ContentFontSize.Small,
               content: [
-                'This is small content',
-                "It's typically set up in paragraphs",
-                'The paragraphs should self organise and have a nice padding',
+                'Excellent solution for managing lessons, clients, and horses.',
+                'Highly satisfied!',
               ],
             },
           },
@@ -507,14 +501,14 @@ export class LandingComponent {
             type: DisplayCardContentType.Icon,
             iconContent: {
               size: IconSize.Small,
-              name: 'polymer',
+              name: 'person_pin',
             },
           },
           {
             type: DisplayCardContentType.Header,
             headerConfig: {
               size: HeaderFontSize.Small,
-              content: `Card 1`,
+              content: `Tom S`,
             },
           },
           {
@@ -522,9 +516,7 @@ export class LandingComponent {
             contentConfig: {
               size: ContentFontSize.Small,
               content: [
-                'This is small content',
-                "It's typically set up in paragraphs",
-                'The paragraphs should self organise and have a nice padding',
+                'Streamlined my invoicing and payment processing. Thank you!',
               ],
             },
           },
@@ -545,14 +537,14 @@ export class LandingComponent {
             type: DisplayCardContentType.Icon,
             iconContent: {
               size: IconSize.Small,
-              name: 'polymer',
+              name: 'person_pin',
             },
           },
           {
             type: DisplayCardContentType.Header,
             headerConfig: {
               size: HeaderFontSize.Small,
-              content: `Card 1`,
+              content: `Lisa N`,
             },
           },
           {
@@ -560,9 +552,7 @@ export class LandingComponent {
             contentConfig: {
               size: ContentFontSize.Small,
               content: [
-                'This is small content',
-                "It's typically set up in paragraphs",
-                'The paragraphs should self organise and have a nice padding',
+                'Fantastic customer support! System is easy to navigate and customize.',
               ],
             },
           },
@@ -583,14 +573,14 @@ export class LandingComponent {
             type: DisplayCardContentType.Icon,
             iconContent: {
               size: IconSize.Small,
-              name: 'polymer',
+              name: 'person_pin',
             },
           },
           {
             type: DisplayCardContentType.Header,
             headerConfig: {
               size: HeaderFontSize.Small,
-              content: `Card 1`,
+              content: `Michael T`,
             },
           },
           {
@@ -598,9 +588,7 @@ export class LandingComponent {
             contentConfig: {
               size: ContentFontSize.Small,
               content: [
-                'This is small content',
-                "It's typically set up in paragraphs",
-                'The paragraphs should self organise and have a nice padding',
+                'Improved communication with clients and staff. Highly recommend!',
               ],
             },
           },
@@ -621,14 +609,14 @@ export class LandingComponent {
             type: DisplayCardContentType.Icon,
             iconContent: {
               size: IconSize.Small,
-              name: 'polymer',
+              name: 'person_pin',
             },
           },
           {
             type: DisplayCardContentType.Header,
             headerConfig: {
               size: HeaderFontSize.Small,
-              content: `Card 1`,
+              content: `Christine L`,
             },
           },
           {
@@ -636,9 +624,7 @@ export class LandingComponent {
             contentConfig: {
               size: ContentFontSize.Small,
               content: [
-                'This is small content',
-                "It's typically set up in paragraphs",
-                'The paragraphs should self organise and have a nice padding',
+                "Effortlessly manages my equestrian center's daily operations. A must-have!",
               ],
             },
           },
