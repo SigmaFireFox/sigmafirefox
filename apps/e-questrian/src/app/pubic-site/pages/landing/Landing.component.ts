@@ -122,14 +122,14 @@ export class LandingComponent {
             type: DisplayCardContentType.Icon,
             iconContent: {
               size: IconSize.Medium,
-              name: 'polymer',
+              name: 'dashboard',
             },
           },
           {
             type: DisplayCardContentType.Header,
             headerConfig: {
               size: HeaderFontSize.Medium,
-              content: 'This is a medium header',
+              content: 'Your Business at a Glance',
             },
           },
           {
@@ -137,9 +137,8 @@ export class LandingComponent {
             contentConfig: {
               size: ContentFontSize.Medium,
               content: [
-                'This is medium content',
-                "It's typically set up in paragraphs",
-                'The paragraphs should self organise and have a nice padding',
+                'Customize your dashboard with key metrics, upcoming appointments, \
+                and important notifications. Stay informed and focused.',
               ],
             },
           },
@@ -152,14 +151,14 @@ export class LandingComponent {
             type: DisplayCardContentType.Icon,
             iconContent: {
               size: IconSize.Medium,
-              name: 'polymer',
+              name: 'bar_chart',
             },
           },
           {
             type: DisplayCardContentType.Header,
             headerConfig: {
               size: HeaderFontSize.Medium,
-              content: 'This is a medium header',
+              content: 'Financial Insights at a Glance',
             },
           },
           {
@@ -167,9 +166,8 @@ export class LandingComponent {
             contentConfig: {
               size: ContentFontSize.Medium,
               content: [
-                'This is medium content',
-                "It's typically set up in paragraphs",
-                'The paragraphs should self organise and have a nice padding',
+                'View real-time financial summaries, track key performance \
+                indicators, and make informed business decisions.',
               ],
             },
           },
@@ -182,14 +180,14 @@ export class LandingComponent {
             type: DisplayCardContentType.Icon,
             iconContent: {
               size: IconSize.Medium,
-              name: 'polymer',
+              name: 'people',
             },
           },
           {
             type: DisplayCardContentType.Header,
             headerConfig: {
               size: HeaderFontSize.Medium,
-              content: 'This is a medium header',
+              content: 'Manage Client Relationships',
             },
           },
           {
@@ -197,9 +195,8 @@ export class LandingComponent {
             contentConfig: {
               size: ContentFontSize.Medium,
               content: [
-                'This is medium content',
-                "It's typically set up in paragraphs",
-                'The paragraphs should self organise and have a nice padding',
+                'Store client contact information, riding history, and communication \
+                records. Track client interactions and appointments.',
               ],
             },
           },
@@ -212,14 +209,14 @@ export class LandingComponent {
             type: DisplayCardContentType.Icon,
             iconContent: {
               size: IconSize.Medium,
-              name: 'polymer',
+              name: 'schedule',
             },
           },
           {
             type: DisplayCardContentType.Header,
             headerConfig: {
               size: HeaderFontSize.Medium,
-              content: 'This is a medium header',
+              content: 'Schedule with Ease',
             },
           },
           {
@@ -227,9 +224,8 @@ export class LandingComponent {
             contentConfig: {
               size: ContentFontSize.Medium,
               content: [
-                'This is medium content',
-                "It's typically set up in paragraphs",
-                'The paragraphs should self organise and have a nice padding',
+                'Manage lessons, sessions, and appointments. Set reminders, \
+                track attendance, and integrate with client schedules.',
               ],
             },
           },
@@ -242,14 +238,14 @@ export class LandingComponent {
             type: DisplayCardContentType.Icon,
             iconContent: {
               size: IconSize.Medium,
-              name: 'polymer',
+              name: 'attach_money',
             },
           },
           {
             type: DisplayCardContentType.Header,
             headerConfig: {
               size: HeaderFontSize.Medium,
-              content: 'This is a medium header',
+              content: 'Track Sales and Receivables',
             },
           },
           {
@@ -257,9 +253,124 @@ export class LandingComponent {
             contentConfig: {
               size: ContentFontSize.Medium,
               content: [
-                'This is medium content',
-                "It's typically set up in paragraphs",
-                'The paragraphs should self organise and have a nice padding',
+                'Record sales, manage invoices, and track payments. \
+                Monitor outstanding balances and debtor history.',
+              ],
+            },
+          },
+        ],
+      },
+      {
+        size: DisplayCardSize.Medium,
+        content: [
+          {
+            type: DisplayCardContentType.Icon,
+            iconContent: {
+              size: IconSize.Medium,
+              name: 'shopping_cart',
+            },
+          },
+          {
+            type: DisplayCardContentType.Header,
+            headerConfig: {
+              size: HeaderFontSize.Medium,
+              content: 'Manage Expenses and Payables',
+            },
+          },
+          {
+            type: DisplayCardContentType.Content,
+            contentConfig: {
+              size: ContentFontSize.Medium,
+              content: [
+                'Record purchases, track supplier invoices, and manage \
+                creditor relationships. Monitor outstanding payments.',
+              ],
+            },
+          },
+        ],
+      },
+      {
+        size: DisplayCardSize.Medium,
+        content: [
+          {
+            type: DisplayCardContentType.Icon,
+            iconContent: {
+              size: IconSize.Medium,
+              name: 'payment',
+            },
+          },
+          {
+            type: DisplayCardContentType.Header,
+            headerConfig: {
+              size: HeaderFontSize.Medium,
+              content: 'Streamline Transactions',
+            },
+          },
+          {
+            type: DisplayCardContentType.Content,
+            contentConfig: {
+              size: ContentFontSize.Medium,
+              content: [
+                'Record purchases, track supplier invoices, and manage \
+                creditor relationships. Monitor outstanding payments.',
+              ],
+            },
+          },
+        ],
+      },
+      {
+        size: DisplayCardSize.Medium,
+        content: [
+          {
+            type: DisplayCardContentType.Icon,
+            iconContent: {
+              size: IconSize.Medium,
+              name: 'account_circle',
+            },
+          },
+          {
+            type: DisplayCardContentType.Header,
+            headerConfig: {
+              size: HeaderFontSize.Medium,
+              content: 'Manage Your Profile',
+            },
+          },
+          {
+            type: DisplayCardContentType.Content,
+            contentConfig: {
+              size: ContentFontSize.Medium,
+              content: [
+                'Easily update your personal and business information, add \
+                profile pictures, and customize your account settings.',
+              ],
+            },
+          },
+        ],
+      },
+      {
+        size: DisplayCardSize.Medium,
+        content: [
+          {
+            type: DisplayCardContentType.Icon,
+            iconContent: {
+              size: IconSize.Medium,
+              name: 'settings',
+            },
+          },
+          {
+            type: DisplayCardContentType.Header,
+            headerConfig: {
+              size: HeaderFontSize.Medium,
+              content: 'Customize Your Experience',
+            },
+          },
+          {
+            type: DisplayCardContentType.Content,
+            contentConfig: {
+              size: ContentFontSize.Medium,
+              content: [
+                'Configure system settings, manage user roles and permissions, \
+                and personalize your platform preferences.',
               ],
             },
           },
