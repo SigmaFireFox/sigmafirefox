@@ -1,12 +1,34 @@
 <div class="page-container">
   <!-- Form on left half of page  -->
   <div class="form-container">
-    <sff-content class="form-item bottom-margin" [config]="topContent"></sff-content>
-    <sff-header class="form-item bottom-margin" [config]="header"></sff-header>
-    <sff-button class="form-item" *ngFor="let button of thirdPartyButtons" [config]="button"></sff-button>
-    <sff-form class="form-item" [config]="formConfig" (formSubmitted)="onFormSubmitted($event)"></sff-form>
-    <sff-content class="form-item" [config]="buttonContent"></sff-content>
-    <sff-button class="form-item" *ngFor="let button of altActionButtons" [config]="button"></sff-button>
+    <sff-content 
+      class="form-item bottom-margin" 
+      [config]="topContent">
+    </sff-content>
+    <sff-header 
+      class="form-item bottom-margin" 
+      [config]="header">
+    </sff-header>
+    <sff-button 
+      class="form-item" 
+      *ngFor="let button of thirdPartyButtons" 
+      [config]="button" 
+      (clicked)="onThirdPartyButtonClicked(button)">
+    </sff-button>
+    <sff-form 
+      class="form-item" 
+      [config]="formConfig" 
+      (formSubmitted)="onFormSubmitted($event)">
+    </sff-form>
+    <sff-content 
+      class="form-item" 
+      [config]="buttonContent">
+    </sff-content>
+    <sff-button 
+      class="form-item" 
+      *ngFor="let button of altActionButtons" 
+      [config]="button">
+    </sff-button>
   </div>
   
   <!-- Image on right half of page  -->

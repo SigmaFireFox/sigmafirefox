@@ -2,7 +2,9 @@
   "name": "@sigmafirefox/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "s:eQuestrian": "pnpm exec nx run eQuestrian:serve"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~18.2.0",

@@ -24,7 +24,11 @@ import {
   FormButtonAlignment,
 } from '@sigmafirefox/components';
 import { ButtonComponent } from '@sigmafirefox/widgets';
-import { RouteRelationshipType } from '@sigmafirefox/services';
+import {
+  AuthenticationService,
+  RouteRelationshipType,
+} from '@sigmafirefox/services';
+import { ThirdPartyAuthProviders } from './register.model';
 
 @Component({
   selector: 'app-register',
@@ -35,9 +39,10 @@ import { RouteRelationshipType } from '@sigmafirefox/services';
     FormComponent,
     ContentComponent,
     HeaderComponent,
-    ButtonComponent, 
-    FooterComponent
-],
+    ButtonComponent,
+    FooterComponent,
+  ],
+  providers: [AuthenticationService],
   templateUrl: './register.component.html',
   styleUrl: './register.component.scss',
 })
@@ -57,23 +62,24 @@ export class RegisterComponent {
 
   header: HeaderConfig = {
     size: HeaderFontSize.Large,
-    content: 'Register'
-  }
+    content: 'Register',
+  };
 
   thirdPartyButtons: ButtonConfig[] = [
     {
-      name: 'facebook',
-      text: 'Continue with Facebook',
+      name: ThirdPartyAuthProviders.Google,
+      text: 'Continue with Google',
       type: ButtonType.Secondary,
       size: ButtonSize.CTA_Large,
     },
-    {
-      name: 'apple',
-      text: 'Continue with Apple',
-      type: ButtonType.Secondary,
-      size: ButtonSize.CTA_Large,
-    }
-  ]
+    // Need to register the app before we add other providers
+    // {
+    //   name: ThirdPartyAuthProviders.Facebook,
+    //   text: 'Continue with Facebook',
+    //   type: ButtonType.Secondary,
+    //   size: ButtonSize.CTA_Large,
+    // }
+  ];
 
   formConfig: FormConfig = {
     fields: [
@@ -120,7 +126,7 @@ export class RegisterComponent {
       type: ButtonType.Secondary,
       size: ButtonSize.CTA_Large,
     },
-  ]
+  ];
 
   footerConfig: FooterConfig = {
     navlinks: [
@@ -146,6 +152,21 @@ export class RegisterComponent {
     },
   };
 
+  constructor(private auth: AuthenticationService) {}
+
+  onThirdPartyButtonClicked(button: ButtonConfig) {
+    switch (button.name) {
+      case ThirdPartyAuthProviders.Google: {
+        this.auth.signInWithGoogle().then(() => console.log('Boom'));
+        break;
+      }
+      // Need to register the app before we can use these 3rd prt providers
+      // case ThirdPartyAuthProviders.Facebook : {
+      //   this.auth.signInWithFacebook()
+      //   break
+      // }
+    }
+  }
 
   onFormSubmitted(form: FormGroup) {
     console.log('Form submitted');

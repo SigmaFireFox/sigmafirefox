@@ -1,6 +1,6 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
+import { FirebaseApp, FirebaseOptions, initializeApp } from 'firebase/app';
 import {
-  getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   onAuthStateChanged,
@@ -8,15 +8,37 @@ import {
   signInWithPopup,
   GoogleAuthProvider,
   FacebookAuthProvider,
-  sendPasswordResetEmail
+  sendPasswordResetEmail,
+  Auth,
+  getAuth,
+  OAuthCredential,
+  UserCredential,
+  getAdditionalUserInfo,
+  AdditionalUserInfo,
+  User
 } from 'firebase/auth';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthenticationService {
-  auth = getAuth();
+  // Configs we need to start this service
+  app: FirebaseApp;
+  auth: Auth;
 
+  // Auth details we may require
+  user: User | undefined
+  accessToken: string | undefined
+  idToken: string | undefined 
+  
+  constructor(
+    @Inject('firebaseConfig') public firebaseConfig: FirebaseOptions
+  ) {
+    this.app = initializeApp(firebaseConfig);
+    this.auth = getAuth(this.app);
+  }
+
+  
   registerWithEmail(email: string, password: string) {
     createUserWithEmailAndPassword(this.auth, email, password)
       .then((userCredential) => {
@@ -88,30 +110,38 @@ export class AuthenticationService {
       });
   }
 
-  signInWithGoogle() {
-    const provider = new GoogleAuthProvider();
-    signInWithPopup(this.auth, provider)
-      .then((result) => {
-        // This gives you a Google Access Token. You can use it to access the Google API.
-        const credential = GoogleAuthProvider.credentialFromResult(result);
-        if (!credential) return;
-        // const token = credential.accessToken;
-        // The signed-in user info.
-        // const user = result.user;
-        // IdP data available using getAdditionalUserInfo(result)
-        // ...
-      })
-      .catch((error) => {
-        // Handle Errors here.
-        // const errorCode = error.code;
-        // const errorMessage = error.message;
-        // The email of the user's account used.
-        // const email = error.customData.email;
-        // The AuthCredential type that was used.
-        const credential = GoogleAuthProvider.credentialFromError(error);
-        if (!credential) return;
-        // ...
-      });
+  signInWithGoogle(): Promise<void> {
+    return new Promise((resolve, reject) => {
+      const provider = new GoogleAuthProvider();
+      signInWithPopup(this.auth, provider)
+        .then((userCredential: UserCredential) => {
+          // Get the OAuthCredentials from the UserCredentials
+          const OAuthCredential: OAuthCredential | null = GoogleAuthProvider.credentialFromResult(userCredential);
+          const additionalUserInfo: AdditionalUserInfo | null = getAdditionalUserInfo(userCredential);
+          if (!OAuthCredential || !additionalUserInfo) return;
+  
+          // If we have all the required credentials lets extract what we are likely to need
+          this.user = userCredential.user;
+          this.accessToken  = OAuthCredential.accessToken;
+          this.idToken = OAuthCredential.idToken;
+
+          resolve()
+        })
+        .catch((error) => {
+          // Handle Errors here.
+          // const errorCode = error.code;
+          // const errorMessage = error.message;
+          // The email of the user's account used.
+          // const email = error.customData.email;
+          // The AuthCredential type that was used.
+          const credential = GoogleAuthProvider.credentialFromError(error);
+          if (!credential) return;
+          // ...
+
+          reject()
+        });
+    })
+
   }
 
   signInWithFacebook() {
