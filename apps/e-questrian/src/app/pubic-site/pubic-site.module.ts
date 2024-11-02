@@ -7,6 +7,7 @@ import { SignInComponent } from './pages/sign-in/sign-in.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 import { firebaseConfig } from '../../environment/environment';
+import { AuthenticationService } from '@sigmafirefox/services';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { firebaseConfig } from '../../environment/environment';
     ForgotPasswordComponent
   ],
   providers: [
+    AuthenticationService,
     {provide: 'firebaseConfig', useValue: firebaseConfig}, 
   ]
 })
