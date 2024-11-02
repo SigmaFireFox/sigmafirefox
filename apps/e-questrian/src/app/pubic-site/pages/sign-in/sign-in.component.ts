@@ -1,24 +1,33 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormComponent, FooterComponent, FieldType, FooterConfig, FormConfig, LabelPosition, FormButtonAlignment } from '@sigmafirefox/components';
+import { FormComponent, FooterComponent } from '@sigmafirefox/components';
 import {
   ImageComponent,
   ContentComponent,
   HeaderComponent,
   ButtonComponent,
   ButtonConfig,
-  ButtonSize,
-  ButtonType,
-  ContentConfig,
-  ContentFontSize,
-  HeaderConfig,
-  HeaderFontSize,
-  ImageConfig,
   NavlinkConfig,
 } from '@sigmafirefox/widgets';
 import { FormGroup } from '@angular/forms';
-import { AuthenticationService, NavigationService, RouteRelationshipType } from '@sigmafirefox/services';
+import {
+  AuthenticationService,
+  NavigationService,
+  RouteRelationshipType,
+} from '@sigmafirefox/services';
 import { AlternativeActions } from './sign-in.model';
+import {
+  imageConfig,
+  topContent,
+  header,
+  thirdPartyButtons,
+  formConfig,
+  buttonContent1,
+  altActionButtons1,
+  buttonContent2,
+  altActionButtons2,
+  footerConfig,
+} from './sign-in.config';
 
 @Component({
   selector: 'app-sign-in',
@@ -37,123 +46,16 @@ import { AlternativeActions } from './sign-in.model';
   styleUrl: './sign-in.component.scss',
 })
 export class SignInComponent {
-  imageConfig: ImageConfig = {
-    url: 'sign-in-side-image.png',
-    alt: 'Register page side image',
-    height: '100%',
-    width: '50%',
-    left: '50%',
-  };
-
-  topContent: ContentConfig = {
-    size: ContentFontSize.Large,
-    content: ['Welcome back'],
-  };
-
-  header: HeaderConfig = {
-    size: HeaderFontSize.Large,
-    content: 'Sign in',
-  };
-
-  thirdPartyButtons: ButtonConfig[] = [
-    {
-      name: 'facebook',
-      text: 'Continue with Facebook',
-      type: ButtonType.Secondary,
-      size: ButtonSize.CTA_Large,
-    },
-    {
-      name: 'apple',
-      text: 'Continue with Apple',
-      type: ButtonType.Secondary,
-      size: ButtonSize.CTA_Large,
-    },
-  ];
-
-  formConfig: FormConfig = {
-    fields: [
-      {
-        name: 'Field1',
-        config: {
-          type: FieldType.Input,
-          label: 'Email',
-          labelPosition: LabelPosition.Internal,
-        },
-      },
-      {
-        name: 'Field1',
-        config: {
-          type: FieldType.Input,
-          label: 'Password',
-          labelPosition: LabelPosition.Internal,
-        },
-      },
-    ],
-    buttons: [
-      {
-        config: {
-          name: 'sign-in',
-          text: 'Sign in',
-          type: ButtonType.Primary,
-          size: ButtonSize.CTA_Large,
-        },
-        alignment: FormButtonAlignment.Full,
-        isSubmit: true,
-      },
-    ],
-  };
-
-  buttonContent1: ContentConfig = {
-    size: ContentFontSize.Medium,
-    content: ['Not yet a registered user?'],
-  };
-
-  altActionButtons1: ButtonConfig[] = [
-    {
-      name: 'register',
-      text: 'Register',
-      type: ButtonType.Secondary,
-      size: ButtonSize.CTA_Large,
-    },
-  ];
-
-  buttonContent2: ContentConfig = {
-    size: ContentFontSize.Medium,
-    content: ['Forgot password?'],
-  };
-
-  altActionButtons2: ButtonConfig[] = [
-    {
-      name: 'forgot-password',
-      text: 'Request reset password link',
-      type: ButtonType.Secondary,
-      size: ButtonSize.CTA_Large,
-    },
-  ];
-
-  footerConfig: FooterConfig = {
-    navlinks: [
-      {
-        relationship: RouteRelationshipType.Parent,
-        route: '',
-        content: { size: ContentFontSize.Medium, content: ['Features'] },
-      },
-      {
-        relationship: RouteRelationshipType.Parent,
-        route: '',
-        content: { size: ContentFontSize.Medium, content: ['Testimonials'] },
-      },
-      {
-        relationship: RouteRelationshipType.None,
-        route: 'contact',
-        content: { size: ContentFontSize.Medium, content: ['Contact us'] },
-      },
-    ],
-    content: {
-      size: ContentFontSize.Small,
-      content: ['© 2024 SigmaFireFox. All rights reserved.'],
-    },
-  };
+  imageConfig = imageConfig;
+  topContent = topContent;
+  header = header;
+  thirdPartyButtons = thirdPartyButtons;
+  formConfig = formConfig;
+  buttonContent1 = buttonContent1;
+  altActionButtons1 = altActionButtons1;
+  buttonContent2 = buttonContent2;
+  altActionButtons2 = altActionButtons2;
+  footerConfig = footerConfig;
 
   constructor(
     private auth: AuthenticationService,
@@ -164,7 +66,7 @@ export class SignInComponent {
     console.log('Form submitted');
     console.log(form.value);
   }
-  
+
   onAltActionButtonsClicked(button: ButtonConfig) {
     switch (button.name) {
       case AlternativeActions.Register: {
@@ -180,6 +82,7 @@ export class SignInComponent {
           route: 'forgot-password',
         } as NavlinkConfig);
         break;
-      }    }
+      }
+    }
   }
 }
