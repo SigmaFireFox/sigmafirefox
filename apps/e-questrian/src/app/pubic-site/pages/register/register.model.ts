@@ -6,3 +6,8 @@ export enum ThirdPartyAuthProviders {
 export enum AlternativeActions {
   SignIn = 'sign-in',
 }
+
+export interface RegisterForm {
+  email: string
+  password: string
+}

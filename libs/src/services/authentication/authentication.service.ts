@@ -39,18 +39,19 @@ export class AuthenticationService {
   }
 
   
-  registerWithEmail(email: string, password: string) {
-    createUserWithEmailAndPassword(this.auth, email, password)
-      .then((userCredential) => {
-        // Register
-        // const user = userCredential.user;
-        console.log(userCredential);
+  registerWithEmail(email: string, password: string): Promise<void> {
+    return new Promise((resolve, reject) => {
+      createUserWithEmailAndPassword(this.auth, email, password)
+      .then((userCredential: UserCredential) => {
+        this.user = userCredential.user;
+        resolve()
       })
       .catch((error) => {
-        // const errorCode = error.code;
-        // const errorMessage = error.message;
         console.log(error);
+        reject()
       });
+    })
+
   }
 
   signInWithEmail(email: string, password: string) {

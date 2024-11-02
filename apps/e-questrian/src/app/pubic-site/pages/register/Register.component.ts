@@ -7,7 +7,6 @@ import {
   ImageComponent,
   NavlinkConfig,
 } from '@sigmafirefox/widgets';
-import { FormGroup } from '@angular/forms';
 import { FormComponent, FooterComponent } from '@sigmafirefox/components';
 import { ButtonComponent } from '@sigmafirefox/widgets';
 import {
@@ -15,7 +14,11 @@ import {
   NavigationService,
   RouteRelationshipType,
 } from '@sigmafirefox/services';
-import { AlternativeActions, ThirdPartyAuthProviders } from './register.model';
+import {
+  AlternativeActions,
+  RegisterForm,
+  ThirdPartyAuthProviders,
+} from './register.model';
 import {
   altActionButtons,
   buttonContent,
@@ -26,6 +29,7 @@ import {
   thirdPartyButtons,
   topContent,
 } from './register.config';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -62,7 +66,9 @@ export class RegisterComponent {
   onThirdPartyButtonClicked(button: ButtonConfig) {
     switch (button.name) {
       case ThirdPartyAuthProviders.Google: {
-        this.auth.signInWithGoogle().then(() => console.log('Boom'));
+        this.auth
+          .signInWithGoogle()
+          .then(() => console.log('Signed in with Google'));
         break;
       }
       // Need to register the app before we can use these 3rd prt providers
@@ -71,6 +77,13 @@ export class RegisterComponent {
       //   break
       // }
     }
+  }
+
+  onFormSubmitted(form: FormGroup) {
+    const registerForm: RegisterForm = form.value
+    this.auth
+      .registerWithEmail(registerForm.email, registerForm.password)
+      .then(() => console.log('Registered with email'));
   }
 
   onAltActionButtonsClicked(button: ButtonConfig) {
@@ -83,10 +96,5 @@ export class RegisterComponent {
         break;
       }
     }
-  }
-
-  onFormSubmitted(form: FormGroup) {
-    console.log('Form submitted');
-    console.log(form.value);
   }
 }
