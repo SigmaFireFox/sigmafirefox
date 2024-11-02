@@ -14,9 +14,11 @@ import {
   HeaderConfig,
   HeaderFontSize,
   ImageConfig,
+  NavlinkConfig,
 } from '@sigmafirefox/widgets';
 import { FormGroup } from '@angular/forms';
-import { RouteRelationshipType } from '@sigmafirefox/services';
+import { AuthenticationService, NavigationService, RouteRelationshipType } from '@sigmafirefox/services';
+import { AlternativeActions } from './sign-in.model';
 
 @Component({
   selector: 'app-sign-in',
@@ -30,6 +32,7 @@ import { RouteRelationshipType } from '@sigmafirefox/services';
     ButtonComponent,
     FooterComponent,
   ],
+  providers: [AuthenticationService],
   templateUrl: './sign-in.component.html',
   styleUrl: './sign-in.component.scss',
 })
@@ -152,8 +155,31 @@ export class SignInComponent {
     },
   };
 
+  constructor(
+    private auth: AuthenticationService,
+    private navService: NavigationService
+  ) {}
+
   onFormSubmitted(form: FormGroup) {
     console.log('Form submitted');
     console.log(form.value);
+  }
+  
+  onAltActionButtonsClicked(button: ButtonConfig) {
+    switch (button.name) {
+      case AlternativeActions.Register: {
+        this.navService.navTo({
+          relationship: RouteRelationshipType.Sibling,
+          route: 'register',
+        } as NavlinkConfig);
+        break;
+      }
+      case AlternativeActions.ForgotPassword: {
+        this.navService.navTo({
+          relationship: RouteRelationshipType.Sibling,
+          route: 'forgot-password',
+        } as NavlinkConfig);
+        break;
+      }    }
   }
 }
