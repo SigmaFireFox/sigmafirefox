@@ -27,7 +27,8 @@
     <sff-button 
       class="form-item" 
       *ngFor="let button of altActionButtons" 
-      [config]="button">
+      [config]="button"
+      (clicked)="onAltActionButtonsClicked(button)">
     </sff-button>
   </div>
   

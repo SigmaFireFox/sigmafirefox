@@ -16,7 +16,7 @@ import {
   HeaderFontSize,
   ImageConfig,
 } from '@sigmafirefox/widgets';
-import { ThirdPartyAuthProviders } from './register.model';
+import { AlternativeActions, ThirdPartyAuthProviders } from './register.model';
 
 export const imageConfig: ImageConfig = {
   url: 'register-side-image.png',
@@ -92,7 +92,7 @@ export const buttonContent: ContentConfig = {
 
 export const altActionButtons: ButtonConfig[] = [
   {
-    name: 'sign-in',
+    name: AlternativeActions.SignIn,
     text: 'Sign in',
     type: ButtonType.Secondary,
     size: ButtonSize.CTA_Large,
