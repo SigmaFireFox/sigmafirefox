@@ -6,7 +6,8 @@
     <sff-button 
       class="form-item" 
       *ngFor="let button of thirdPartyButtons" 
-      [config]="button">
+      [config]="button"
+      (clicked)="onThirdPartyButtonClicked(button)">
     </sff-button>
     <sff-form 
       class="form-item" 

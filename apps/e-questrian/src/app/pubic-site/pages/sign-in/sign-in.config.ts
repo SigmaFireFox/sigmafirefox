@@ -1,6 +1,7 @@
 import { FormConfig, FieldType, LabelPosition, FormButtonAlignment, FooterConfig } from "@sigmafirefox/components";
 import { RouteRelationshipType } from "@sigmafirefox/services";
 import { ButtonConfig, ButtonSize, ButtonType, ContentConfig, ContentFontSize, HeaderConfig, HeaderFontSize, ImageConfig } from "@sigmafirefox/widgets";
+import { ThirdPartyAuthProviders } from "./sign-in.model";
 
 export const imageConfig: ImageConfig = {
   url: 'sign-in-side-image.png',
@@ -22,17 +23,18 @@ export const header: HeaderConfig = {
 
 export const thirdPartyButtons: ButtonConfig[] = [
   {
-    name: 'facebook',
-    text: 'Continue with Facebook',
+    name: ThirdPartyAuthProviders.Google,
+    text: 'Continue with Google',
     type: ButtonType.Secondary,
     size: ButtonSize.CTA_Large,
   },
-  {
-    name: 'apple',
-    text: 'Continue with Apple',
-    type: ButtonType.Secondary,
-    size: ButtonSize.CTA_Large,
-  },
+  // Need to register the app before we add other providers
+  // {
+  //   name: ThirdPartyAuthProviders.Facebook,
+  //   text: 'Continue with Facebook',
+  //   type: ButtonType.Secondary,
+  //   size: ButtonSize.CTA_Large,
+  // }
 ];
 
 export const formConfig: FormConfig = {

@@ -15,7 +15,7 @@ import {
   NavigationService,
   RouteRelationshipType,
 } from '@sigmafirefox/services';
-import { AlternativeActions, SignInForm } from './sign-in.model';
+import { AlternativeActions, SignInForm, ThirdPartyAuthProviders } from './sign-in.model';
 import {
   imageConfig,
   topContent,
@@ -61,6 +61,22 @@ export class SignInComponent {
     private auth: AuthenticationService,
     private navService: NavigationService
   ) {}
+
+  onThirdPartyButtonClicked(button: ButtonConfig) {
+    switch (button.name) {
+      case ThirdPartyAuthProviders.Google: {
+        this.auth
+          .signInWithGoogle()
+          .then(() => console.log('Signed in with Google'));
+        break;
+      }
+      // Need to register the app before we can use these 3rd prt providers
+      // case ThirdPartyAuthProviders.Facebook : {
+      //   this.auth.signInWithFacebook()
+      //   break
+      // }
+    }
+  }
 
   onFormSubmitted(form: FormGroup) {
     const signInForm: SignInForm = form.value
