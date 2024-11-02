@@ -15,7 +15,7 @@ import {
   NavigationService,
   RouteRelationshipType,
 } from '@sigmafirefox/services';
-import { AlternativeActions } from './sign-in.model';
+import { AlternativeActions, SignInForm } from './sign-in.model';
 import {
   imageConfig,
   topContent,
@@ -63,8 +63,11 @@ export class SignInComponent {
   ) {}
 
   onFormSubmitted(form: FormGroup) {
-    console.log('Form submitted');
-    console.log(form.value);
+    const signInForm: SignInForm = form.value
+    this.auth
+      .signInWithEmail(signInForm.email, signInForm.password)
+      .then(() => console.log('Signed with email'))
+      .catch((error) => console.log(error))
   }
 
   onAltActionButtonsClicked(button: ButtonConfig) {

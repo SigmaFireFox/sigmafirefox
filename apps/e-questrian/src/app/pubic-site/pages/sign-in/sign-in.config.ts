@@ -38,7 +38,7 @@ export const thirdPartyButtons: ButtonConfig[] = [
 export const formConfig: FormConfig = {
   fields: [
     {
-      name: 'Field1',
+      name: 'email',
       config: {
         type: FieldType.Input,
         label: 'Email',
@@ -46,7 +46,7 @@ export const formConfig: FormConfig = {
       },
     },
     {
-      name: 'Field1',
+      name: 'password',
       config: {
         type: FieldType.Input,
         label: 'Password',

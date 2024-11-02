@@ -47,25 +47,24 @@ export class AuthenticationService {
         resolve()
       })
       .catch((error) => {
-        console.log(error);
-        reject()
+        reject(error)
       });
     })
 
   }
 
-  signInWithEmail(email: string, password: string) {
-    signInWithEmailAndPassword(this.auth, email, password)
-      .then((userCredential) => {
-        // Signed in
-        // const user = userCredential.user;
-        console.log(userCredential);
+  signInWithEmail(email: string, password: string) : Promise<void> {
+    return new Promise ((resolve, reject ) => {
+      signInWithEmailAndPassword(this.auth, email, password)
+      .then((userCredential: UserCredential) => {
+        this.user = userCredential.user;
+        resolve()
       })
       .catch((error) => {
-        // const errorCode = error.code;
-        // const errorMessage = error.message;
-        console.log(error);
+        reject(error)
       });
+    })
+
   }
 
   getSignInUser() {

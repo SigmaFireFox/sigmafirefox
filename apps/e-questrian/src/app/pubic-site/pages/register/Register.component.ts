@@ -80,10 +80,11 @@ export class RegisterComponent {
   }
 
   onFormSubmitted(form: FormGroup) {
-    const registerForm: RegisterForm = form.value
+    const registerForm: RegisterForm = form.value;
     this.auth
       .registerWithEmail(registerForm.email, registerForm.password)
-      .then(() => console.log('Registered with email'));
+      .then(() => console.log('Registered with email'))
+      .catch((error) => console.log(error))
   }
 
   onAltActionButtonsClicked(button: ButtonConfig) {
