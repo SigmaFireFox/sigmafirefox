@@ -157,18 +157,13 @@ export class AuthenticationService {
       });
   }
 
-  resetPassword(email: string) {
-    sendPasswordResetEmail(this.auth, email)
-      .then(() => {
-        // Password reset email sent!
-        // ..
-      })
-      .catch((error) => {
-        // const errorCode = error.code;
-        // const errorMessage = error.message;
-        console.log(error);
-        // ..
-      });
+  resetPassword(email: string): Promise<void> {
+    return new Promise((resolve, reject) => {
+      sendPasswordResetEmail(this.auth, email)
+      .then(() => resolve())
+      .catch((error) => reject(error));
+    }) 
+
   }
 
   // ****************************************************************
