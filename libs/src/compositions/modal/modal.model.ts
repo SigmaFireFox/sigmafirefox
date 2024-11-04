@@ -4,6 +4,22 @@ import { ContentConfig } from '../../widgets/content/content.model';
 import { HeaderConfig } from '../../widgets/header/header.model';
 import { IconConfig } from '../../widgets/icon/icon.model';
 
+export enum ModalHorizontalAlignment {
+  Left,
+  CenterLeft,
+  Center,
+  CenterRight,
+  Right,
+}
+
+export enum ModalVerticalAlignment {
+  Top,
+  CenterTop,
+  Center,
+  CenterBottom,
+  Bottom,
+}
+
 export enum ModalSize {
   Small,
   Medium,
@@ -30,4 +46,6 @@ export interface ModalContent {
 export interface ModalConfig {
   size: ModalSize;
   content: ModalContent[];
+  horizontalAlignment: ModalHorizontalAlignment
+  verticalAlignment: ModalVerticalAlignment
 }

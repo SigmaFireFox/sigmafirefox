@@ -52,7 +52,7 @@ export class LandingComponent {
   contactUsModalConfig = contactUsModalConfig;
 
   // Flags
-  showContactUsModal = false;
+  showContactUsModal = true;
 
   constructor(
     private navService: NavigationService,

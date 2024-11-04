@@ -1,22 +1,35 @@
 .back-drop {
+  // Position
   position: fixed;
+  z-index: 5;
   top: 0;
   left: 0;
-  height: calc(100vh - 6rem);
-  width: 98vw;
-  z-index: 5;
+
+  // Dimensions
+  height: 100%;
+  width: 100%;
+
+  // Padding and Margin
+  padding: 0;
+
+  // Position of content
   display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-  padding: 3rem 0;
+  // As defined but inputs
 
   .modal-card {
+    // Dimensions
+    width: 16rem;
+
+    // Padding and Margin
+    padding: 1rem;
+    margin: 4rem 1rem;
+
+    // Content
     display: flex;
     flex-direction: column;
-    padding: 1rem;
+    
+    // Styling
     border-radius: 1rem;
-    width: 16rem;
-    margin: 2rem;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   }
 }

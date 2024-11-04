@@ -1,4 +1,4 @@
-<div *ngIf="config" class="back-drop">
+<div *ngIf="config" [ngStyle]="customModalPositioning" class="back-drop">
   <div class="modal-card">
     <div *ngFor="let item of config.content" [ngSwitch]="item.type">
       <sff-icon *ngSwitchCase="modalContentType.Icon" [config]="item.iconContent"></sff-icon>
