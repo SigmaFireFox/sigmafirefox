@@ -1,10 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {
-  ModalConfig,
-  ModalContentType,
-  ModalHorizontalAlignment,
-} from './modal.model';
+import { ModalConfig, ModalContentType } from './modal.model';
 import { StarRaterComponent } from '../../components/star-rater/star-rater.component';
 import { IconComponent } from '../../widgets/icon/icon.component';
 import { HeaderComponent } from '../../widgets/header/header.component';
@@ -31,7 +27,7 @@ export class ModalComponent implements OnInit {
   @Output() formSubmitted: EventEmitter<FormGroup> = new EventEmitter();
 
   modalContentType = ModalContentType;
-  customModalPositioning: { [key: string]: string } = {  
+  customModalPositioning: { [key: string]: string } = {
     'justify-content': 'start',
     'align-items': 'start',
   };
@@ -39,24 +35,10 @@ export class ModalComponent implements OnInit {
   ngOnInit() {
     if (!this.config) return;
     // Setting of position
-    switch (this.config.horizontalAlignment) {
-      case ModalHorizontalAlignment.Left: {
-        break;
-      }
-      case ModalHorizontalAlignment.CenterLeft: {
-        break;
-      }
-      case ModalHorizontalAlignment.Center: {
-        break;
-      }
-      case ModalHorizontalAlignment.CenterRight: {
-        break;
-      }
-      case ModalHorizontalAlignment.Right: {
-        break;
-      }
-    }
-    console.log('');
+    this.customModalPositioning = {
+      'justify-content': this.config.horizontalAlignment,
+      'align-items': this.config.verticalAlignment,
+    };
   }
 
   onFormSubmitted(form: FormGroup) {

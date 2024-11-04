@@ -5,19 +5,15 @@ import { HeaderConfig } from '../../widgets/header/header.model';
 import { IconConfig } from '../../widgets/icon/icon.model';
 
 export enum ModalHorizontalAlignment {
-  Left,
-  CenterLeft,
-  Center,
-  CenterRight,
-  Right,
+  Left = 'flex-start',
+  Center = 'center',
+  Right = 'flex-end',
 }
 
 export enum ModalVerticalAlignment {
-  Top,
-  CenterTop,
-  Center,
-  CenterBottom,
-  Bottom,
+  Top = 'flex-start',
+  Center = 'center',
+  Bottom = 'flex-end',
 }
 
 export enum ModalSize {
@@ -46,6 +42,6 @@ export interface ModalContent {
 export interface ModalConfig {
   size: ModalSize;
   content: ModalContent[];
-  horizontalAlignment: ModalHorizontalAlignment
-  verticalAlignment: ModalVerticalAlignment
+  horizontalAlignment: ModalHorizontalAlignment;
+  verticalAlignment: ModalVerticalAlignment;
 }
