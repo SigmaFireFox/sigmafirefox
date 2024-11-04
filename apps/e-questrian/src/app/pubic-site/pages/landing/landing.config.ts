@@ -15,8 +15,8 @@ import {
   CardGridConfig,
   CarouselConfig,
   ModalConfig,
-  ModalVerticalAlignment,
-  ModalHorizontalAlignment,
+  HorizontalAlignment,
+  VerticalAlignment,
 } from '@sigmafirefox/compositions';
 import { RouteRelationshipType } from '@sigmafirefox/services';
 import {
@@ -734,8 +734,8 @@ export const footerConfig: FooterConfig = {
 
 export const contactUsModalConfig: ModalConfig = {
   size: ModalSize.Medium,
-  verticalAlignment: ModalVerticalAlignment.Bottom,
-  horizontalAlignment: ModalHorizontalAlignment.Right,
+  verticalAlignment: VerticalAlignment.Bottom,
+  horizontalAlignment: HorizontalAlignment.Right,
   content: [
     {
       type: ModalContentType.Header,

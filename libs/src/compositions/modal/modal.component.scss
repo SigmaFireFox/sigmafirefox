@@ -16,6 +16,9 @@
   display: flex;
   // As defined but inputs
 
+  // Blur effect
+  backdrop-filter: blur(5px);
+
   .modal-card {
     // Dimensions
     width: 16rem;

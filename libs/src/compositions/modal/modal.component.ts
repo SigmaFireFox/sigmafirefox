@@ -31,6 +31,8 @@ export class ModalComponent implements OnInit {
     'justify-content': 'start',
     'align-items': 'start',
   };
+  customModalCardSizing: { [key: string]: string } = {}
+  customModalContentStyling: { [key: string]: string } = {}
 
   ngOnInit() {
     if (!this.config) return;
@@ -39,6 +41,17 @@ export class ModalComponent implements OnInit {
       'justify-content': this.config.horizontalAlignment,
       'align-items': this.config.verticalAlignment,
     };
+    // Setting up alignment
+    if (this.config.isOnlyInfo) {
+      this.customModalContentStyling = {
+        'display': 'flex',
+        'justify-content': 'center',
+        'text-align': 'center',
+      }
+      this.customModalCardSizing = {
+        'width': '24rem'
+      }
+    }
   }
 
   onFormSubmitted(form: FormGroup) {
