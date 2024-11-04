@@ -11,6 +11,8 @@ import {
 import { ModalComponent } from '../../compositions/modal/modal.component';
 import { HeaderFontSize } from '../../widgets/header/header.model';
 import { ContentFontSize } from '../../widgets/content/content.model';
+import { FormButtonAlignment } from '../../components/form/form.model';
+import { ButtonSize, ButtonType } from '../../widgets/button/button.model';
 
 @Component({
   selector: 'sff-error-modal',
@@ -33,6 +35,7 @@ export class ErrorModalComponent implements OnInit {
 
   ngOnInit() {
     this.errorService.errorModalConfig.subscribe((config) => {
+      this.modalConfig.content = []
       this.modalConfig.content.push(
         {
           type: ModalContentType.Header,
@@ -46,6 +49,24 @@ export class ErrorModalComponent implements OnInit {
           contentConfig: {
             size: ContentFontSize.Medium,
             content: config.content,
+          },
+        },
+        {
+          type: ModalContentType.Form,
+          formConfig: {
+            fields: [],
+            buttons: [
+              {
+                config: {
+                  name: 'close',
+                  text: 'Close',
+                  type: ButtonType.Primary,
+                  size: ButtonSize.CTA_Small,
+                },
+                alignment: FormButtonAlignment.Centre,
+                isSubmit: true,
+              },
+            ],
           },
         }
       );

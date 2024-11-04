@@ -1,1 +1,5 @@
-<sff-modal *ngIf="showModal" [config]="modalConfig"></sff-modal>
+<sff-modal 
+  *ngIf="showModal" 
+  [config]="modalConfig" 
+  (formSubmitted)="showModal = false">
+</sff-modal>
