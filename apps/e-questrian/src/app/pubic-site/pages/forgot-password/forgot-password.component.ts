@@ -13,6 +13,7 @@ import {
   altActionButtons2,
   buttonContent1,
   buttonContent2,
+  confirmationContent,
   footerConfig,
   formConfig,
   header,
@@ -49,11 +50,14 @@ export class ForgotPasswordComponent {
   topContent = topContent;
   header = header;
   formConfig = formConfig;
+  confirmationContent = confirmationContent;
   buttonContent1 = buttonContent1;
   altActionButtons1 = altActionButtons1;
   buttonContent2 = buttonContent2;
   altActionButtons2 = altActionButtons2;
   footerConfig = footerConfig;
+
+  resetSent = false
 
   constructor(
     private auth: AuthenticationService,
@@ -64,7 +68,10 @@ export class ForgotPasswordComponent {
     const forgotPasswordForm: ForgotPasswordForm = form.value;
     this.auth
       .resetPassword(forgotPasswordForm.email)
-      .then(() => console.log('Reset password email sent'))
+      .then(() => {
+        this.resetSent = true;
+        console.log('Reset password email sent')
+      })
       .catch((error) => console.log(error));
   }
 

@@ -61,6 +61,17 @@ export const formConfig: FormConfig = {
   ],
 };
 
+export const confirmationContent: ContentConfig = {
+  size: ContentFontSize.Large,
+  content: [
+    'Thank you providing your email address.',
+    'Should your email be linked to a registered account, \
+    a reset password will be sent to your email address \
+    shortly. If you can not find such email, be sure to \
+    check your spam folder'
+  ],
+};
+
 export const buttonContent1: ContentConfig = {
   size: ContentFontSize.Medium,
   content: ['Remembered your password?'],
