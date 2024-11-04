@@ -18,6 +18,7 @@ import {
   User,
   UserProfile,
 } from 'firebase/auth';
+import { ErrorHandlingService } from '../error-handling/error-handling.service';
 
 @Injectable({
   providedIn: 'root',
@@ -42,7 +43,8 @@ export class AuthenticationService {
   }
 
   constructor(
-    @Inject('firebaseConfig') public firebaseConfig: FirebaseOptions
+    @Inject('firebaseConfig') public firebaseConfig: FirebaseOptions,
+    private errorHandling: ErrorHandlingService
   ) {
     this.app = initializeApp(firebaseConfig);
     this.auth = getAuth(this.app);
@@ -61,7 +63,7 @@ export class AuthenticationService {
           this.user = userCredential.user;
           resolve();
         })
-        .catch((error) => reject(error));
+        .catch((error) => reject(this.errorHandling.handleError(error)));
     });
   }
 
@@ -160,10 +162,9 @@ export class AuthenticationService {
   resetPassword(email: string): Promise<void> {
     return new Promise((resolve, reject) => {
       sendPasswordResetEmail(this.auth, email)
-      .then(() => resolve())
-      .catch((error) => reject(error));
-    }) 
-
+        .then(() => resolve())
+        .catch((error) => reject(error));
+    });
   }
 
   // ****************************************************************

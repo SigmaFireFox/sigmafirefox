@@ -5,5 +5,9 @@ import { Injectable } from '@angular/core';
 })
 export class ErrorHandlingService {
 
-  constructor() { }
+  handleError(error: unknown):void{
+    console.log(error)
+  }
 }
+
+// FirebaseError: Firebase: Error (auth/invalid-email)

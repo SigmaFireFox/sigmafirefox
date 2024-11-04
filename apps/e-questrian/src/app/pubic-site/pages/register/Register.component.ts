@@ -84,7 +84,7 @@ export class RegisterComponent {
     this.auth
       .registerWithEmail(registerForm.email, registerForm.password)
       .then(() => console.log('Registered with email'))
-      .catch((error) => console.log(error))
+      // No Catch as this is handled by the shared error handling service
   }
 
   onAltActionButtonsClicked(button: ButtonConfig) {
