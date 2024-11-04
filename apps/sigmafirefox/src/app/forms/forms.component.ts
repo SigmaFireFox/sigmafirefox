@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import {
   FieldType,
+  FormButtonAlignment,
   FormComponent,
   FormConfig,
   LabelPosition,
@@ -60,6 +61,7 @@ export class FormsComponent {
           size: ButtonSize.Large,
         },
         isSubmit: true,
+        alignment: FormButtonAlignment.Full
       },
     ],
   };
