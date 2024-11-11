@@ -1,3 +1,4 @@
+import { ButtonConfig } from '../../widgets/button/button.model';
 import { FormConfig } from '../../components/form/form.model';
 import { StarRaterConfig } from '../../components/star-rater/star-rater.model';
 import { ContentConfig } from '../../widgets/content/content.model';
@@ -28,6 +29,7 @@ export enum ModalContentType {
   Content,
   Form,
   StarRater,
+  Buttons,
 }
 
 export interface ModalContent {
@@ -37,6 +39,7 @@ export interface ModalContent {
   contentConfig?: ContentConfig;
   formConfig?: FormConfig;
   starRaterConfig?: StarRaterConfig;
+  buttonsConfig?: ButtonConfig[];
 }
 
 export interface ModalConfig {

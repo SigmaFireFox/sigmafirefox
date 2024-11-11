@@ -27,6 +27,14 @@
         *ngSwitchCase="modalContentType.StarRater"
         [config]="item.starRaterConfig">
       </sff-star-rater>
+      <div *ngSwitchCase="modalContentType.Buttons">
+        <sff-button
+          [ngStyle]="customModalContentStyling" 
+          *ngFor="let buttonConfig of item.buttonsConfig"
+          [config]="buttonConfig"
+          (clicked)="onButtonClicked(buttonConfig)">
+        </sff-button>
+      </div>
     </div>
   </div>
 </div>

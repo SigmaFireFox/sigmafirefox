@@ -1,5 +1,6 @@
 <sff-modal 
   *ngIf="showModal" 
   [config]="modalConfig" 
-  (formSubmitted)="showModal = false">
+  (formSubmitted)="showModal = false"
+  (buttonClicked)="onButtonClicked($event)">
 </sff-modal>

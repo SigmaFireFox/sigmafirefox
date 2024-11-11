@@ -7,6 +7,8 @@ import { HeaderComponent } from '../../widgets/header/header.component';
 import { ContentComponent } from '../../widgets/content/content.component';
 import { FormComponent } from '../../components/form/form.component';
 import { FormGroup } from '@angular/forms';
+import { ButtonComponent } from "../../widgets/button/button.component";
+import { ButtonConfig } from '../../widgets/button/button.model';
 
 @Component({
   selector: 'sff-modal',
@@ -18,13 +20,15 @@ import { FormGroup } from '@angular/forms';
     ContentComponent,
     StarRaterComponent,
     FormComponent,
-  ],
+    ButtonComponent
+],
   templateUrl: './modal.component.html',
   styleUrl: './modal.component.scss',
 })
 export class ModalComponent implements OnInit {
   @Input() config: ModalConfig | undefined;
   @Output() formSubmitted: EventEmitter<FormGroup> = new EventEmitter();
+  @Output() buttonClicked: EventEmitter<ButtonConfig> = new EventEmitter();
 
   modalContentType = ModalContentType;
   customModalPositioning: { [key: string]: string } = {
@@ -56,5 +60,9 @@ export class ModalComponent implements OnInit {
 
   onFormSubmitted(form: FormGroup) {
     this.formSubmitted.emit(form);
+  }
+
+  onButtonClicked(buttonConfig: ButtonConfig) {
+    this.buttonClicked.emit(buttonConfig)
   }
 }
