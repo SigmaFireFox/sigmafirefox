@@ -1,5 +1,15 @@
 <div *ngIf="config" [ngClass]="config.clickRoute ? 'with-click-route': ''" class="profile-card-container" (click)="onProfileCardClicked()">
-  <div class="profile-pic-container"></div>
+  <div class="profile-pic-container">
+    <sff-image 
+      *ngIf="profilePicConfig" 
+      [config]="profilePicConfig">
+    </sff-image>
+    <sff-icon 
+      class="profile-icon" 
+      *ngIf="!profilePicConfig" 
+      [config]="profilePicIconConfig">
+    </sff-icon>
+  </div>
   <div class="profile-content-container">
     <sff-content 
       #name 

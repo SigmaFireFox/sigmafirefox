@@ -6,10 +6,21 @@
   min-width: 10rem;
   height: 3rem;
   padding: 0 0.5rem;
+  align-items: center;
 
   .profile-pic-container {
     display: flex;
     flex-direction: column;
+    border: black 1px solid;
+    height: 2.25rem;
+    width: 2.25rem;
+    border-radius: 1.25rem;
+    margin-right: 0.5rem;
+
+    .profile-icon {
+      margin-left: -0.27rem;
+      margin-top: -0.3rem;
+    }
   }
 
   .profile-content-container {
@@ -20,4 +31,5 @@
 
 .with-click-route:hover {
   cursor: pointer;
+  transform: scale(1.05);
 }

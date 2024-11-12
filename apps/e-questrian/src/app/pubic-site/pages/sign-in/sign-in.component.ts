@@ -15,7 +15,11 @@ import {
   NavigationService,
   RouteRelationshipType,
 } from '@sigmafirefox/services';
-import { AlternativeActions, SignInForm, ThirdPartyAuthProviders } from './sign-in.model';
+import {
+  AlternativeActions,
+  SignInForm,
+  ThirdPartyAuthProviders,
+} from './sign-in.model';
 import {
   imageConfig,
   topContent,
@@ -65,9 +69,13 @@ export class SignInComponent {
   onThirdPartyButtonClicked(button: ButtonConfig) {
     switch (button.name) {
       case ThirdPartyAuthProviders.Google: {
-        this.auth
-          .signInWithGoogle()
-          .then(() => console.log('Signed in with Google'));
+        this.auth.signInWithGoogle().then(() => {
+          console.log('Signed in with Google');
+          this.navService.navTo({
+            relationship: RouteRelationshipType.Sibling,
+            route: '/platform',
+          });
+        });
         break;
       }
       // Need to register the app before we can use these 3rd prt providers
@@ -79,17 +87,17 @@ export class SignInComponent {
   }
 
   onFormSubmitted(form: FormGroup) {
-    const signInForm: SignInForm = form.value
+    const signInForm: SignInForm = form.value;
     this.auth
       .signInWithEmail(signInForm.email, signInForm.password)
       .then(() => {
-        console.log('Signed with email')
+        console.log('Signed with email');
         this.navService.navTo({
           relationship: RouteRelationshipType.Sibling,
-          route: '/platform'
-        })
+          route: '/platform',
+        });
       })
-      .catch((error) => console.log(error))
+      .catch((error) => console.log(error));
   }
 
   onAltActionButtonsClicked(button: ButtonConfig) {
