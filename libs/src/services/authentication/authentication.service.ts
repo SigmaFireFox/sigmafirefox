@@ -78,7 +78,7 @@ export class AuthenticationService {
           this.user = userCredential.user;
           resolve();
         })
-        .catch((error) => reject(error));
+        .catch((error) => reject(this.errorHandling.handleError(error)));
     });
   }
 
@@ -163,7 +163,7 @@ export class AuthenticationService {
     return new Promise((resolve, reject) => {
       sendPasswordResetEmail(this.auth, email)
         .then(() => resolve())
-        .catch((error) => reject(error));
+        .catch((error) => reject(this.errorHandling.handleError(error)));
     });
   }
 

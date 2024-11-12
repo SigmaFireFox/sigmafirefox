@@ -5,6 +5,7 @@ import { ErrorModalConfig } from './error-modal.model';
 import {
   ErrorFirebaseEmailInUse,
   ErrorFirebaseGeneral,
+  ErrorFirebaseInvalidCredential,
   ErrorFirebaseInvalidEmail,
   ErrorFirebaseMissingPassword,
   ErrorFirebaseWeakPassword,
@@ -18,6 +19,7 @@ export class ErrorHandlingService {
   errorModalConfig = new Subject<ErrorModalConfig>();
 
   handleError(error: Error): void {
+    console.log(error.message)
     if (error.name === 'FirebaseError') {
       switch (error.message as FirebaseError) {
         case FirebaseError.InvalidEmail: {
@@ -31,6 +33,9 @@ export class ErrorHandlingService {
         }
         case FirebaseError.WeakPassword: {
           return this.errorModalConfig.next(ErrorFirebaseWeakPassword);
+        }
+        case FirebaseError.InvalidCredential: {
+          return this.errorModalConfig.next(ErrorFirebaseInvalidCredential);
         }
         default: {
           return this.errorModalConfig.next(ErrorFirebaseGeneral);

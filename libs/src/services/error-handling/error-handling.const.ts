@@ -45,6 +45,17 @@ export const ErrorFirebaseWeakPassword: ErrorModalConfig = {
   ],
 }
 
+export const ErrorFirebaseInvalidCredential: ErrorModalConfig = {
+  heading: 'Invalid Credentials',
+  content: [
+    'The credentials your have provided seem to be correct',
+    'Please check that the email address and/or the password \
+    you have provided are correct',
+    'If you are certain the credentials are correct, please \
+    reach out to us via our "Contact us" form',
+  ],
+}
+
 export const ErrorFirebaseGeneral: ErrorModalConfig = {
   heading: 'Firebase error',
   content: [
