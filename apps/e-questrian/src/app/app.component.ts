@@ -7,8 +7,5 @@ import { ErrorModalComponent } from '@sigmafirefox/services';
   imports: [RouterModule, ErrorModalComponent],
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
 })
-export class AppComponent {
-  title = 'eQuestrian';
-}
+export class AppComponent {}
