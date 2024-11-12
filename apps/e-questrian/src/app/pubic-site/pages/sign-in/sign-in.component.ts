@@ -82,7 +82,13 @@ export class SignInComponent {
     const signInForm: SignInForm = form.value
     this.auth
       .signInWithEmail(signInForm.email, signInForm.password)
-      .then(() => console.log('Signed with email'))
+      .then(() => {
+        console.log('Signed with email')
+        this.navService.navTo({
+          relationship: RouteRelationshipType.Sibling,
+          route: '/platform'
+        })
+      })
       .catch((error) => console.log(error))
   }
 
