@@ -14,3 +14,5 @@ export * from './footer/footer.component';
 export * from './footer/footer.model'
 export * from './navbar/navbar.component';
 export * from './navbar/navbar.model'
+export * from './profile-card/profile-card.component';
+export * from './profile-card/profile-card.model'
