@@ -93,8 +93,9 @@ $White: #FFFFFF;
   fill: white !important;
 }
 
-.display-card {
+.display-card, .profile-card-container {
   background-color: $Eggshell;
+  color: $Rich-Black;
 }
 
 .font {

@@ -1,0 +1,23 @@
+.profile-card-container {
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: row;
+  width: fit-content;
+  min-width: 10rem;
+  height: 3rem;
+  padding: 0 0.5rem;
+
+  .profile-pic-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .profile-content-container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.with-click-route:hover {
+  cursor: pointer;
+}

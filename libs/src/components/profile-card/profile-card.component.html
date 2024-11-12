@@ -1,1 +1,10 @@
-<p>profile-card works!</p>
+<div *ngIf="config" [ngClass]="config.clickRoute ? 'with-click-route': ''" class="profile-card-container" (click)="onProfileCardClicked()">
+  <div class="profile-pic-container"></div>
+  <div class="profile-content-container">
+    <sff-content 
+      #name 
+      *ngIf="contentConfig" 
+      [config]="contentConfig">
+    </sff-content>
+  </div>
+</div>

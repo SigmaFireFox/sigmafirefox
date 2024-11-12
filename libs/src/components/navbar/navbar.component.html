@@ -8,5 +8,9 @@
       [config]="navlink"
       (clicked)="onNavbarClicked($event)">
     </sff-navlink>
+    <sff-profile-card 
+      *ngIf="config.profileCard"
+      [config]="config.profileCard">
+    </sff-profile-card>
   </div>
 </div>
