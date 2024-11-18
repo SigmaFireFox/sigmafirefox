@@ -1,5 +1,16 @@
 <sff-navbar [config]="navbarConfig"></sff-navbar>
 <div class="module-window">
-  <router-outlet></router-outlet>
+  <mat-drawer-container class="example-container" autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+      The menu will go here
+    </mat-drawer>
+  
+    <div class="example-sidenav-content">
+      <button type="button" mat-button (click)="drawer.toggle()">
+        Toggle sidenav
+      </button>
+      <router-outlet></router-outlet>
+    </div>
+  
+  </mat-drawer-container>
 </div>
-

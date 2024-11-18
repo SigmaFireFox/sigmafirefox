@@ -10,7 +10,7 @@ import { firebaseConfig } from '../../environment/environment';
   declarations: [],
   imports: [
     CommonModule,
-    PlatformRoutingModule
+    PlatformRoutingModule,
   ],
   providers: [
     AuthenticationService,
