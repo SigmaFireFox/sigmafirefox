@@ -7,7 +7,9 @@ export interface NavigationMenu {
 
 export interface NavigationMenuItem {
   icon: string,
-  description: string
+  description: string,
+  route: string
+  children?: NavigationMenuItem[]
 }
 
 export interface NavigationMenuConfig {

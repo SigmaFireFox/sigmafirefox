@@ -6,6 +6,7 @@ import { ContentComponent } from "../../widgets/content/content.component";
 import { ContentFontSize } from '../../widgets/content/content.model';
 import { IconSize } from '../../widgets/icon/icon.model';
 import { RouteRelationshipType } from '../../services/navigation/navigation.model';
+import { NavigationService } from '@sigmafirefox/services';
 
 @Component({
   selector: 'sff-navigation-menu',
@@ -18,6 +19,9 @@ export class NavigationMenuComponent implements OnInit {
   @Input() menu: NavigationMenu | undefined;
 
   config: NavigationMenuConfig = {items: []}
+  currentSelection = ''
+
+  constructor(private nav: NavigationService){}
 
   ngOnInit(){
     if (!this.menu || !this.config) return
@@ -29,14 +33,21 @@ export class NavigationMenuComponent implements OnInit {
         },
         navlink: {
           relationship: RouteRelationshipType.Absolute,
-          route: '',
+          route: item.route,
           content: {
             size: ContentFontSize.Medium,
             content: [item.description]
           }
         }
       })
-      console.log(item)
+    })
+  }
+
+  onMenuItemClicked(route: string) {
+    this.currentSelection = route
+    this.nav.navTo({
+      relationship: RouteRelationshipType.Absolute,
+      route: route
     })
   }
 }

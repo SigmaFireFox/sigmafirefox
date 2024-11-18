@@ -86,7 +86,8 @@ $Grey: #A9A9A9;
   }
 }
 
-.sidenav, .sidenav-button {
+.sidenav,
+.sidenav-button {
   background-color: $Grey !important;
 }
 
@@ -96,8 +97,12 @@ $Grey: #A9A9A9;
 
 .display-card,
 .profile-card-container {
-  background-color: $Eggshell;
-  color: $Rich-Black;
+  background-color: $Eggshell !important;
+  color: $Rich-Black !important;
+}
+
+.active-navigation-menu-item {
+  background-color: $Bitter-Lemon !important;
 }
 
 .font {

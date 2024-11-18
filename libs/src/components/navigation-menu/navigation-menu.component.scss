@@ -1,4 +1,16 @@
-.menu-item {
+.navigation-menu-item,
+.active-navigation-menu-item {
   display: flex;
   flex-direction: row;
+  height: 2rem;
+  align-items: center;
+  margin: 0.5rem 0;
+  padding: 0.25rem 0.5rem;
+  border-radius: 1.25rem;
+}
+
+.navigation-menu-item:hover {
+  cursor: pointer;
+  transform: scale(1.03);
+  font-weight: 800;
 }

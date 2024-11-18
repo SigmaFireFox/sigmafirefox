@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -8,9 +8,4 @@ import { CommonModule } from '@angular/common';
   templateUrl: './profile-management.component.html',
   styleUrl: './profile-management.component.scss',
 })
-export class ProfileManagementComponent implements OnInit {
-
-  ngOnInit(){
-    console.log('ProfileManagementComponent')
-  }
-}
+export class ProfileManagementComponent {}

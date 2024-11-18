@@ -6,6 +6,11 @@ import { ProfileManagementModule } from './modules/profile-management/profile-ma
 const routes: Routes = [
   { path: '', component: HostComponent, title: 'e-Questrian', children: [
     {
+      path: 'dashboard',
+      loadChildren: () => ProfileManagementModule,
+      title: 'e-Questrian | Dashboard'
+    },
+    {
       path: 'profile',
       loadChildren: () => ProfileManagementModule,
       title: 'e-Questrian | Profile'

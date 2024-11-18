@@ -21,28 +21,53 @@ export const navbarConfig: NavbarConfig = {
     emailAddress: 'dude@mcgee.com',
     clickRoute: {
       relationship: RouteRelationshipType.Absolute,
-      route: 'platform/profile'
-    }
+      route: 'platform/profile',
+    },
   },
 };
 
 export const navigationMenu: NavigationMenu = {
   items: [
-    { icon: 'dashboard', description: 'Dashboard'},
-    { icon: 'event', description: 'Appointments'},
-    { icon: 'people', description: 'Clients'},
-    { icon: 'account_balance', description: 'Finance'},
-    { icon: 'visibility', description: 'Overview'},
-    { icon: 'trending_up', description: 'Sales and Debtors'},
-    { icon: 'trending_down', description: 'Expenses and Creditors'},
-    { icon: 'payment', description: 'Payments and Receipts'},
-    { icon: 'insert_chart', description: 'Reports'},
-    { icon: 'local_shipping', description: 'Liveries'},
-    { icon: 'pets', description: 'Livestock'},
-    { icon: 'group', description: 'Staff'},
-    { icon: 'account_circle', description: 'Profile'},
-    { icon: 'settings', description: 'Settings'},
-    { icon: 'exit_to_app', description: 'Sign out'},
-  ]
-}
-
+    { icon: 'dashboard', description: 'Dashboard', route: 'platform/dashboard' },
+    { icon: 'event', description: 'Appointments', route: 'platform/appointments' },
+    { icon: 'people', description: 'Clients', route: 'platform/clients' },
+    {
+      icon: 'account_balance',
+      description: 'Finance',
+      route: 'platform/finance',
+      children: [
+        {
+          icon: 'visibility',
+          description: 'Overview',
+          route: 'platform/finance/overview',
+        },
+        {
+          icon: 'trending_up',
+          description: 'Sales and Debtors',
+          route: 'platform/finance/sales',
+        },
+        {
+          icon: 'trending_down',
+          description: 'Expenses and Creditors',
+          route: 'platform/finance/expenses',
+        },
+        {
+          icon: 'payment',
+          description: 'Payments and Receipts',
+          route: 'platform/finance/cash-book',
+        },
+        {
+          icon: 'insert_chart',
+          description: 'Reports',
+          route: 'platform/finance/reports',
+        },
+      ],
+    },
+    { icon: 'hotel', description: 'Liveries', route: 'platform/liveries' },
+    { icon: 'pets', description: 'Livestock', route: 'platform/livestock' },
+    { icon: 'group', description: 'Staff', route: 'platform/dashboard/staff' },
+    { icon: 'account_circle', description: 'Profile', route: 'platform/profile' },
+    { icon: 'settings', description: 'Settings', route: 'platform/settings' },
+    { icon: 'exit_to_app', description: 'Sign out', route: '.platform/' },
+  ],
+};

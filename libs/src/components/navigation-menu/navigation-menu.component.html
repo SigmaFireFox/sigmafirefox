@@ -1,5 +1,9 @@
 <div *ngIf="config">
-  <div class="menu-item" *ngFor="let item of config.items">
+  <div 
+    class="navigation-menu-item" 
+    [ngClass]="currentSelection === item.navlink.route? 'active-navigation-menu-item': ''"
+    *ngFor="let item of config.items" 
+    (click)="onMenuItemClicked(item.navlink.route)">
     <sff-icon *ngIf="item.icon" [config]="item.icon"></sff-icon>
     <sff-content *ngIf="item.navlink.content" [config]="item.navlink.content"></sff-content>
   </div>
