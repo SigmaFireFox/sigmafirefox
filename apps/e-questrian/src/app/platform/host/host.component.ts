@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavbarComponent, NavigationMenuComponent } from '@sigmafirefox/components';
-import { navbarConfig, navigationMenuItemConfig } from './host.config';
+import { navbarConfig, navigationMenu } from './host.config';
 import { RouterModule } from '@angular/router';
 import { AuthenticationService } from '@sigmafirefox/services';
 import { UserProfile } from 'firebase/auth';
@@ -24,7 +24,7 @@ import { MatIcon } from '@angular/material/icon';
 })
 export class HostComponent implements OnInit {
   navbarConfig = navbarConfig;
-  navigationMenuItemConfig = navigationMenuItemConfig;
+  navigationMenu = navigationMenu;
 
   constructor(private auth: AuthenticationService) {}
 

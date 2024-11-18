@@ -1,6 +1,6 @@
-import { NavbarConfig, NavigationMenuConfig } from '@sigmafirefox/components';
+import { NavbarConfig, NavigationMenu } from '@sigmafirefox/components';
 import { RouteRelationshipType } from '@sigmafirefox/services';
-import { ContentFontSize, HeaderFontSize, IconSize } from '@sigmafirefox/widgets';
+import { HeaderFontSize } from '@sigmafirefox/widgets';
 
 export const navbarConfig: NavbarConfig = {
   logo: {
@@ -26,22 +26,23 @@ export const navbarConfig: NavbarConfig = {
   },
 };
 
-export const navigationMenuItemConfig: NavigationMenuConfig = {
+export const navigationMenu: NavigationMenu = {
   items: [
-    {
-      icon: {
-        size: IconSize.Small,
-        name: 'home'
-      },
-      navlink: {
-        relationship: RouteRelationshipType.Absolute,
-        route: '',
-        content: {
-          size: ContentFontSize.Medium,
-          content: ['Home']
-        }
-      },
-      children: []
-    }
+    { icon: 'dashboard', description: 'Dashboard'},
+    { icon: 'event', description: 'Appointments'},
+    { icon: 'people', description: 'Clients'},
+    { icon: 'account_balance', description: 'Finance'},
+    { icon: 'visibility', description: 'Overview'},
+    { icon: 'trending_up', description: 'Sales and Debtors'},
+    { icon: 'trending_down', description: 'Expenses and Creditors'},
+    { icon: 'payment', description: 'Payments and Receipts'},
+    { icon: 'insert_chart', description: 'Reports'},
+    { icon: 'local_shipping', description: 'Liveries'},
+    { icon: 'pets', description: 'Livestock'},
+    { icon: 'group', description: 'Staff'},
+    { icon: 'account_circle', description: 'Profile'},
+    { icon: 'settings', description: 'Settings'},
+    { icon: 'exit_to_app', description: 'Sign out'},
   ]
 }
+

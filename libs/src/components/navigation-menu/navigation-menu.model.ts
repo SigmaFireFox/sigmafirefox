@@ -1,12 +1,22 @@
 import { IconConfig } from '../../widgets/icon/icon.model';
 import { NavlinkConfig } from '../../widgets/navlink/navlink.model';
 
-export interface NavigationMenuConfig {
+export interface NavigationMenu {
   items: NavigationMenuItem[]
 }
 
 export interface NavigationMenuItem {
-  icon: IconConfig;
-  navlink: NavlinkConfig;
-  children: NavigationMenuItem[];
+  icon: string,
+  description: string
 }
+
+export interface NavigationMenuConfig {
+  items: NavigationMenuConfigItem[]
+}
+
+export interface NavigationMenuConfigItem {
+    icon: IconConfig;
+    navlink: NavlinkConfig
+}
+
+

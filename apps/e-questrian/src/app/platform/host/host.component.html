@@ -3,7 +3,7 @@
   <mat-drawer-container class="draw-container" autosize>
     
     <mat-drawer #drawer class="sidenav" mode="side" opened="true">
-      <sff-navigation-menu [config]="navigationMenuItemConfig"></sff-navigation-menu>
+      <sff-navigation-menu [menu]="navigationMenu"></sff-navigation-menu>
     </mat-drawer>
 
     <div class="sidenav-button" mat-button (click)="drawer.toggle()">
