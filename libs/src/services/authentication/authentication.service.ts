@@ -144,15 +144,16 @@ export class AuthenticationService {
   // Public Sign Out and Reset Password Methods
   // ****************************************************************
 
-  signOut() {
-    signOut(this.auth)
-      .then(() => {
-        // Sign-out successful.
-      })
+  signOut(): Promise<void> {
+    return new Promise((resolve, reject) => {
+      signOut(this.auth)
+      .then(() => resolve())
       .catch((error) => {
-        // An error happened.
+        reject()
         console.log(error);
       });
+    })
+
   }
 
   resetPassword(email: string): Promise<void> {

@@ -28,7 +28,7 @@ export const navbarConfig: NavbarConfig = {
 
 export const navigationMenu: NavigationMenu = {
   items: [
-    { icon: 'dashboard', description: 'Dashboard', route: 'platform/dashboard' },
+    { icon: 'dashboard', description: 'Dashboard', route: 'platform' },
     { icon: 'event', description: 'Appointments', route: 'platform/appointments' },
     { icon: 'people', description: 'Clients', route: 'platform/clients' },
     {
@@ -68,6 +68,6 @@ export const navigationMenu: NavigationMenu = {
     { icon: 'group', description: 'Staff', route: 'platform/dashboard/staff' },
     { icon: 'account_circle', description: 'Profile', route: 'platform/user/profile' },
     { icon: 'settings', description: 'Settings', route: 'platform/user/settings' },
-    { icon: 'exit_to_app', description: 'Sign out', route: '.platform/' },
+    { icon: 'exit_to_app', description: 'Sign out', route: 'platform/user/log-out' },
   ],
 };
