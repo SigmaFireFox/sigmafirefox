@@ -66,8 +66,8 @@ export const navigationMenu: NavigationMenu = {
     { icon: 'hotel', description: 'Liveries', route: 'platform/liveries' },
     { icon: 'pets', description: 'Livestock', route: 'platform/livestock' },
     { icon: 'group', description: 'Staff', route: 'platform/dashboard/staff' },
-    { icon: 'account_circle', description: 'Profile', route: 'platform/profile' },
-    { icon: 'settings', description: 'Settings', route: 'platform/settings' },
+    { icon: 'account_circle', description: 'Profile', route: 'platform/user/profile' },
+    { icon: 'settings', description: 'Settings', route: 'platform/user/settings' },
     { icon: 'exit_to_app', description: 'Sign out', route: '.platform/' },
   ],
 };

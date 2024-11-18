@@ -6,7 +6,7 @@ import { ContentComponent } from "../../widgets/content/content.component";
 import { ContentFontSize } from '../../widgets/content/content.model';
 import { IconSize } from '../../widgets/icon/icon.model';
 import { RouteRelationshipType } from '../../services/navigation/navigation.model';
-import { NavigationService } from '@sigmafirefox/services';
+import { NavigationService } from '../../services/navigation/navigation.service';
 
 @Component({
   selector: 'sff-navigation-menu',
