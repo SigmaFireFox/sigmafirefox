@@ -1,6 +1,6 @@
-import { NavbarConfig } from '@sigmafirefox/components';
+import { NavbarConfig, NavigationMenuConfig } from '@sigmafirefox/components';
 import { RouteRelationshipType } from '@sigmafirefox/services';
-import { HeaderFontSize } from '@sigmafirefox/widgets';
+import { ContentFontSize, HeaderFontSize, IconSize } from '@sigmafirefox/widgets';
 
 export const navbarConfig: NavbarConfig = {
   logo: {
@@ -24,5 +24,24 @@ export const navbarConfig: NavbarConfig = {
       route: 'platform/profile'
     }
   },
-
 };
+
+export const navigationMenuItemConfig: NavigationMenuConfig = {
+  items: [
+    {
+      icon: {
+        size: IconSize.Small,
+        name: 'home'
+      },
+      navlink: {
+        relationship: RouteRelationshipType.Absolute,
+        route: '',
+        content: {
+          size: ContentFontSize.Medium,
+          content: ['Home']
+        }
+      },
+      children: []
+    }
+  ]
+}

@@ -1,1 +1,6 @@
-<p>navigation-menu works!</p>
+<div *ngIf="config">
+  <div class="menu-item" *ngFor="let item of config.items">
+    <sff-icon *ngIf="item.icon" [config]="item.icon"></sff-icon>
+    <sff-content *ngIf="item.navlink.content" [config]="item.navlink.content"></sff-content>
+  </div>
+</div>
