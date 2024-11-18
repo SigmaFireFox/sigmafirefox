@@ -1,16 +1,19 @@
 <sff-navbar [config]="navbarConfig"></sff-navbar>
 <div class="module-window">
-  <mat-drawer-container class="example-container" autosize>
-    <mat-drawer #drawer class="example-sidenav" mode="side">
+  <mat-drawer-container class="draw-container" autosize>
+    
+    <mat-drawer #drawer class="sidenav" mode="side" opened="true">
       The menu will go here
     </mat-drawer>
-  
-    <div class="example-sidenav-content">
-      <button type="button" mat-button (click)="drawer.toggle()">
-        Toggle sidenav
-      </button>
+
+    <div class="sidenav-button" mat-button (click)="drawer.toggle()">
+      <mat-icon *ngIf="!drawer.opened">menu</mat-icon>
+      <mat-icon *ngIf="drawer.opened">close</mat-icon>
+    </div>
+
+    <div class="content-window">
       <router-outlet></router-outlet>
     </div>
-  
+    
   </mat-drawer-container>
 </div>

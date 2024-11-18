@@ -1,23 +1,47 @@
 .module-window {
-  padding: 4rem 0 0 0;
-  background-color: aqua;
-}
-
-.example-container {
-  width: 100%;
-  height: calc(100vh - 4rem);
-}
-
-.example-sidenav-content {
   display: flex;
-  height: 100%;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  height: calc(100% - 4rem);
+  padding: 4rem 0 0 0;
+
+  .draw-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    .sidenav {
+      padding: 20px;
+      width: fit-content;
+      min-width: 240px;
+      border-radius: 0;
+    }
+
+    .sidenav-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 1.5rem;
+      width: 1.5rem;
+      padding: 0.5rem;
+      border-radius: 0 5px 5px 0;
+      cursor: pointer;
+    }
+
+    .sidenav-button:hover {
+      transform: scale(1.03);
+      font-weight: 800;
+    }
+
+    .content-window {
+      display: flex;
+      height: 100%;
+      align-items: center;
+      justify-content: center;
+      margin-left: 2.5rem;
+      margin-top: -2.5rem;
+    }
+  }
 }
 
-.example-sidenav {
-  padding: 20px;
-  width: fit-content;
-  min-width: 240px;
-  border-radius: 0;
-}
+
+

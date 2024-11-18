@@ -6,17 +6,17 @@ import { RouterModule } from '@angular/router';
 import { AuthenticationService } from '@sigmafirefox/services';
 import { UserProfile } from 'firebase/auth';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import { MatIcon } from '@angular/material/icon';
 
 @Component({
   selector: 'app-host',
   standalone: true,
-  imports: [CommonModule, RouterModule, NavbarComponent, MatSidenavModule],
+  imports: [CommonModule, RouterModule, NavbarComponent, MatSidenavModule, MatIcon],
   templateUrl: './host.component.html',
   styleUrl: './host.component.scss',
 })
 export class HostComponent implements OnInit {
   navbarConfig = navbarConfig
-  showFiller = false;
 
   constructor(private auth: AuthenticationService){}
 
@@ -25,5 +25,9 @@ export class HostComponent implements OnInit {
     const profile = this.auth.userProfile as UserProfile
     if (!profile) return
     this.navbarConfig.profileCard.profilePicUrl = profile['photoURL'] as string || undefined
+  }
+
+  onSideNavButtonClick(event: unknown){
+    console.log(event)
   }
 }
