@@ -7,6 +7,7 @@ import {
 } from '@sigmafirefox/components';
 import { ButtonConfig } from '@sigmafirefox/widgets';
 import {
+  AuthenticationService,
   ContactUsService,
   NavigationService,
   RouteRelationshipType,
@@ -56,8 +57,17 @@ export class LandingComponent {
 
   constructor(
     private navService: NavigationService,
-    private contactService: ContactUsService
-  ) {}
+    private contactService: ContactUsService,
+    private auth: AuthenticationService
+  ) {
+    this.auth.isUserSignedIn.then((isSignedIn) => {
+      if (isSignedIn)
+        this.navService.navTo({
+          relationship: RouteRelationshipType.Child,
+          route: 'platform',
+        });
+    });
+  }
 
   navlinkClicked(navlinkName: string) {
     switch (navlinkName) {

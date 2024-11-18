@@ -34,12 +34,8 @@ export class AuthenticationService {
   accessToken: string | undefined;
   idToken: string | undefined;
 
-  get isUserSignedIn(): boolean {
-    if (this.user) return true;
-    this.getSignInUser().then((isUserSignedIn) => {
-      return isUserSignedIn;
-    });
-    return false;
+   get isUserSignedIn(): Promise<boolean> {
+    return this.getSignInUser()
   }
 
   constructor(
