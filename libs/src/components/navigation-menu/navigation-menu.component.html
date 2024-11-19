@@ -6,7 +6,7 @@
 
     <div 
       #ParentItem
-      [ngClass]="currentSelection === item.navlink.route && !item.showChildren 
+      [ngClass]="currentSelection === item.navlink.route && item.children.length === 0  
         ? 'active-navigation-menu-item'
         : 'navigation-menu-item'"
       (click)="onParentItemClicked(item)">
