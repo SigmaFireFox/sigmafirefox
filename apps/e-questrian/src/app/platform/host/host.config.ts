@@ -26,7 +26,7 @@ export const navbarConfig: NavbarConfig = {
   },
 };
 
-export const navigationMenu: NavigationMenu = {
+export const modulesMenu: NavigationMenu = {
   items: [
     { icon: 'dashboard', description: 'Dashboard', route: 'platform' },
     { icon: 'event', description: 'Appointments', route: 'platform/appointments' },
@@ -66,6 +66,11 @@ export const navigationMenu: NavigationMenu = {
     { icon: 'hotel', description: 'Liveries', route: 'platform/liveries' },
     { icon: 'pets', description: 'Livestock', route: 'platform/livestock' },
     { icon: 'group', description: 'Staff', route: 'platform/dashboard/staff' },
+  ],
+};
+
+export const userMenu: NavigationMenu = {
+  items: [
     { icon: 'account_circle', description: 'Profile', route: 'platform/user/profile' },
     { icon: 'settings', description: 'Settings', route: 'platform/user/settings' },
     { icon: 'exit_to_app', description: 'Sign out', route: 'platform/user/log-out' },
