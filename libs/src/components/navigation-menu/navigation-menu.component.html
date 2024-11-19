@@ -1,10 +1,48 @@
 <div *ngIf="config">
-  <div 
-    class="navigation-menu-item" 
-    [ngClass]="currentSelection === item.navlink.route? 'active-navigation-menu-item': ''"
-    *ngFor="let item of config.items" 
-    (click)="onMenuItemClicked(item.navlink.route)">
-    <sff-icon *ngIf="item.icon" [config]="item.icon"></sff-icon>
-    <sff-content *ngIf="item.navlink.content" [config]="item.navlink.content"></sff-content>
+  
+  <div
+    *ngFor="let item of config.items"
+    class="navigation-menu-items-container">
+
+    <div 
+      #ParentItem
+      [ngClass]="currentSelection === item.navlink.route && !item.showChildren 
+        ? 'active-navigation-menu-item'
+        : 'navigation-menu-item'"
+      (click)="onParentItemClicked(item)">
+      <sff-icon 
+        *ngIf="item.icon" 
+        [config]="item.icon">
+      </sff-icon>
+      <sff-content 
+        *ngIf="item.navlink.content" 
+        [config]="item.navlink.content">
+      </sff-content>
+    </div>
+
+    <div 
+      #ChildrenContainer 
+      *ngIf="item.showChildren">
+      <div
+        *ngFor="let childItem of item.children"
+        >
+        <div
+          #ChildItem
+          class="child-item"
+          [ngClass]="currentSelection === childItem.navlink.route 
+            ? 'active-navigation-menu-item'
+            : 'navigation-menu-item'"
+          (click)="onChildItemClicked(childItem)">
+          <sff-icon 
+            *ngIf="childItem.icon" 
+            [config]="childItem.icon">
+          </sff-icon>
+          <sff-content 
+            *ngIf="childItem.navlink.content" 
+            [config]="childItem.navlink.content">
+          </sff-content>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

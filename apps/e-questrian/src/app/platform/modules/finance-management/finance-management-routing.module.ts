@@ -8,7 +8,7 @@ import { ReportsComponent } from './components/reports/reports.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'overview',
     component: OverviewComponent,
     title: 'e-Questrian | Finance | Overview',
   },

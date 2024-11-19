@@ -1,16 +1,28 @@
+.navigation-menu-items-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 90%;
+}
+
 .navigation-menu-item,
 .active-navigation-menu-item {
   display: flex;
   flex-direction: row;
-  height: 2rem;
+  height: 1.5rem;
   align-items: center;
   margin: 0.5rem 0;
   padding: 0.25rem 0.5rem;
   border-radius: 1.25rem;
+  max-width: 90%;
 }
 
 .navigation-menu-item:hover {
   cursor: pointer;
   transform: scale(1.03);
   font-weight: 800;
+}
+
+.child-item {
+  margin-left: 1rem;
+  width: 17rem;
 }

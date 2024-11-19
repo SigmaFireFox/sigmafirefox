@@ -19,6 +19,8 @@ export interface NavigationMenuConfig {
 export interface NavigationMenuConfigItem {
     icon: IconConfig;
     navlink: NavlinkConfig
+    showChildren: boolean;
+    children: NavigationMenuConfigItem[]
 }
 
 
