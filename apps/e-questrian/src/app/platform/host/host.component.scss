@@ -31,9 +31,9 @@
       }
     }
 
-    .closed-menu {
+    .open-menu-button {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       justify-content: center;
       height: 1.5rem;
       width: 1.5rem;
@@ -44,6 +44,26 @@
       :hover {
         transform: scale(1.03);
         font-weight: 800;
+      }
+    }
+
+    .closed-menu {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: flex-start;
+      height: calc(100%);
+      width: 3rem;
+      border-radius: 0 5px 5px 0;
+      cursor: pointer;
+
+      :hover {
+        transform: scale(1.03);
+        font-weight: 800;
+      }
+
+      .closed-menu-button {
+        height: 1.5rem;
       }
     }
 

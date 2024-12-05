@@ -15,7 +15,7 @@
         [config]="item.icon">
       </sff-icon>
       <sff-content 
-        *ngIf="item.navlink.content" 
+        *ngIf="item.navlink.content && !iconsOnly" 
         [config]="item.navlink.content">
       </sff-content>
     </div>

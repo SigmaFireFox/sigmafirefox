@@ -13,9 +13,22 @@
       </sff-navigation-menu>
     </mat-drawer>
 
-    <div class="closed-menu" mat-button (click)="drawer.toggle()">
-      <mat-icon *ngIf="!drawer.opened">menu</mat-icon>
-      <mat-icon *ngIf="drawer.opened">close</mat-icon>
+    <div 
+      *ngIf="drawer.opened" 
+      class="open-menu-button" 
+      (click)="drawer.toggle()">
+      <mat-icon >close</mat-icon>
+    </div>
+
+    <div 
+      *ngIf="!drawer.opened" 
+      class="closed-menu"
+      (click)="drawer.toggle()">
+      <sff-navigation-menu 
+        *ngIf="!drawer.opened" 
+        [menu]="modulesMenu"
+        [iconsOnly]="true">
+      </sff-navigation-menu>
     </div>
 
     <div class="content-window">

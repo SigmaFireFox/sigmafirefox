@@ -1,7 +1,8 @@
 .navigation-menu-items-container {
   display: flex;
   flex-direction: column;
-  max-width: 90%;
+  width: 200px;
+  min-width: fit-content;
 }
 
 .navigation-menu-item,
@@ -14,6 +15,10 @@
   padding: 0.25rem 0.5rem;
   border-radius: 1.25rem;
   max-width: 90%;
+}
+
+.active-navigation-menu-item {
+  margin-right: 16px;
 }
 
 .navigation-menu-item:hover {

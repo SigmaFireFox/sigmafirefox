@@ -22,6 +22,7 @@ import { NavigationService } from '../../services/navigation/navigation.service'
 })
 export class NavigationMenuComponent implements OnInit {
   @Input() menu: NavigationMenu | undefined;
+  @Input() iconsOnly = false
 
   config: NavigationMenuConfig = { items: [] };
   currentSelection = '';
@@ -90,7 +91,6 @@ export class NavigationMenuComponent implements OnInit {
   }
 
   onChildItemClicked(item: NavigationMenuConfigItem) {
-    console.log(item)
     this.currentSelection = item.navlink.route;
     this.nav.navTo({
       relationship: RouteRelationshipType.Absolute,
