@@ -2,13 +2,18 @@
 <div class="module-window">
   <mat-drawer-container class="draw-container" autosize>
     
-    <mat-drawer #drawer class="sidenav" mode="side" opened="true">
-      <sff-navigation-menu [menu]="modulesMenu"></sff-navigation-menu>
-      <div class="sidenav-spacer"></div>
-      <sff-navigation-menu class="user-menu" [menu]="userMenu"></sff-navigation-menu>
+    <mat-drawer #drawer class="open-menu" mode="side" opened="true">
+      <sff-navigation-menu 
+        class='open-menu-top' 
+        [menu]="modulesMenu">
+      </sff-navigation-menu>
+      <sff-navigation-menu 
+        class='open-menu-bottom' 
+        [menu]="userMenu">
+      </sff-navigation-menu>
     </mat-drawer>
 
-    <div class="sidenav-button" mat-button (click)="drawer.toggle()">
+    <div class="closed-menu" mat-button (click)="drawer.toggle()">
       <mat-icon *ngIf="!drawer.opened">menu</mat-icon>
       <mat-icon *ngIf="drawer.opened">close</mat-icon>
     </div>

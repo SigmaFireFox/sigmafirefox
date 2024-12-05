@@ -7,26 +7,31 @@
   .draw-container {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: -webkit-fill-available;
 
-    .sidenav {
+    .open-menu {
+      display: flex;
       padding: 20px;
+      padding-right: 0;
       width: fit-content;
       min-width: 15rem;
       border-radius: 0;
-      display: flex;
       height: 100%;
 
-      .user-menu {
+      &-top {
+        display: flex;
+      }
+
+      &-bottom {
+        position: absolute;
+        bottom: 16px;
         border-top: 2px solid black;
         padding-top: 0.5rem;
-        position: absolute;
-        bottom: 1rem;
-        width: calc(100% - 40px)
+        width: calc(100% - 40px);
       }
     }
 
-    .sidenav-button {
+    .closed-menu {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -35,11 +40,11 @@
       padding: 0.5rem;
       border-radius: 0 5px 5px 0;
       cursor: pointer;
-    }
 
-    .sidenav-button:hover {
-      transform: scale(1.03);
-      font-weight: 800;
+      :hover {
+        transform: scale(1.03);
+        font-weight: 800;
+      }
     }
 
     .content-window {
@@ -52,6 +57,7 @@
     }
   }
 }
+
 
 
 
