@@ -2,7 +2,7 @@ import {  NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HostComponent } from './host/host.component';
 import { UserManagementModule } from './modules/user-management/user-management.module';
-import { DashboardComponent } from './host/dashboard/dashboard.component';
+import { DashboardComponent } from './modules/dashboard/dashboard.component';
 import { ClientManagementComponent } from './modules/client-management/components/client-management/client-management.component';
 import { AppointmentsComponent } from './modules/client-management/components/appointments/appointments.component';
 import { LiveriesComponent } from './modules/operations-management/components/liveries/liveries.component';
