@@ -1,0 +1,85 @@
+.module-window {
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 4rem);
+  padding: 4rem 0 0 0;
+
+  .draw-container {
+    display: flex;
+    flex-direction: column;
+    height: -webkit-fill-available;
+
+    .open-menu {
+      display: flex;
+      padding: 20px;
+      padding-right: 0;
+      padding-top: 0;
+      width: fit-content;
+      border-radius: 0;
+      height: 100%;
+
+      &-button {
+        display: flex;
+        justify-content: flex-end;
+        width: calc(100% - 1rem);
+        padding: 0.5rem;
+        border-radius: 0 5px 5px 0;
+        cursor: pointer;
+  
+        :hover {
+          transform: scale(1.03);
+          font-weight: 800;
+        }
+
+      &-top {
+        display: flex;
+      }
+
+      &-bottom {
+        position: absolute;
+        bottom: 16px;
+        border-top: 2px solid black;
+        padding-top: 0.5rem;
+        width: calc(100% - 40px);
+      }
+    }
+
+
+    }
+
+    .closed-menu {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      height: calc(100%);
+      width: 3rem;
+      cursor: pointer;
+
+      :hover {
+        font-weight: 800;
+      }
+
+      &-button {
+        display: flex;
+        justify-content: center;
+        width: calc(100% - 1rem);
+        padding: 0.5rem;
+        border-radius: 0 5px 5px 0;
+        cursor: pointer;      }
+    }
+
+    .view-port {
+      display: flex;
+      height: 100%;
+      align-items: center;
+      justify-content: center;
+      margin-left: 2.5rem;
+      margin-top: -2.5rem;
+    }
+  }
+}
+
+
+
+
