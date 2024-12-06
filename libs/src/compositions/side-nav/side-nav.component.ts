@@ -14,5 +14,5 @@ import { RouterModule } from '@angular/router';
   styleUrl: './side-nav.component.scss',
 })
 export class SideNavComponent {
-  @Input() sideNavConfig: SideNavConfig | undefined
+  @Input() config: SideNavConfig | undefined
 }
