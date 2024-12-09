@@ -2,8 +2,9 @@
   
   <div
     *ngFor="let item of config.items"
-    class="navigation-menu-items-container">
-
+    class="navigation-menu-items-container"
+    [ngStyle]="iconsOnly ? {'width': 'auto'} : {}"
+    >
     <div 
       #ParentItem
       [ngClass]="currentSelection === item.navlink.route && item.children.length === 0  
