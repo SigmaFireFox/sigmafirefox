@@ -1,31 +1,27 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NavbarComponent, NavigationMenuComponent } from '@sigmafirefox/components';
+import { NavbarComponent } from '@sigmafirefox/components';
 import { modulesMenu, navbarConfig, userMenu } from './host.config';
-import { RouterModule } from '@angular/router';
 import { AuthenticationService } from '@sigmafirefox/services';
 import { UserProfile } from 'firebase/auth';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatIcon } from '@angular/material/icon';
+import { SideNavComponent, SideNavConfig } from '@sigmafirefox/compositions';
 
 @Component({
   selector: 'app-host',
   standalone: true,
   imports: [
     CommonModule,
-    RouterModule,
-    NavbarComponent,
-    MatSidenavModule,
-    MatIcon,
-    NavigationMenuComponent
+    SideNavComponent,
+    NavbarComponent
   ],
   templateUrl: './host.component.html',
-  styleUrl: './host.component.scss',
 })
 export class HostComponent implements OnInit {
   navbarConfig = navbarConfig;
-  modulesMenu = modulesMenu;
-  userMenu = userMenu;
+  sideNavConfig: SideNavConfig = {
+    modulesMenu: modulesMenu,
+    userMenu: userMenu
+  }
 
   constructor(private auth: AuthenticationService) {}
 
