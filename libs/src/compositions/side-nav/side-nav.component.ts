@@ -9,10 +9,22 @@ import { RouterModule } from '@angular/router';
 @Component({
   selector: 'sff-side-nav',
   standalone: true,
-  imports: [CommonModule, RouterModule, MatSidenavModule, MatIcon, NavigationMenuComponent],
+  imports: [
+    CommonModule,
+    RouterModule,
+    MatSidenavModule,
+    MatIcon,
+    NavigationMenuComponent,
+  ],
   templateUrl: './side-nav.component.html',
   styleUrl: './side-nav.component.scss',
 })
 export class SideNavComponent {
-  @Input() config: SideNavConfig | undefined
+  @Input() config: SideNavConfig | undefined;
+
+  drawerOpen = true;
+
+  toggleDraw() {
+    this.drawerOpen = !this.drawerOpen;
+  }
 }

@@ -4,10 +4,10 @@
     <mat-drawer #drawer 
       class="open-menu" 
       mode="side" 
-      opened="true">
+      [opened]="drawerOpen">
       <div 
         class="open-menu-button" 
-        (click)="drawer.toggle()">
+        (click)="toggleDraw()">
       <mat-icon >arrow_circle_left</mat-icon>
       </div>
       <sff-navigation-menu 
@@ -25,13 +25,14 @@
       class="closed-menu">
       <div 
         class="closed-menu-button" 
-        (click)="drawer.toggle()">
+        (click)="toggleDraw()">
         <mat-icon >arrow_circle_right</mat-icon>
       </div>
       <sff-navigation-menu 
         *ngIf="!drawer.opened" 
         [menu]="config.modulesMenu"
-        [iconsOnly]="true">
+        [iconsOnly]="true"
+        (menuExpanded)="drawerOpen = true">
       </sff-navigation-menu>
     </div>
 
