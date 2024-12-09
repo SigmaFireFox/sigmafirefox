@@ -86,8 +86,13 @@ export class NavigationMenuComponent implements OnInit {
       relationship: RouteRelationshipType.Absolute,
       route: item.navlink.route,
     });
-    this.closeAllParentItems();
-    item.showChildren = true;
+    
+    if (item.showChildren) {
+      this.closeAllParentItems();
+    } else {
+      this.closeAllParentItems();
+      item.showChildren = true;
+    }
   }
 
   onChildItemClicked(item: NavigationMenuConfigItem) {
