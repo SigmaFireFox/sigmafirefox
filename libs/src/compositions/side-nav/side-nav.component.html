@@ -8,7 +8,7 @@
       <div 
         class="open-menu-button" 
         (click)="toggleDraw()">
-      <mat-icon >arrow_circle_left</mat-icon>
+        <mat-icon >arrow_circle_left</mat-icon>
       </div>
       <sff-navigation-menu 
         class='open-menu-top' 
@@ -29,8 +29,16 @@
         <mat-icon >arrow_circle_right</mat-icon>
       </div>
       <sff-navigation-menu 
-        *ngIf="!drawer.opened" 
+        *ngIf="!drawer.opened"
+        class='closed-menu-top' 
         [menu]="config.modulesMenu"
+        [iconsOnly]="true"
+        (menuExpanded)="drawerOpen = true">
+      </sff-navigation-menu>
+      <sff-navigation-menu
+        class='closed-menu-bottom' 
+        *ngIf="!drawer.opened" 
+        [menu]="config.userMenu"
         [iconsOnly]="true"
         (menuExpanded)="drawerOpen = true">
       </sff-navigation-menu>
