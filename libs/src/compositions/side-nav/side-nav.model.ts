@@ -1,6 +1,6 @@
-import { NavigationMenu } from '../../components/navigation-menu/navigation-menu.model';
+import { NavigationMenuItem } from '../../components/navigation-menu/navigation-menu.model';
 
 export interface SideNavConfig {
-  modulesMenu: NavigationMenu;
-  userMenu: NavigationMenu;
+  modulesMenu: NavigationMenuItem[];
+  userMenu: NavigationMenuItem[];
 }

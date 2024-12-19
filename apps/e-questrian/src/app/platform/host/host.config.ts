@@ -1,4 +1,4 @@
-import { NavbarConfig, NavigationMenu } from '@sigmafirefox/components';
+import { NavbarConfig, NavigationMenuItem } from '@sigmafirefox/components';
 import { RouteRelationshipType } from '@sigmafirefox/services';
 import { HeaderFontSize } from '@sigmafirefox/widgets';
 
@@ -26,53 +26,65 @@ export const navbarConfig: NavbarConfig = {
   },
 };
 
-export const modulesMenu: NavigationMenu = {
-  items: [
-    { icon: 'dashboard', description: 'Dashboard', route: 'platform' },
-    { icon: 'event', description: 'Appointments', route: 'platform/appointments' },
-    { icon: 'people', description: 'Clients', route: 'platform/clients' },
-    {
-      icon: 'account_balance',
-      description: 'Finance',
-      route: 'platform/finance',
-      children: [
-        {
-          icon: 'visibility',
-          description: 'Overview',
-          route: 'platform/finance/overview',
-        },
-        {
-          icon: 'trending_up',
-          description: 'Sales and Debtors',
-          route: 'platform/finance/sales',
-        },
-        {
-          icon: 'trending_down',
-          description: 'Expenses and Creditors',
-          route: 'platform/finance/expenses',
-        },
-        {
-          icon: 'payment',
-          description: 'Payments and Receipts',
-          route: 'platform/finance/cash-book',
-        },
-        {
-          icon: 'insert_chart',
-          description: 'Reports',
-          route: 'platform/finance/reports',
-        },
-      ],
-    },
-    { icon: 'hotel', description: 'Liveries', route: 'platform/liveries' },
-    { icon: 'pets', description: 'Livestock', route: 'platform/livestock' },
-    { icon: 'group', description: 'Staff', route: 'platform/dashboard/staff' },
-  ],
-};
+export const modulesMenu: NavigationMenuItem[] = [
+  { icon: 'dashboard', description: 'Dashboard', route: 'platform' },
+  {
+    icon: 'event',
+    description: 'Appointments',
+    route: 'platform/appointments',
+  },
+  { icon: 'people', description: 'Clients', route: 'platform/clients' },
+  {
+    icon: 'account_balance',
+    description: 'Finance',
+    route: 'platform/finance',
+    children: [
+      {
+        icon: 'visibility',
+        description: 'Overview',
+        route: 'platform/finance/overview',
+      },
+      {
+        icon: 'trending_up',
+        description: 'Sales and Debtors',
+        route: 'platform/finance/sales',
+      },
+      {
+        icon: 'trending_down',
+        description: 'Expenses and Creditors',
+        route: 'platform/finance/expenses',
+      },
+      {
+        icon: 'payment',
+        description: 'Payments and Receipts',
+        route: 'platform/finance/cash-book',
+      },
+      {
+        icon: 'insert_chart',
+        description: 'Reports',
+        route: 'platform/finance/reports',
+      },
+    ],
+  },
+  { icon: 'hotel', description: 'Liveries', route: 'platform/liveries' },
+  { icon: 'pets', description: 'Livestock', route: 'platform/livestock' },
+  { icon: 'group', description: 'Staff', route: 'platform/dashboard/staff' },
+];
 
-export const userMenu: NavigationMenu = {
-  items: [
-    { icon: 'account_circle', description: 'Profile', route: 'platform/user/profile' },
-    { icon: 'settings', description: 'Settings', route: 'platform/user/settings' },
-    { icon: 'exit_to_app', description: 'Sign out', route: 'platform/user/log-out' },
-  ],
-};
+export const userMenu: NavigationMenuItem[] = [
+  {
+    icon: 'account_circle',
+    description: 'Profile',
+    route: 'platform/user/profile',
+  },
+  {
+    icon: 'settings',
+    description: 'Settings',
+    route: 'platform/user/settings',
+  },
+  {
+    icon: 'exit_to_app',
+    description: 'Sign out',
+    route: 'platform/user/log-out',
+  },
+];
