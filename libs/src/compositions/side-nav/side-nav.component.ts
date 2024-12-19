@@ -6,6 +6,8 @@ import { MatIcon } from '@angular/material/icon';
 import { SideNavConfig } from './side-nav.model';
 import { RouterModule } from '@angular/router';
 import { NavigationMenuConfig, NavigationMenuItem } from '../../components/navigation-menu/navigation-menu.model';
+import { NavigationService } from '../../services/navigation/navigation.service';
+import { RouteRelationshipType } from '../../services/navigation/navigation.model';
 
 @Component({
   selector: 'sff-side-nav',
@@ -29,6 +31,9 @@ export class SideNavComponent implements OnInit {
   userMenuOpenConfig: NavigationMenuConfig | undefined;
   userMenuClosedConfig: NavigationMenuConfig | undefined;
 
+  constructor(private nav: NavigationService) {}
+  
+
   ngOnInit() {
     this.setNavigationMenuConfigs();
   }
@@ -39,6 +44,10 @@ export class SideNavComponent implements OnInit {
 
   onMenuItemClicked(menuItem: NavigationMenuItem) {
     console.log(menuItem)
+    this.nav.navTo({
+      relationship: RouteRelationshipType.Absolute,
+      route: menuItem.navlink.route,
+    });
   }
 
 

@@ -10,7 +10,6 @@ import { ContentComponent } from '../../widgets/content/content.component';
 import { ContentFontSize } from '../../widgets/content/content.model';
 import { IconSize } from '../../widgets/icon/icon.model';
 import { RouteRelationshipType } from '../../services/navigation/navigation.model';
-import { NavigationService } from '../../services/navigation/navigation.service';
 
 @Component({
   selector: 'sff-navigation-menu',
@@ -27,7 +26,6 @@ export class NavigationMenuComponent implements OnInit {
   menuItems: NavigationMenuItem[] = [];
   currentSelection = '';
 
-  constructor(private nav: NavigationService) {}
 
   ngOnInit() {
     this.setMenuItems();
@@ -84,30 +82,20 @@ export class NavigationMenuComponent implements OnInit {
     return childrenMenuItems;
   }
 
-  onParentItemClicked(item: NavigationMenuItem) {
-    this.currentSelection = item.navlink.route;
-    this.nav.navTo({
-      relationship: RouteRelationshipType.Absolute,
-      route: item.navlink.route,
-    });
-
-    const showChildren = item.showChildren;
-    this.closeAllParentItems();
-    item.showChildren = !showChildren;
-
-    this.menuExpanded.next();
-  }
-
-  onChildItemClicked(item: NavigationMenuItem) {
-    this.currentSelection = item.navlink.route;
-    this.nav.navTo({
-      relationship: RouteRelationshipType.Absolute,
-      route: item.navlink.route,
-    });
-  }
-
   onItemClicked(menuItem: NavigationMenuItem) {
+    if (menuItem.children.length > 0) 
+      this.expandMenu(menuItem)
+    else {
+      this.currentSelection = menuItem.navlink.route;
+    }
+
     this.menuItemClicked.emit(menuItem)
+  }
+
+  private expandMenu(menuItem: NavigationMenuItem){
+    const expandMenu = !menuItem.showChildren
+    this.closeAllParentItems()
+    menuItem.showChildren = expandMenu
   }
 
   private closeAllParentItems() {

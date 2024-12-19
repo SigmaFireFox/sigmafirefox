@@ -10,7 +10,7 @@
       [ngClass]="currentSelection === menuItem.navlink.route && menuItem.children.length === 0  
         ? 'active-navigation-menu-item'
         : 'navigation-menu-item'"
-      (click)="onParentItemClicked(menuItem); onItemClicked(menuItem)">
+      (click)="onItemClicked(menuItem)">
       <sff-icon 
         *ngIf="menuItem.icon" 
         [config]="menuItem.icon">
@@ -33,7 +33,7 @@
           [ngClass]="currentSelection === childItem.navlink.route 
             ? 'active-navigation-menu-item'
             : 'navigation-menu-item'"
-          (click)="onChildItemClicked(childItem); onItemClicked(childItem)">
+          (click)="onItemClicked(childItem)">
           <sff-icon 
             *ngIf="childItem.icon" 
             [config]="childItem.icon">
