@@ -22,6 +22,7 @@ import { NavigationService } from '../../services/navigation/navigation.service'
 export class NavigationMenuComponent implements OnInit {
   @Input() config: NavigationMenuConfig | undefined;
   @Output() menuExpanded: EventEmitter<void> = new EventEmitter();
+  @Output() menuItemClicked: EventEmitter<NavigationMenuItem> = new EventEmitter();
 
   menuItems: NavigationMenuItem[] = [];
   currentSelection = '';
@@ -103,6 +104,10 @@ export class NavigationMenuComponent implements OnInit {
       relationship: RouteRelationshipType.Absolute,
       route: item.navlink.route,
     });
+  }
+
+  onItemClicked(menuItem: NavigationMenuItem) {
+    this.menuItemClicked.emit(menuItem)
   }
 
   private closeAllParentItems() {

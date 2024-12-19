@@ -5,7 +5,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIcon } from '@angular/material/icon';
 import { SideNavConfig } from './side-nav.model';
 import { RouterModule } from '@angular/router';
-import { NavigationMenuConfig } from '../../components/navigation-menu/navigation-menu.model';
+import { NavigationMenuConfig, NavigationMenuItem } from '../../components/navigation-menu/navigation-menu.model';
 
 @Component({
   selector: 'sff-side-nav',
@@ -36,6 +36,11 @@ export class SideNavComponent implements OnInit {
   toggleDraw() {
     this.drawerOpen = !this.drawerOpen;
   }
+
+  onMenuItemClicked(menuItem: NavigationMenuItem) {
+    console.log(menuItem)
+  }
+
 
   private setNavigationMenuConfigs() {
     if (!this.config) return;

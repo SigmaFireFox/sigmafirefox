@@ -1,4 +1,7 @@
-import { NavbarConfig, NavigationMenuItemConfig } from '@sigmafirefox/components';
+import {
+  NavbarConfig,
+  NavigationMenuItemConfig,
+} from '@sigmafirefox/components';
 import { RouteRelationshipType } from '@sigmafirefox/services';
 import { HeaderFontSize } from '@sigmafirefox/widgets';
 
@@ -68,7 +71,7 @@ export const modulesMenuConfig: NavigationMenuItemConfig[] = [
   },
   { icon: 'hotel', description: 'Liveries', route: 'platform/liveries' },
   { icon: 'pets', description: 'Livestock', route: 'platform/livestock' },
-  { icon: 'group', description: 'Staff', route: 'platform/dashboard/staff' },
+  { icon: 'group', description: 'Staff', route: 'platform/staff' },
 ];
 
 export const userMenuConfig: NavigationMenuItemConfig[] = [
