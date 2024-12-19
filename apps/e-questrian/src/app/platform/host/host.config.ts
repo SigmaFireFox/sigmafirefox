@@ -1,4 +1,4 @@
-import { NavbarConfig, NavigationMenuItem } from '@sigmafirefox/components';
+import { NavbarConfig, NavigationMenuItemConfig } from '@sigmafirefox/components';
 import { RouteRelationshipType } from '@sigmafirefox/services';
 import { HeaderFontSize } from '@sigmafirefox/widgets';
 
@@ -26,7 +26,7 @@ export const navbarConfig: NavbarConfig = {
   },
 };
 
-export const modulesMenu: NavigationMenuItem[] = [
+export const modulesMenuConfig: NavigationMenuItemConfig[] = [
   { icon: 'dashboard', description: 'Dashboard', route: 'platform' },
   {
     icon: 'event',
@@ -71,7 +71,7 @@ export const modulesMenu: NavigationMenuItem[] = [
   { icon: 'group', description: 'Staff', route: 'platform/dashboard/staff' },
 ];
 
-export const userMenu: NavigationMenuItem[] = [
+export const userMenuConfig: NavigationMenuItemConfig[] = [
   {
     icon: 'account_circle',
     description: 'Profile',

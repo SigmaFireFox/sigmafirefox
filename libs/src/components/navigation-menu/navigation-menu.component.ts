@@ -1,8 +1,9 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
-  NavigationMenuItem,
+  NavigationMenuConfig,
   NavigationMenuItemConfig,
+  NavigationMenuItem,
 } from './navigation-menu.model';
 import { IconComponent } from '../../widgets/icon/icon.component';
 import { ContentComponent } from '../../widgets/content/content.component';
@@ -19,56 +20,59 @@ import { NavigationService } from '../../services/navigation/navigation.service'
   styleUrl: './navigation-menu.component.scss',
 })
 export class NavigationMenuComponent implements OnInit {
-  @Input() menu: NavigationMenuItem[] | undefined;
-  @Input() iconsOnly = false;
+  @Input() config: NavigationMenuConfig | undefined;
   @Output() menuExpanded: EventEmitter<void> = new EventEmitter();
 
-  config: NavigationMenuItemConfig[] = [];
+  menuItems: NavigationMenuItem[] = [];
   currentSelection = '';
 
   constructor(private nav: NavigationService) {}
 
   ngOnInit() {
-    this.setConfigs();
+    this.setMenuItems();
   }
 
-  private setConfigs() {
-    if (!this.menu || !this.config) return;
-    this.menu.forEach((item: NavigationMenuItem) => {
-      this.config.push({
+  private setMenuItems() {
+    if (!this.config) return;
+    this.config.menuItems.forEach((itemConfig: NavigationMenuItemConfig) => {
+      this.menuItems.push({
         icon: {
           size: IconSize.Small,
-          name: item.icon,
+          name: itemConfig.icon,
         },
         navlink: {
           relationship: RouteRelationshipType.Absolute,
-          route: item.route,
+          route: itemConfig.route,
           content: {
             size: ContentFontSize.Medium,
-            content: [item.description],
+            content: [itemConfig.description],
           },
         },
         showChildren: false,
-        children: item.children ? this.setChildren(item) : [],
+        children: itemConfig.children
+          ? this.setChildrenFromItemConfig(itemConfig)
+          : [],
       });
     });
   }
 
-  private setChildren(item: NavigationMenuItem): NavigationMenuItemConfig[] {
-    if (!item.children) return [];
-    const childrenConfig: NavigationMenuItemConfig[] = [];
-    item.children.forEach((item: NavigationMenuItem) => {
-      childrenConfig.push({
+  private setChildrenFromItemConfig(
+    itemConfig: NavigationMenuItemConfig
+  ): NavigationMenuItem[] {
+    if (!itemConfig.children) return [];
+    const childrenMenuItems: NavigationMenuItem[] = [];
+    itemConfig.children.forEach((childItemConfig: NavigationMenuItemConfig) => {
+      childrenMenuItems.push({
         icon: {
           size: IconSize.Small,
-          name: item.icon,
+          name: childItemConfig.icon,
         },
         navlink: {
           relationship: RouteRelationshipType.Absolute,
-          route: item.route,
+          route: childItemConfig.route,
           content: {
             size: ContentFontSize.Medium,
-            content: [item.description],
+            content: [childItemConfig.description],
           },
         },
         showChildren: false,
@@ -76,10 +80,10 @@ export class NavigationMenuComponent implements OnInit {
       });
     });
 
-    return childrenConfig;
+    return childrenMenuItems;
   }
 
-  onParentItemClicked(item: NavigationMenuItemConfig) {
+  onParentItemClicked(item: NavigationMenuItem) {
     this.currentSelection = item.navlink.route;
     this.nav.navTo({
       relationship: RouteRelationshipType.Absolute,
@@ -93,7 +97,7 @@ export class NavigationMenuComponent implements OnInit {
     this.menuExpanded.next();
   }
 
-  onChildItemClicked(item: NavigationMenuItemConfig) {
+  onChildItemClicked(item: NavigationMenuItem) {
     this.currentSelection = item.navlink.route;
     this.nav.navTo({
       relationship: RouteRelationshipType.Absolute,
@@ -102,7 +106,7 @@ export class NavigationMenuComponent implements OnInit {
   }
 
   private closeAllParentItems() {
-    this.config.forEach((item) => {
+    this.menuItems.forEach((item) => {
       item.showChildren = false;
     });
   }

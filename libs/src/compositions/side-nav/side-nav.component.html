@@ -12,11 +12,11 @@
       </div>
       <sff-navigation-menu 
         class='open-menu-top' 
-        [menu]="config.modulesMenu">
+        [config]="modulesMenuOpenConfig">
       </sff-navigation-menu>
       <sff-navigation-menu 
         class='open-menu-bottom' 
-        [menu]="config.userMenu">
+        [config]="userMenuOpenConfig">
       </sff-navigation-menu>
     </mat-drawer>
 
@@ -31,15 +31,13 @@
       <sff-navigation-menu 
         *ngIf="!drawer.opened"
         class='closed-menu-top' 
-        [menu]="config.modulesMenu"
-        [iconsOnly]="true"
+        [config]="modulesMenuClosedConfig"
         (menuExpanded)="drawerOpen = true">
       </sff-navigation-menu>
       <sff-navigation-menu
         class='closed-menu-bottom' 
         *ngIf="!drawer.opened" 
-        [menu]="config.userMenu"
-        [iconsOnly]="true"
+        [config]="userMenuClosedConfig"
         (menuExpanded)="drawerOpen = true">
       </sff-navigation-menu>
     </div>

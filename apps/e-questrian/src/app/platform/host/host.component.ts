@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavbarComponent } from '@sigmafirefox/components';
-import { modulesMenu, navbarConfig, userMenu } from './host.config';
+import { modulesMenuConfig, navbarConfig, userMenuConfig } from './host.config';
 import { AuthenticationService } from '@sigmafirefox/services';
 import { UserProfile } from 'firebase/auth';
 import { SideNavComponent, SideNavConfig } from '@sigmafirefox/compositions';
@@ -19,8 +19,8 @@ import { SideNavComponent, SideNavConfig } from '@sigmafirefox/compositions';
 export class HostComponent implements OnInit {
   navbarConfig = navbarConfig;
   sideNavConfig: SideNavConfig = {
-    modulesMenu: modulesMenu,
-    userMenu: userMenu
+    modulesMenuConfig: modulesMenuConfig,
+    userMenuConfig: userMenuConfig
   }
 
   constructor(private auth: AuthenticationService) {}

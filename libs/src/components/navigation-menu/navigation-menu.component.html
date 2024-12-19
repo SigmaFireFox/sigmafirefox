@@ -1,31 +1,31 @@
 <div *ngIf="config">
   
   <div
-    *ngFor="let item of config"
+    *ngFor="let menuItem of menuItems"
     class="navigation-menu-items-container"
-    [ngStyle]="iconsOnly ? {'width': 'auto'} : {}"
+    [ngStyle]="config.isIconsOnly ? {'width': 'auto'} : {}"
     >
     <div 
       #ParentItem
-      [ngClass]="currentSelection === item.navlink.route && item.children.length === 0  
+      [ngClass]="currentSelection === menuItem.navlink.route && menuItem.children.length === 0  
         ? 'active-navigation-menu-item'
         : 'navigation-menu-item'"
-      (click)="onParentItemClicked(item)">
+      (click)="onParentItemClicked(menuItem)">
       <sff-icon 
-        *ngIf="item.icon" 
-        [config]="item.icon">
+        *ngIf="menuItem.icon" 
+        [config]="menuItem.icon">
       </sff-icon>
       <sff-content 
-        *ngIf="item.navlink.content && !iconsOnly" 
-        [config]="item.navlink.content">
+        *ngIf="menuItem.navlink.content && !config.isIconsOnly" 
+        [config]="menuItem.navlink.content">
       </sff-content>
     </div>
 
     <div 
       #ChildrenContainer 
-      *ngIf="item.showChildren">
+      *ngIf="menuItem.showChildren">
       <div
-        *ngFor="let childItem of item.children"
+        *ngFor="let childItem of menuItem.children"
         >
         <div
           #ChildItem
