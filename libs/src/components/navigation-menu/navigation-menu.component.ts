@@ -10,7 +10,8 @@ import { ContentComponent } from '../../widgets/content/content.component';
 import { ContentFontSize } from '../../widgets/content/content.model';
 import { IconSize } from '../../widgets/icon/icon.model';
 import { RouteRelationshipType } from '../../services/navigation/navigation.model';
-
+// eslint-disable-next-line @nx/enforce-module-boundaries
+import { SideNavService } from 'libs/src/compositions/side-nav/side-nav.service';
 @Component({
   selector: 'sff-navigation-menu',
   standalone: true,
@@ -25,9 +26,11 @@ export class NavigationMenuComponent implements OnInit {
   menuItems: NavigationMenuItem[] = [];
   currentSelection = '';
 
+  constructor(private sideNavService: SideNavService){}
 
   ngOnInit() {
     this.setMenuItems();
+    this.expandPreviouslySelectedGroupParent()
   }
 
   private setMenuItems() {
@@ -79,6 +82,13 @@ export class NavigationMenuComponent implements OnInit {
     });
 
     return childrenMenuItems;
+  }
+
+  private expandPreviouslySelectedGroupParent(){
+    this.menuItems.forEach(menuItem => {
+      if (menuItem.navlink.route === this.sideNavService.currentExtendedGroupParent)
+        this.expandMenu(menuItem)
+    })
   }
 
   onItemClicked(menuItem: NavigationMenuItem) {

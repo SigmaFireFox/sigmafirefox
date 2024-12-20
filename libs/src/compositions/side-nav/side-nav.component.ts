@@ -5,9 +5,13 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIcon } from '@angular/material/icon';
 import { SideNavConfig } from './side-nav.model';
 import { RouterModule } from '@angular/router';
-import { NavigationMenuConfig, NavigationMenuItem } from '../../components/navigation-menu/navigation-menu.model';
+import {
+  NavigationMenuConfig,
+  NavigationMenuItem,
+} from '../../components/navigation-menu/navigation-menu.model';
 import { NavigationService } from '../../services/navigation/navigation.service';
 import { RouteRelationshipType } from '../../services/navigation/navigation.model';
+import { SideNavService } from './side-nav.service';
 
 @Component({
   selector: 'sff-side-nav',
@@ -19,6 +23,7 @@ import { RouteRelationshipType } from '../../services/navigation/navigation.mode
     MatIcon,
     NavigationMenuComponent,
   ],
+  providers: [SideNavService],
   templateUrl: './side-nav.component.html',
   styleUrl: './side-nav.component.scss',
 })
@@ -31,8 +36,10 @@ export class SideNavComponent implements OnInit {
   userMenuOpenConfig: NavigationMenuConfig | undefined;
   userMenuClosedConfig: NavigationMenuConfig | undefined;
 
-  constructor(private nav: NavigationService) {}
-  
+  constructor(
+    private sideNavService: SideNavService,
+    private nav: NavigationService
+  ) {}
 
   ngOnInit() {
     this.setNavigationMenuConfigs();
@@ -40,18 +47,20 @@ export class SideNavComponent implements OnInit {
 
   toggleDraw() {
     this.drawerOpen = !this.drawerOpen;
+    if (!this.drawerOpen) this.sideNavService.currentExtendedGroupParent = ''
   }
 
   onMenuItemClicked(menuItem: NavigationMenuItem) {
-    if (menuItem.children.length > 0)
-      this.drawerOpen = true
+    if (menuItem.children.length > 0) {
+      this.drawerOpen = true;
+      this.sideNavService.onMenuGroupParentClicked(menuItem.navlink.route)
+    }
     else
       this.nav.navTo({
         relationship: RouteRelationshipType.Absolute,
         route: menuItem.navlink.route,
       });
   }
-
 
   private setNavigationMenuConfigs() {
     if (!this.config) return;

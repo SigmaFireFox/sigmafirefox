@@ -10,12 +10,14 @@
         (click)="toggleDraw()">
         <mat-icon >arrow_circle_left</mat-icon>
       </div>
-      <sff-navigation-menu 
+      <sff-navigation-menu
+        *ngIf="drawer.opened"
         class='open-menu-top' 
         [config]="modulesMenuOpenConfig"
         (menuItemClicked)="onMenuItemClicked($event)">
       </sff-navigation-menu>
       <sff-navigation-menu 
+        *ngIf="drawer.opened"
         class='open-menu-bottom' 
         [config]="userMenuOpenConfig"
         (menuItemClicked)="onMenuItemClicked($event)">
