@@ -43,11 +43,13 @@ export class SideNavComponent implements OnInit {
   }
 
   onMenuItemClicked(menuItem: NavigationMenuItem) {
-    console.log(menuItem)
-    this.nav.navTo({
-      relationship: RouteRelationshipType.Absolute,
-      route: menuItem.navlink.route,
-    });
+    if (menuItem.children.length > 0)
+      this.drawerOpen = true
+    else
+      this.nav.navTo({
+        relationship: RouteRelationshipType.Absolute,
+        route: menuItem.navlink.route,
+      });
   }
 
 

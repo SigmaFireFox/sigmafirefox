@@ -34,14 +34,12 @@
         *ngIf="!drawer.opened"
         class='closed-menu-top' 
         [config]="modulesMenuClosedConfig"
-        (menuExpanded)="drawerOpen = true"
         (menuItemClicked)="onMenuItemClicked($event)">
       </sff-navigation-menu>
       <sff-navigation-menu
         class='closed-menu-bottom' 
         *ngIf="!drawer.opened" 
         [config]="userMenuClosedConfig"
-        (menuExpanded)="drawerOpen = true"
         (menuItemClicked)="onMenuItemClicked($event)">
       </sff-navigation-menu>
     </div>

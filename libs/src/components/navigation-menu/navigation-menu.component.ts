@@ -20,7 +20,6 @@ import { RouteRelationshipType } from '../../services/navigation/navigation.mode
 })
 export class NavigationMenuComponent implements OnInit {
   @Input() config: NavigationMenuConfig | undefined;
-  @Output() menuExpanded: EventEmitter<void> = new EventEmitter();
   @Output() menuItemClicked: EventEmitter<NavigationMenuItem> = new EventEmitter();
 
   menuItems: NavigationMenuItem[] = [];
