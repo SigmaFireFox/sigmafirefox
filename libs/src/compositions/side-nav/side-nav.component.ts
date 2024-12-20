@@ -47,14 +47,16 @@ export class SideNavComponent implements OnInit {
 
   toggleDraw() {
     this.drawerOpen = !this.drawerOpen;
-    if (!this.drawerOpen) this.sideNavService.currentExtendedGroupParent = ''
+    if (!this.drawerOpen) this.sideNavService.currentExtendedGroupParent = '';
   }
 
   onMenuItemClicked(menuItem: NavigationMenuItem) {
+    // Expand menu
     if (menuItem.children.length > 0) {
       this.drawerOpen = true;
-      this.sideNavService.onMenuGroupParentClicked(menuItem.navlink.route)
+      this.sideNavService.onMenuGroupParentClicked(menuItem.navlink.route);
     }
+    // Select menu item
     else
       this.nav.navTo({
         relationship: RouteRelationshipType.Absolute,

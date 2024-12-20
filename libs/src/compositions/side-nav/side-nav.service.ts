@@ -9,7 +9,6 @@ export class SideNavService {
   currentExtendedGroupParent = ''
 
   onMenuGroupParentClicked(parentRoute: string){
-    console.log(parentRoute)
     this.currentSelectedItem = ''
     this.currentExtendedGroupParent = parentRoute
   }

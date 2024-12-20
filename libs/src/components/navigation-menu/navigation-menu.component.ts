@@ -12,6 +12,8 @@ import { IconSize } from '../../widgets/icon/icon.model';
 import { RouteRelationshipType } from '../../services/navigation/navigation.model';
 // eslint-disable-next-line @nx/enforce-module-boundaries
 import { SideNavService } from 'libs/src/compositions/side-nav/side-nav.service';
+import {  Router } from '@angular/router';
+
 @Component({
   selector: 'sff-navigation-menu',
   standalone: true,
@@ -26,7 +28,14 @@ export class NavigationMenuComponent implements OnInit {
   menuItems: NavigationMenuItem[] = [];
   currentSelection = '';
 
-  constructor(private sideNavService: SideNavService){}
+  constructor(
+    private router: Router,
+    private sideNavService: SideNavService
+  ){
+    router.events.subscribe(() => this.setCurrentSelectionBasedOnRoute());
+    this.setCurrentSelectionBasedOnRoute()
+
+  }
 
   ngOnInit() {
     this.setMenuItems();
@@ -94,9 +103,6 @@ export class NavigationMenuComponent implements OnInit {
   onItemClicked(menuItem: NavigationMenuItem) {
     if (menuItem.children.length > 0) 
       this.expandMenu(menuItem)
-    else {
-      this.currentSelection = menuItem.navlink.route;
-    }
 
     this.menuItemClicked.emit(menuItem)
   }
@@ -111,5 +117,12 @@ export class NavigationMenuComponent implements OnInit {
     this.menuItems.forEach((item) => {
       item.showChildren = false;
     });
+  }
+
+  private setCurrentSelectionBasedOnRoute(){
+    let route = this.router.url
+    if (route.indexOf('/') === 0)
+      route = route.slice(1)
+    this.currentSelection = route
   }
 }
