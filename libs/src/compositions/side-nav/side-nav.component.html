@@ -11,19 +11,30 @@
         <mat-icon >arrow_circle_left</mat-icon>
       </div>
       <sff-navigation-menu
-        *ngIf="drawer.opened"
         class='open-menu-top' 
         [config]="modulesMenuOpenConfig"
         (menuItemClicked)="onMenuItemClicked($event)">
       </sff-navigation-menu>
       <sff-navigation-menu 
-        *ngIf="drawer.opened"
         class='open-menu-bottom' 
         [config]="userMenuOpenConfig"
         (menuItemClicked)="onMenuItemClicked($event)">
       </sff-navigation-menu>
     </mat-drawer>
 
+    <div #viewport
+      *ngIf="drawer.opened"
+      class="view-port">
+      <router-outlet></router-outlet>
+    </div>
+
+
+
+  </mat-drawer-container>
+
+  <div #closedDrawerContainer
+    *ngIf="!drawer.opened"
+    class="closed-draw-container">
     <div #closedMenu
       *ngIf="!drawer.opened" 
       class="closed-menu">
@@ -47,9 +58,8 @@
     </div>
 
     <div #viewport
-      class="view-port">
+      class="closed-menu-view-port">
       <router-outlet></router-outlet>
     </div>
-    
-  </mat-drawer-container>
+  </div>
 </div>
