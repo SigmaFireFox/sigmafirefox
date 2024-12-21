@@ -8,10 +8,12 @@ import {
   HeaderFontSize,
 } from '@sigmafirefox/widgets';
 import {
+  HorizontalAlignment,
   ModalComponent,
   ModalConfig,
   ModalContentType,
   ModalSize,
+  VerticalAlignment,
 } from '@sigmafirefox/compositions';
 import { FieldType, LabelPosition } from '@sigmafirefox/components';
 
@@ -75,5 +77,7 @@ export class ModalsComponent {
         },
       },
     ],
+    horizontalAlignment: HorizontalAlignment.Center,
+    verticalAlignment: VerticalAlignment.Center,
   };
 }

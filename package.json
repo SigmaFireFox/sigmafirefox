@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "s:eQ": "pnpm exec nx run eQuestrian:serve"
+    "s:eQ": "pnpm exec nx run eQuestrian:serve",
+    "s:SFF": "pnpm exec nx run sigmafirefox:serve"
   },
   "private": true,
   "dependencies": {
