@@ -1,6 +1,6 @@
-import { FieldConfig } from "../field/field.model"
+import { FormField } from "../form/form.model"
 
 export interface FormRowConfig {
   columns: number
-  fields: FieldConfig[]
+  fields: FormField[]
 }

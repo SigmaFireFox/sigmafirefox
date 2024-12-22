@@ -74,34 +74,20 @@ export class FormsComponent {
       columns: 2,
       fields: [
         {
-          type: FieldType.Input,
-          label: 'An input field - External label',
-          labelPosition: LabelPosition.External,
+          name: 'field1',
+          config: {
+            type: FieldType.Input,
+            label: 'An input field - External label',
+            labelPosition: LabelPosition.External,
+          },
         },
         {
-          type: FieldType.Textarea,
-          label: 'An textarea field - External label',
-          labelPosition: LabelPosition.External,
-        },
-      ],
-    },
-    {
-      columns: 3,
-      fields: [
-        {
-          type: FieldType.Input,
-          label: 'An input field - External label',
-          labelPosition: LabelPosition.External,
-        },
-        {
-          type: FieldType.Textarea,
-          label: 'An textarea field - External label',
-          labelPosition: LabelPosition.External,
-        },
-        {
-          type: FieldType.Input,
-          label: 'An input field - External label',
-          labelPosition: LabelPosition.External,
+          name: 'field2',
+          config: {
+            type: FieldType.Textarea,
+            label: 'An textarea field - External label',
+            labelPosition: LabelPosition.External,
+          },
         },
       ],
     },
@@ -109,19 +95,57 @@ export class FormsComponent {
       columns: 3,
       fields: [
         {
-          type: FieldType.Input,
-          label: 'An input field - External label',
-          labelPosition: LabelPosition.External,
+          name: 'field2',
+          config: {
+            type: FieldType.Input,
+            label: 'An input field - External label',
+            labelPosition: LabelPosition.External,
+          },
         },
         {
-          type: FieldType.Input,
-          label: 'An input field - External label',
-          labelPosition: LabelPosition.External,
+          name: 'field2',
+          config: {
+            type: FieldType.Textarea,
+            label: 'An textarea field - External label',
+            labelPosition: LabelPosition.External,
+          },
         },
         {
-          type: FieldType.Input,
-          label: 'An input field - External label',
-          labelPosition: LabelPosition.External,
+          name: 'field2',
+          config: {
+            type: FieldType.Input,
+            label: 'An input field - External label',
+            labelPosition: LabelPosition.External,
+          },
+        },
+      ],
+    },
+    {
+      columns: 3,
+      fields: [
+        {
+          name: 'field2',
+          config: {
+            type: FieldType.Input,
+            label: 'An input field - External label',
+            labelPosition: LabelPosition.External,
+          },
+        },
+        {
+          name: 'field2',
+          config: {
+            type: FieldType.Input,
+            label: 'An input field - External label',
+            labelPosition: LabelPosition.External,
+          },
+        },
+        {
+          name: 'field2',
+          config: {
+            type: FieldType.Input,
+            label: 'An input field - External label',
+            labelPosition: LabelPosition.External,
+          },
         },
       ],
     },
@@ -129,14 +153,20 @@ export class FormsComponent {
       columns: 2,
       fields: [
         {
-          type: FieldType.Textarea,
-          label: 'An textarea field - External label',
-          labelPosition: LabelPosition.External,
+          name: 'field2',
+          config: {
+            type: FieldType.Textarea,
+            label: 'An textarea field - External label',
+            labelPosition: LabelPosition.External,
+          },
         },
         {
-          type: FieldType.Textarea,
-          label: 'An textarea field - External label',
-          labelPosition: LabelPosition.External,
+          name: 'field2',
+          config: {
+            type: FieldType.Textarea,
+            label: 'An textarea field - External label',
+            labelPosition: LabelPosition.External,
+          },
         },
       ],
     },
