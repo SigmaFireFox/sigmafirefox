@@ -6,6 +6,11 @@
 <h3>Fields</h3>
 <sff-field *ngFor="let fieldConfig of fieldConfigs" [config]="fieldConfig"></sff-field>
 
+<h3>Form rows</h3>
+<div *ngFor="let config of formRowConfigs">
+  <sff-form-row  [config]="config"></sff-form-row>
+</div>
+
 <h3>Star rater</h3>
 <sff-star-rater [config]="starRaterConfig5"></sff-star-rater>
 <sff-star-rater [config]="starRaterConfig4pt5"></sff-star-rater>

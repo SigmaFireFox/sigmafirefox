@@ -2,175 +2,30 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import {
-  FieldType,
-  FormButtonAlignment,
   FormRowComponent,
-  FormRowConfig,
-  LabelPosition,
+  MultipleColumnFormComponent,
   SingleColumnFormComponent,
-  SingleColumnFormConfig,
 } from '@sigmafirefox/components';
-import { ButtonSize, ButtonType } from '@sigmafirefox/widgets';
+import { MockSingleColumnFormConfig } from './configs/single-column-form.config';
+import { MockFormRowConfigs } from './configs/form-row.config';
+import { MockMultipleColumnFormConfig } from './configs/multiple-column-form.config';
 
 @Component({
   selector: 'app-forms',
   standalone: true,
-  imports: [CommonModule, SingleColumnFormComponent, FormRowComponent],
+  imports: [
+    CommonModule,
+    SingleColumnFormComponent,
+    MultipleColumnFormComponent,
+    FormRowComponent,
+  ],
   templateUrl: './forms.component.html',
   styleUrl: './forms.component.scss',
 })
 export class FormsComponent {
-  singleColumnFormConfig: SingleColumnFormConfig = {
-    fields: [
-      {
-        name: 'Field1',
-        config: {
-          type: FieldType.Input,
-          label: 'An input field - External label',
-          labelPosition: LabelPosition.External,
-        },
-      },
-      {
-        name: 'Field2',
-        config: {
-          type: FieldType.Textarea,
-          label: 'An textarea field - External label',
-          labelPosition: LabelPosition.External,
-        },
-      },
-      {
-        name: 'Field3',
-        config: {
-          type: FieldType.Input,
-          label: 'An input field - Internal label',
-          labelPosition: LabelPosition.Internal,
-        },
-      },
-      {
-        name: 'Field4',
-        config: {
-          type: FieldType.Textarea,
-          label: 'An textarea field - Internal label',
-          labelPosition: LabelPosition.Internal,
-        },
-      },
-    ],
-    buttons: [
-      {
-        config: {
-          name: 'button',
-          text: 'Primary Large (100%) of available width',
-          type: ButtonType.Primary,
-          size: ButtonSize.Large,
-        },
-        isSubmit: true,
-        alignment: FormButtonAlignment.Full,
-      },
-    ],
-  };
-
-  formRowConfigs: FormRowConfig[] = [
-    {
-      columns: 2,
-      fields: [
-        {
-          name: 'field1',
-          config: {
-            type: FieldType.Input,
-            label: 'An input field - External label',
-            labelPosition: LabelPosition.External,
-          },
-        },
-        {
-          name: 'field2',
-          config: {
-            type: FieldType.Textarea,
-            label: 'An textarea field - External label',
-            labelPosition: LabelPosition.External,
-          },
-        },
-      ],
-    },
-    {
-      columns: 3,
-      fields: [
-        {
-          name: 'field2',
-          config: {
-            type: FieldType.Input,
-            label: 'An input field - External label',
-            labelPosition: LabelPosition.External,
-          },
-        },
-        {
-          name: 'field2',
-          config: {
-            type: FieldType.Textarea,
-            label: 'An textarea field - External label',
-            labelPosition: LabelPosition.External,
-          },
-        },
-        {
-          name: 'field2',
-          config: {
-            type: FieldType.Input,
-            label: 'An input field - External label',
-            labelPosition: LabelPosition.External,
-          },
-        },
-      ],
-    },
-    {
-      columns: 3,
-      fields: [
-        {
-          name: 'field2',
-          config: {
-            type: FieldType.Input,
-            label: 'An input field - External label',
-            labelPosition: LabelPosition.External,
-          },
-        },
-        {
-          name: 'field2',
-          config: {
-            type: FieldType.Input,
-            label: 'An input field - External label',
-            labelPosition: LabelPosition.External,
-          },
-        },
-        {
-          name: 'field2',
-          config: {
-            type: FieldType.Input,
-            label: 'An input field - External label',
-            labelPosition: LabelPosition.External,
-          },
-        },
-      ],
-    },
-    {
-      columns: 2,
-      fields: [
-        {
-          name: 'field2',
-          config: {
-            type: FieldType.Textarea,
-            label: 'An textarea field - External label',
-            labelPosition: LabelPosition.External,
-          },
-        },
-        {
-          name: 'field2',
-          config: {
-            type: FieldType.Textarea,
-            label: 'An textarea field - External label',
-            labelPosition: LabelPosition.External,
-          },
-        },
-      ],
-    },
-  ];
+  singleColumnFormConfig = MockSingleColumnFormConfig;
+  formRowConfigs = MockFormRowConfigs
+  multipleColumnFormConfig = MockMultipleColumnFormConfig
 
   onFormSubmitted(form: FormGroup) {
     console.log('Form submitted');

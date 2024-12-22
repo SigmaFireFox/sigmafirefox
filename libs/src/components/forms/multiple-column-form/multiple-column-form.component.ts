@@ -27,7 +27,6 @@ export class MultipleColumnFormComponent implements OnInit {
       for (const row of this.config.rows) {
         for (const field of row.fields) {
           this.form.addControl(field.name, new FormControl(''));
-
         }
       }
   

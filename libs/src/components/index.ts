@@ -9,6 +9,7 @@ export * from './display-card/display-card.model'
 export * from './cta-banner/cta-banner.component';
 export * from './cta-banner/cta-banner.model'
 export * from './forms/single-column-form/single-column-form.component';
+export * from './forms/multiple-column-form/multiple-column-form.component';
 export * from './forms/forms.model'
 export * from './footer/footer.component';
 export * from './footer/footer.model'

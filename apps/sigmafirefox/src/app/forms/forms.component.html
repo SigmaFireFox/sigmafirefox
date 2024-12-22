@@ -16,8 +16,14 @@
   </sff-single-column-form>
 </div>
 
-<h3>Multi-column form row</h3>
+<h3>Form row</h3>
 <div *ngFor="let config of formRowConfigs">
   <sff-form-row  [config]="config"></sff-form-row>
 </div>
+
+<h3>Multiple column form - Unconstrained</h3>
+<sff-multiple-column-form 
+  [config]="multipleColumnFormConfig"
+  (formSubmitted)="onFormSubmitted($event)">
+</sff-multiple-column-form>
   
