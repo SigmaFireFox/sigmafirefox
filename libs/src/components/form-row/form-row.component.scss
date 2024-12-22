@@ -2,10 +2,17 @@
   display: flex;
   flex-direction: row;
   width: 100%;
-  margin: 8px;
 
   sff-field {
     width: 100%;
-    margin: 16px;
+    margin: 0px 16px;
+  }
+
+  sff-field:first-child {
+    margin-left: 0px;
+  }
+
+  sff-field:last-child {
+    margin-right: 0px;
   }
 }

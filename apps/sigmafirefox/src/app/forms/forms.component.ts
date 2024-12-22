@@ -125,6 +125,21 @@ export class FormsComponent {
         },
       ],
     },
+    {
+      columns: 2,
+      fields: [
+        {
+          type: FieldType.Textarea,
+          label: 'An textarea field - External label',
+          labelPosition: LabelPosition.External,
+        },
+        {
+          type: FieldType.Textarea,
+          label: 'An textarea field - External label',
+          labelPosition: LabelPosition.External,
+        },
+      ],
+    },
   ];
 
   onFormSubmitted(form: FormGroup) {
