@@ -1,5 +1,5 @@
 import { ButtonConfig } from '../../widgets/button/button.model';
-import { SingleColumnFormConfig } from '../../components/form/forms.model';
+import { SingleColumnFormConfig } from '../../components/forms/forms.model';
 import { StarRaterConfig } from '../../components/star-rater/star-rater.model';
 import { ContentConfig } from '../../widgets/content/content.model';
 import { HeaderConfig } from '../../widgets/header/header.model';

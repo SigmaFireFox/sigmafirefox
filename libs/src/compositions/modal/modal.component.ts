@@ -5,7 +5,7 @@ import { StarRaterComponent } from '../../components/star-rater/star-rater.compo
 import { IconComponent } from '../../widgets/icon/icon.component';
 import { HeaderComponent } from '../../widgets/header/header.component';
 import { ContentComponent } from '../../widgets/content/content.component';
-import { SingleColumnFormComponent } from '../../components/form/single-column-form/single-column-form.component';
+import { SingleColumnFormComponent } from '../../components/forms/single-column-form/single-column-form.component';
 import { FormGroup } from '@angular/forms';
 import { ButtonComponent } from "../../widgets/button/button.component";
 import { ButtonConfig } from '../../widgets/button/button.model';
