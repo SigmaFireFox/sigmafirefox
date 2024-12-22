@@ -6,7 +6,7 @@ import {
 } from '@sigmafirefox/components';
 import { ButtonType, ButtonSize } from '@sigmafirefox/widgets';
 
-export const SingleColumnFormConfig: SingleColumnFormConfig = {
+export const MockSingleColumnFormConfig: SingleColumnFormConfig = {
   fields: [
     {
       name: 'Field1',
