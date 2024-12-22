@@ -1,4 +1,11 @@
 .row-container {
   display: flex;
   flex-direction: row;
+  width: 100%;
+  margin: 8px;
+
+  sff-field {
+    width: 100%;
+    margin: 16px;
+  }
 }

@@ -11,5 +11,7 @@
 </div>
 
 <h3>Multi-column form row</h3>
-<sff-form-row [config]="formRowConfig"></sff-form-row>
+<div *ngFor="let config of formRowConfigs">
+  <sff-form-row  [config]="config"></sff-form-row>
+</div>
   

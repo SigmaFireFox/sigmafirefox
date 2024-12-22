@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import {
@@ -14,7 +15,7 @@ import { ButtonSize, ButtonType } from '@sigmafirefox/widgets';
 @Component({
   selector: 'app-forms',
   standalone: true,
-  imports: [FormComponent, FormRowComponent],
+  imports: [CommonModule, FormComponent, FormRowComponent],
   templateUrl: './forms.component.html',
   styleUrl: './forms.component.scss',
 })
@@ -68,21 +69,63 @@ export class FormsComponent {
     ],
   };
 
-  formRowConfig: FormRowConfig = {
-    columns: 2,
-    fields: [
-      {
-        type: FieldType.Input,
-        label: 'An input field - External label',
-        labelPosition: LabelPosition.External,
-      },
-      {
-        type: FieldType.Textarea,
-        label: 'An textarea field - External label',
-        labelPosition: LabelPosition.External,
-      },
-    ],
-  };
+  formRowConfigs: FormRowConfig[] = [
+    {
+      columns: 2,
+      fields: [
+        {
+          type: FieldType.Input,
+          label: 'An input field - External label',
+          labelPosition: LabelPosition.External,
+        },
+        {
+          type: FieldType.Textarea,
+          label: 'An textarea field - External label',
+          labelPosition: LabelPosition.External,
+        },
+      ],
+    },
+    {
+      columns: 3,
+      fields: [
+        {
+          type: FieldType.Input,
+          label: 'An input field - External label',
+          labelPosition: LabelPosition.External,
+        },
+        {
+          type: FieldType.Textarea,
+          label: 'An textarea field - External label',
+          labelPosition: LabelPosition.External,
+        },
+        {
+          type: FieldType.Input,
+          label: 'An input field - External label',
+          labelPosition: LabelPosition.External,
+        },
+      ],
+    },
+    {
+      columns: 3,
+      fields: [
+        {
+          type: FieldType.Input,
+          label: 'An input field - External label',
+          labelPosition: LabelPosition.External,
+        },
+        {
+          type: FieldType.Input,
+          label: 'An input field - External label',
+          labelPosition: LabelPosition.External,
+        },
+        {
+          type: FieldType.Input,
+          label: 'An input field - External label',
+          labelPosition: LabelPosition.External,
+        },
+      ],
+    },
+  ];
 
   onFormSubmitted(form: FormGroup) {
     console.log('Form submitted');
