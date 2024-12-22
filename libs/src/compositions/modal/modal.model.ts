@@ -1,5 +1,5 @@
 import { ButtonConfig } from '../../widgets/button/button.model';
-import { FormConfig } from '../../components/form/form.model';
+import { SingleColumnFormConfig } from '../../components/form/forms.model';
 import { StarRaterConfig } from '../../components/star-rater/star-rater.model';
 import { ContentConfig } from '../../widgets/content/content.model';
 import { HeaderConfig } from '../../widgets/header/header.model';
@@ -37,7 +37,7 @@ export interface ModalContent {
   iconContent?: IconConfig;
   headerConfig?: HeaderConfig;
   contentConfig?: ContentConfig;
-  formConfig?: FormConfig;
+  formConfig?: SingleColumnFormConfig;
   starRaterConfig?: StarRaterConfig;
   buttonsConfig?: ButtonConfig[];
 }

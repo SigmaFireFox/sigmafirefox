@@ -8,8 +8,8 @@ export * from './display-card/display-card.component';
 export * from './display-card/display-card.model'
 export * from './cta-banner/cta-banner.component';
 export * from './cta-banner/cta-banner.model'
-export * from './form/form.component';
-export * from './form/form.model'
+export * from './form/single-column-form/single-column-form.component';
+export * from './form/forms.model'
 export * from './footer/footer.component';
 export * from './footer/footer.model'
 export * from './navbar/navbar.component';

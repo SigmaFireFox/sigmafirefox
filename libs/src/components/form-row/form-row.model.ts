@@ -1,4 +1,4 @@
-import { FormField } from "../form/form.model"
+import { FormField } from "../form/forms.model"
 
 export interface FormRowConfig {
   columns: number

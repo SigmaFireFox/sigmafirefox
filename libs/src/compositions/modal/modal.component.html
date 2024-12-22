@@ -16,12 +16,12 @@
         *ngSwitchCase="modalContentType.Content"
         [config]="item.contentConfig">
       </sff-content>
-      <sff-form 
+      <sff-single-column-form 
         [ngStyle]="customModalContentStyling" 
         *ngSwitchCase="modalContentType.Form" 
         [config]="item.formConfig"
         (formSubmitted)="onFormSubmitted($event)">
-      </sff-form>
+      </sff-single-column-form>
       <sff-star-rater 
         [ngStyle]="customModalContentStyling" 
         *ngSwitchCase="modalContentType.StarRater"

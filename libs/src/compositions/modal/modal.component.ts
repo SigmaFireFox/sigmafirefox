@@ -5,7 +5,7 @@ import { StarRaterComponent } from '../../components/star-rater/star-rater.compo
 import { IconComponent } from '../../widgets/icon/icon.component';
 import { HeaderComponent } from '../../widgets/header/header.component';
 import { ContentComponent } from '../../widgets/content/content.component';
-import { FormComponent } from '../../components/form/form.component';
+import { SingleColumnFormComponent } from '../../components/form/single-column-form/single-column-form.component';
 import { FormGroup } from '@angular/forms';
 import { ButtonComponent } from "../../widgets/button/button.component";
 import { ButtonConfig } from '../../widgets/button/button.model';
@@ -19,8 +19,8 @@ import { ButtonConfig } from '../../widgets/button/button.model';
     HeaderComponent,
     ContentComponent,
     StarRaterComponent,
-    FormComponent,
-    ButtonComponent
+    ButtonComponent, 
+    SingleColumnFormComponent,
 ],
   templateUrl: './modal.component.html',
   styleUrl: './modal.component.scss',

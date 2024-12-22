@@ -4,23 +4,23 @@ import { FormGroup } from '@angular/forms';
 import {
   FieldType,
   FormButtonAlignment,
-  FormComponent,
-  FormConfig,
   FormRowComponent,
   FormRowConfig,
   LabelPosition,
+  SingleColumnFormComponent,
+  SingleColumnFormConfig,
 } from '@sigmafirefox/components';
 import { ButtonSize, ButtonType } from '@sigmafirefox/widgets';
 
 @Component({
   selector: 'app-forms',
   standalone: true,
-  imports: [CommonModule, FormComponent, FormRowComponent],
+  imports: [CommonModule, SingleColumnFormComponent, FormRowComponent],
   templateUrl: './forms.component.html',
   styleUrl: './forms.component.scss',
 })
 export class FormsComponent {
-  singleColumnFormConfig: FormConfig = {
+  singleColumnFormConfig: SingleColumnFormConfig = {
     fields: [
       {
         name: 'Field1',
