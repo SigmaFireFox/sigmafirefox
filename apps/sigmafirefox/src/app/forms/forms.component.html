@@ -3,9 +3,13 @@
 <h3>Submitting forms will console log the results</h3>
 
 <h3>Single column form - Unconstrained</h3>
-<sff-form [config]="formConfig"></sff-form>
+<sff-form [config]="singleColumnFormConfig"></sff-form>
 
 <h3>Single column form - Constrained</h3>
 <div class="narrow-column">
-  <sff-form [config]="formConfig" (formSubmitted)="onFormSubmitted($event)"></sff-form>
+  <sff-form [config]="singleColumnFormConfig" (formSubmitted)="onFormSubmitted($event)"></sff-form>
 </div>
+
+<h3>Multi-column form row</h3>
+<sff-form-row [config]="formRowConfig"></sff-form-row>
+  

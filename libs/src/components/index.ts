@@ -18,3 +18,5 @@ export * from './profile-card/profile-card.component';
 export * from './profile-card/profile-card.model'
 export * from './navigation-menu/navigation-menu.component';
 export * from './navigation-menu/navigation-menu.model'
+export * from './form-row/form-row.component';
+export * from './form-row/form-row.model'
