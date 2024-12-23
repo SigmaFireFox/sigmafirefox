@@ -3,9 +3,12 @@
     class="header" 
     [config]="headerConfig">
   </sff-header>
+  <sff-profile-card 
+    [config]="profileCardConfig">
+  </sff-profile-card>
   <sff-multiple-column-form
     class="form" 
-    [config]="profileForm"
+    [config]="profileFormConfig"
     (formSubmitted)="onFormSubmitted($event)">
   </sff-multiple-column-form>
 </div>

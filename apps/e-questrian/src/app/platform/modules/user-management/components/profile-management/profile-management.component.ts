@@ -13,13 +13,20 @@ import {
   LabelPosition,
   MultipleColumnFormComponent,
   MultipleColumnFormConfig,
+  ProfileCardComponent,
+  ProfileCardConfig,
 } from '@sigmafirefox/components';
 import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-profile-management',
   standalone: true,
-  imports: [CommonModule, HeaderComponent, MultipleColumnFormComponent],
+  imports: [
+    CommonModule,
+    HeaderComponent,
+    MultipleColumnFormComponent,
+    ProfileCardComponent,
+  ],
   templateUrl: './profile-management.component.html',
   styleUrl: './profile-management.component.scss',
 })
@@ -29,7 +36,7 @@ export class ProfileManagementComponent {
     content: 'Profile Management',
   };
 
-  profileForm: MultipleColumnFormConfig = {
+  profileFormConfig: MultipleColumnFormConfig = {
     rows: [
       {
         columns: 2,
@@ -71,7 +78,6 @@ export class ProfileManagementComponent {
               labelPosition: LabelPosition.External,
             },
           },
-
         ],
       },
       {
@@ -151,6 +157,12 @@ export class ProfileManagementComponent {
       },
     ],
   };
+
+  profileCardConfig: ProfileCardConfig = {
+      firstName: 'Dude',
+      lastName: 'McGee',
+      emailAddress: 'dude@macgee.com'
+  }
 
   onFormSubmitted(form: FormGroup) {
     console.log(form);
