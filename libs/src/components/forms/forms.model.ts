@@ -32,4 +32,5 @@ export interface SingleColumnFormConfig {
 export interface MultipleColumnFormConfig {
   rows: FormRowConfig[]
   buttons: FormButton[]
+  isViewOnly?: boolean
 }

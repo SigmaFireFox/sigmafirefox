@@ -27,6 +27,12 @@ export class MultipleColumnFormComponent implements OnInit {
   constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit() {
+    this.setForm()
+    this.setCustomStyling()
+    this.setIsViewOnlyState()
+  }
+
+  private setForm(){
     if (!this.config) return;
     this.form = this.formBuilder.group({});
     for (const row of this.config.rows) {
@@ -34,6 +40,10 @@ export class MultipleColumnFormComponent implements OnInit {
         this.form.addControl(field.name, new FormControl(''));
       }
     }
+  }
+
+  private setCustomStyling(){
+    if (!this.config) return;
 
     let display = '';
     let justifyContent = '';
@@ -59,6 +69,18 @@ export class MultipleColumnFormComponent implements OnInit {
       display: display,
       'justify-content': justifyContent,
     };
+  }
+
+  setIsViewOnlyState(){
+    if (!this.config) return;
+
+    if (this.config.isViewOnly) {
+      this.config.rows.forEach(row => {
+        row.fields.forEach(field => {
+          field.config.isViewOnly = true
+        })
+      })
+    }
   }
 
   onFormFieldValueUpdate(formFieldValue: FormFieldValue) {

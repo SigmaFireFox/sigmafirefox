@@ -38,6 +38,7 @@ export class ProfileManagementComponent {
   };
 
   profileFormConfig: MultipleColumnFormConfig = {
+    isViewOnly: true,
     rows: [
       {
         columns: 2,
@@ -48,7 +49,6 @@ export class ProfileManagementComponent {
               type: FieldType.Input,
               label: 'First name',
               labelPosition: LabelPosition.External,
-              isViewOnly: true
             },
           },
           {
@@ -57,7 +57,6 @@ export class ProfileManagementComponent {
               type: FieldType.Input,
               label: 'Last name',
               labelPosition: LabelPosition.External,
-              isViewOnly: true
             },
           },
         ],
@@ -71,7 +70,6 @@ export class ProfileManagementComponent {
               type: FieldType.Input,
               label: 'ID number',
               labelPosition: LabelPosition.External,
-              isViewOnly: true
             },
           },
           {
@@ -80,7 +78,7 @@ export class ProfileManagementComponent {
               type: FieldType.Input,
               label: 'Date of Birth',
               labelPosition: LabelPosition.External,
-              isViewOnly: true            },
+            },
           },
         ],
       },
@@ -93,7 +91,7 @@ export class ProfileManagementComponent {
               type: FieldType.Input,
               label: 'Contact number',
               labelPosition: LabelPosition.External,
-              isViewOnly: true            },
+            },
           },
           {
             name: 'secondary-contact',
@@ -101,7 +99,7 @@ export class ProfileManagementComponent {
               type: FieldType.Input,
               label: 'Secondary contact',
               labelPosition: LabelPosition.External,
-              isViewOnly: true            },
+            },
           },
         ],
       },
@@ -114,7 +112,7 @@ export class ProfileManagementComponent {
               type: FieldType.Input,
               label: 'Primary email',
               labelPosition: LabelPosition.External,
-              isViewOnly: true            },
+            },
           },
           {
             name: 'secondary_email',
@@ -122,7 +120,7 @@ export class ProfileManagementComponent {
               type: FieldType.Input,
               label: 'Secondary email',
               labelPosition: LabelPosition.External,
-              isViewOnly: true            },
+            },
           },
         ],
       },
@@ -135,7 +133,7 @@ export class ProfileManagementComponent {
               type: FieldType.Textarea,
               label: 'Residential address',
               labelPosition: LabelPosition.External,
-              isViewOnly: true            },
+            },
           },
           {
             name: 'Postal address',
@@ -143,7 +141,7 @@ export class ProfileManagementComponent {
               type: FieldType.Textarea,
               label: 'Postal address',
               labelPosition: LabelPosition.External,
-              isViewOnly: true            },
+            },
           },
         ],
       },
@@ -163,11 +161,11 @@ export class ProfileManagementComponent {
   };
 
   profileCardConfig: ProfileCardConfig = {
-      profileCardSize: ProfileCardSize.Large,
-      firstName: 'Dude',
-      lastName: 'McGee',
-      profileContent: ['My Ride Equestrian School', 'UserID: 12398724598275']
-  }
+    profileCardSize: ProfileCardSize.Large,
+    firstName: 'Dude',
+    lastName: 'McGee',
+    profileContent: ['My Ride Equestrian School', 'UserID: 12398724598275'],
+  };
 
   onFormSubmitted(form: FormGroup) {
     console.log(form);
