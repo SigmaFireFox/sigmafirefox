@@ -20,6 +20,7 @@ import { ButtonComponent } from '../../../widgets/button/button.component';
 export class MultipleColumnFormComponent implements OnInit {
   @Input() config: MultipleColumnFormConfig | undefined;
   @Output() formSubmitted: EventEmitter<FormGroup> = new EventEmitter();
+  @Output() buttonClicked: EventEmitter<FormButton> = new EventEmitter();
 
   form: FormGroup | undefined;
   customStyling: { [key: string]: string } = {};
@@ -91,8 +92,9 @@ export class MultipleColumnFormComponent implements OnInit {
   }
 
   onButtonClicked(button: FormButton) {
-    if (button.isSubmit && this.form) {
+    if (button.isSubmit && this.form) 
       this.formSubmitted.emit(this.form);
-    }
+    else 
+      this.buttonClicked.emit(button)
   }
 }

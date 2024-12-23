@@ -43,7 +43,7 @@ export class FieldComponent implements OnInit {
     };
     this.childConfig = {
       isInternalLabel: this.config?.labelPosition === LabelPosition.Internal,
-      isViewOnly: this.config.isViewOnly
+      isViewOnly: this.config.isViewOnly || false
     };
   }
 
@@ -51,11 +51,11 @@ export class FieldComponent implements OnInit {
     if (!this.config) return;
     switch (this.config?.type) {
       case FieldType.Input: {
-        this.inputConfig = { isViewOnly: this.config.isViewOnly };
+        this.inputConfig = { isViewOnly: this.config.isViewOnly || false};
         break;
       }
       case FieldType.Textarea: {
-        this.textAreaConfig = { isViewOnly: this.config.isViewOnly };
+        this.textAreaConfig = { isViewOnly: this.config.isViewOnly || false};
       }
     }
   }

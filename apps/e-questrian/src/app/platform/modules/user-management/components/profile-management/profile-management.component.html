@@ -1,4 +1,5 @@
-<div class="page-container">
+<div 
+  class="page-container">
   <sff-header 
     class="header" 
     [config]="headerConfig">
@@ -9,6 +10,7 @@
   <sff-multiple-column-form
     class="form" 
     [config]="profileFormConfig"
-    (formSubmitted)="onFormSubmitted($event)">
+    (formSubmitted)="onFormSubmitted($event)"
+    (buttonClicked)="onButtonClicked($event)">
   </sff-multiple-column-form>
 </div>

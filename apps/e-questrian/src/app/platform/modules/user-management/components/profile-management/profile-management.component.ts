@@ -1,15 +1,13 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
-  ButtonSize,
-  ButtonType,
   HeaderComponent,
   HeaderConfig,
   HeaderFontSize,
 } from '@sigmafirefox/widgets';
 import {
   FieldType,
-  FormButtonAlignment,
+  FormButton,
   LabelPosition,
   MultipleColumnFormComponent,
   MultipleColumnFormConfig,
@@ -18,6 +16,10 @@ import {
   ProfileCardSize,
 } from '@sigmafirefox/components';
 import { FormGroup } from '@angular/forms';
+import {
+  EditViewFormButtons,
+  ViewOnlyFormButtons,
+} from './profile-management.config';
 
 @Component({
   selector: 'app-profile-management',
@@ -146,18 +148,7 @@ export class ProfileManagementComponent {
         ],
       },
     ],
-    buttons: [
-      {
-        config: {
-          name: 'edit',
-          text: 'Edit',
-          type: ButtonType.Secondary,
-          size: ButtonSize.Small,
-        },
-        isSubmit: true,
-        alignment: FormButtonAlignment.Right,
-      },
-    ],
+    buttons: ViewOnlyFormButtons,
   };
 
   profileCardConfig: ProfileCardConfig = {
@@ -167,7 +158,26 @@ export class ProfileManagementComponent {
     profileContent: ['My Ride Equestrian School', 'UserID: 12398724598275'],
   };
 
+  constructor(private cd: ChangeDetectorRef) {}
+
   onFormSubmitted(form: FormGroup) {
     console.log(form);
+    this.profileFormConfig.isViewOnly = true;
+    this.profileFormConfig.buttons = ViewOnlyFormButtons;
+  }
+
+  onButtonClicked(button: FormButton) {
+    switch (button.config.name) {
+      case 'edit': {
+        this.profileFormConfig.isViewOnly = false;
+        this.profileFormConfig.buttons = EditViewFormButtons;
+        break;
+      }
+      case 'cancel': {
+        this.profileFormConfig.isViewOnly = true;
+        this.profileFormConfig.buttons = ViewOnlyFormButtons;
+        break;
+      }
+    }
   }
 }
