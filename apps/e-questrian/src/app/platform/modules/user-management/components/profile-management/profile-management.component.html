@@ -1,3 +1,11 @@
 <div class="page-container">
-  <sff-header [config]="headerConfig"></sff-header>
+  <sff-header 
+    class="header" 
+    [config]="headerConfig">
+  </sff-header>
+  <sff-multiple-column-form
+    class="form" 
+    [config]="profileForm"
+    (formSubmitted)="onFormSubmitted($event)">
+  </sff-multiple-column-form>
 </div>

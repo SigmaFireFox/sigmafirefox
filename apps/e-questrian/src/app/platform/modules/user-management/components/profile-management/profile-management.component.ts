@@ -1,17 +1,158 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HeaderComponent, HeaderConfig, HeaderFontSize } from '@sigmafirefox/widgets';
+import {
+  ButtonSize,
+  ButtonType,
+  HeaderComponent,
+  HeaderConfig,
+  HeaderFontSize,
+} from '@sigmafirefox/widgets';
+import {
+  FieldType,
+  FormButtonAlignment,
+  LabelPosition,
+  MultipleColumnFormComponent,
+  MultipleColumnFormConfig,
+} from '@sigmafirefox/components';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-profile-management',
   standalone: true,
-  imports: [CommonModule, HeaderComponent],
+  imports: [CommonModule, HeaderComponent, MultipleColumnFormComponent],
   templateUrl: './profile-management.component.html',
   styleUrl: './profile-management.component.scss',
 })
 export class ProfileManagementComponent {
   headerConfig: HeaderConfig = {
-      size: HeaderFontSize.Large,
-      content: 'Profile Management'
+    size: HeaderFontSize.Large,
+    content: 'Profile Management',
+  };
+
+  profileForm: MultipleColumnFormConfig = {
+    rows: [
+      {
+        columns: 2,
+        fields: [
+          {
+            name: 'first_name',
+            config: {
+              type: FieldType.Input,
+              label: 'First name',
+              labelPosition: LabelPosition.External,
+            },
+          },
+          {
+            name: 'last_name',
+            config: {
+              type: FieldType.Input,
+              label: 'Last name',
+              labelPosition: LabelPosition.External,
+            },
+          },
+        ],
+      },
+      {
+        columns: 2,
+        fields: [
+          {
+            name: 'id_number',
+            config: {
+              type: FieldType.Input,
+              label: 'ID number',
+              labelPosition: LabelPosition.External,
+            },
+          },
+          {
+            name: 'date_of_birth',
+            config: {
+              type: FieldType.Input,
+              label: 'Date of Birth',
+              labelPosition: LabelPosition.External,
+            },
+          },
+
+        ],
+      },
+      {
+        columns: 2,
+        fields: [
+          {
+            name: 'contact_number',
+            config: {
+              type: FieldType.Input,
+              label: 'Contact number',
+              labelPosition: LabelPosition.External,
+            },
+          },
+          {
+            name: 'secondary-contact',
+            config: {
+              type: FieldType.Input,
+              label: 'Secondary contact',
+              labelPosition: LabelPosition.External,
+            },
+          },
+        ],
+      },
+      {
+        columns: 2,
+        fields: [
+          {
+            name: 'primary_email',
+            config: {
+              type: FieldType.Input,
+              label: 'Primary email',
+              labelPosition: LabelPosition.External,
+            },
+          },
+          {
+            name: 'secondary_email',
+            config: {
+              type: FieldType.Input,
+              label: 'Secondary email',
+              labelPosition: LabelPosition.External,
+            },
+          },
+        ],
+      },
+      {
+        columns: 2,
+        fields: [
+          {
+            name: 'residential-address',
+            config: {
+              type: FieldType.Textarea,
+              label: 'Residential address',
+              labelPosition: LabelPosition.External,
+            },
+          },
+          {
+            name: 'Postal address',
+            config: {
+              type: FieldType.Textarea,
+              label: 'Postal address',
+              labelPosition: LabelPosition.External,
+            },
+          },
+        ],
+      },
+    ],
+    buttons: [
+      {
+        config: {
+          name: 'edit',
+          text: 'Edit',
+          type: ButtonType.Secondary,
+          size: ButtonSize.Small,
+        },
+        isSubmit: true,
+        alignment: FormButtonAlignment.Right,
+      },
+    ],
+  };
+
+  onFormSubmitted(form: FormGroup) {
+    console.log(form);
   }
 }
