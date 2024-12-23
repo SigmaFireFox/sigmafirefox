@@ -7,4 +7,5 @@ export enum HeaderFontSize {
 export interface HeaderConfig {
   size: HeaderFontSize
   content: string
+  skipMargin?: boolean
 }

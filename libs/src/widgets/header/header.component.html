@@ -1,1 +1,7 @@
-<div [ngStyle]="customStyling" class="font content" *ngIf="config">{{config.content}}</div>
+<div 
+  [ngStyle]="customStyling" 
+  class="font content" 
+  [ngClass]="config.skipMargin? 'no-margin': ''"
+  *ngIf="config">
+  {{config.content}}
+</div>

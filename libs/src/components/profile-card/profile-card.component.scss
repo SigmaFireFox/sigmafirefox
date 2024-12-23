@@ -6,10 +6,11 @@
   height: fit-content;
   min-width: 10rem;
   min-height: 3rem;
-  padding: 0 0.5rem;
   align-items: center;
 
-  .profile-pic-container {
+  .profile-pic-container
+  
+  &-small {
     display: flex;
     flex-direction: column;
     border: black 1px solid;
@@ -33,4 +34,9 @@
 .with-click-route:hover {
   cursor: pointer;
   transform: scale(1.05);
+}
+
+.extra-padding {
+  padding: 1rem;
+  padding-right: 3rem;
 }

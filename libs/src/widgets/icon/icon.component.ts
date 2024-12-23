@@ -21,6 +21,11 @@ export class IconComponent implements OnInit {
     let fontSize = ''
     let margin = ''
     switch (this.config.size) {
+      case IconSize.XXLarge: {
+        fontSize = '7rem'
+        margin = '0.5rem'
+        break
+      }
       case IconSize.XLarge: {
         fontSize = '3.75rem'
         margin = '0.25rem'

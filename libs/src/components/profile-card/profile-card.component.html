@@ -1,5 +1,11 @@
-<div *ngIf="config" [ngClass]="config.clickRoute ? 'with-click-route': ''" class="profile-card-container" (click)="onProfileCardClicked()">
-  <div class="profile-pic-container">
+<div 
+  *ngIf="config" 
+  [ngClass]="config.clickRoute ? 'with-click-route': ''" class="profile-card-container" 
+  [ngClass]="config.profileCardSize === profileCardSize.Large ? 'extra-padding' : '' "
+  (click)="onProfileCardClicked()">
+  <div [ngClass]="config.profileCardSize === profileCardSize.Small 
+          ? 'profile-pic-container-small'
+          : '' ">
     <sff-image 
       *ngIf="profilePicConfig" 
       [config]="profilePicConfig">

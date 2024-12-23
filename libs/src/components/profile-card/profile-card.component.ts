@@ -40,6 +40,8 @@ export class ProfileCardComponent implements OnInit {
     size: IconSize.Medium,
     name: 'person',
   };
+  profileCardSize = ProfileCardSize
+  
   constructor(private navService: NavigationService) {}
 
   ngOnInit() {
@@ -78,6 +80,7 @@ export class ProfileCardComponent implements OnInit {
       case ProfileCardSize.Large: {
         if (this.headerConfig) {
           this.headerConfig.size = HeaderFontSize.Large;
+          this.headerConfig.skipMargin = true
         }
         if (this.contentConfig) {
           this.contentConfig.size = ContentFontSize.Large;
@@ -88,7 +91,7 @@ export class ProfileCardComponent implements OnInit {
           this.profilePicConfig.width = '10rem';
         }
         if (this.profilePicIconConfig) {
-          this.profilePicIconConfig.size = IconSize.XLarge}
+          this.profilePicIconConfig.size = IconSize.XXLarge}
       }
     }
   }
