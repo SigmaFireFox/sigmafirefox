@@ -11,4 +11,5 @@ export interface FieldConfig {
   type: FieldType;
   label: string;
   labelPosition: LabelPosition;
+  isViewOnly?: boolean;
 }

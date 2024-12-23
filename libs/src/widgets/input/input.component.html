@@ -1,8 +1,8 @@
 <input 
   [ngClass]="config?.isInternalLabel ? 'internal' : 'external'" 
+  [ngClass]="config?.isViewOnly ? 'view-only-field' : 'edit-field'" 
   class="input" 
   [(ngModel)]="value"
+  disabled="{{config?.isViewOnly}}"
   (focus)="onFocus()"
-  (blur)="onBlur()"
-  
-  >
+  (blur)="onBlur()">

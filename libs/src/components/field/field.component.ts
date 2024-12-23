@@ -27,8 +27,15 @@ export class FieldComponent implements OnInit {
   fieldType = FieldType;
   childConfig: InputConfig | TextAreaConfig | undefined;
   customStyling: object | undefined;
+  inputConfig: InputConfig | undefined;
+  textAreaConfig: TextAreaConfig | undefined;
 
   ngOnInit() {
+    this.setConfigs();
+    this.setFieldConfigs();
+  }
+
+  private setConfigs() {
     if (!this.config) return;
     this.labelConfig = {
       size: HeaderFontSize.Small,
@@ -36,7 +43,21 @@ export class FieldComponent implements OnInit {
     };
     this.childConfig = {
       isInternalLabel: this.config?.labelPosition === LabelPosition.Internal,
+      isViewOnly: this.config.isViewOnly
     };
+  }
+
+  private setFieldConfigs() {
+    if (!this.config) return;
+    switch (this.config?.type) {
+      case FieldType.Input: {
+        this.inputConfig = { isViewOnly: this.config.isViewOnly };
+        break;
+      }
+      case FieldType.Textarea: {
+        this.textAreaConfig = { isViewOnly: this.config.isViewOnly };
+      }
+    }
   }
 
   onFocus(isInternalLabel: boolean | undefined) {

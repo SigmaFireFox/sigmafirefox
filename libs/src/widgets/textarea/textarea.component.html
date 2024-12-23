@@ -1,9 +1,11 @@
 <textarea 
   [ngClass]="config?.isInternalLabel ? 'internal' : 'external'" 
+  [ngClass]="config?.isViewOnly ? 'view-only-field' : 'edit-field'" 
   class="textarea font" 
   rows="4" 
   cols="50"
   [(ngModel)]="value"
+  disabled="{{config?.isViewOnly}}"
   (focus)="onFocus()" 
   (blur)="onBlur()">
 </textarea>

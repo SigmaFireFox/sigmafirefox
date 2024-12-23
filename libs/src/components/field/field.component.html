@@ -9,11 +9,13 @@
     </div>
     <sff-input 
       *ngSwitchCase="fieldType.Input"
+      [config]="inputConfig"
       (focusEvent)="onFocus(true)"
       (blurEvent)="onBlur(true, $event)">
     </sff-input>
     <sff-textarea 
       *ngSwitchCase="fieldType.Textarea"
+      [config]="textAreaConfig"
       (focusEvent)="onFocus(true)"
       (blurEvent)="onBlur(true, $event)">
     </sff-textarea>
