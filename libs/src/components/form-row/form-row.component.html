@@ -1,3 +1,7 @@
 <div *ngIf="config" class="row-container">
-  <sff-field *ngFor="let field of config.fields" [config]="field.config"></sff-field>
+  <sff-field 
+    *ngFor="let field of config.fields" 
+    [config]="field.config"
+    (updatedValue)="onFieldValueUpdate(field, $event)">
+  </sff-field>
 </div>

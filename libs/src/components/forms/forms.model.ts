@@ -14,6 +14,11 @@ export interface FormField {
   config: FieldConfig
 }
 
+export interface FormFieldValue {
+  field: FormField,
+  value: string
+}
+
 export interface FormButton {
   config: ButtonConfig
   isSubmit?: boolean

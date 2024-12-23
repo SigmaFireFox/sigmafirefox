@@ -2,7 +2,8 @@
   <div class="fields-container">
     <sff-form-row
       *ngFor="let row of config.rows" 
-      [config]="row" >
+      [config]="row"
+      (updatedValue)="onFormFieldValueUpdate($event)">
     </sff-form-row>
   </div>
   <div [ngStyle]="customStyling" class="buttons-container">

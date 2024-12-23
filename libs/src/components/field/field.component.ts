@@ -22,7 +22,6 @@ export class FieldComponent implements OnInit {
   @Input() config: FieldConfig | undefined;
   @Output() updatedValue: EventEmitter<string> = new EventEmitter();
 
-
   labelConfig: HeaderConfig | undefined;
   labelPosition = LabelPosition;
   fieldType = FieldType;
@@ -52,6 +51,6 @@ export class FieldComponent implements OnInit {
       this.customStyling = {
         outline: 'none',
       };
-    this.updatedValue.emit(value)
+    this.updatedValue.emit(value);
   }
 }
