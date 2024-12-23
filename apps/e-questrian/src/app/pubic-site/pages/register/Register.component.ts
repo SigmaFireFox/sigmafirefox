@@ -7,7 +7,7 @@ import {
   ImageComponent,
   NavlinkConfig,
 } from '@sigmafirefox/widgets';
-import { FormComponent, FooterComponent } from '@sigmafirefox/components';
+import { FooterComponent, SingleColumnFormComponent } from '@sigmafirefox/components';
 import { ButtonComponent } from '@sigmafirefox/widgets';
 import {
   AuthenticationService,
@@ -37,7 +37,7 @@ import { FormGroup } from '@angular/forms';
   imports: [
     CommonModule,
     ImageComponent,
-    FormComponent,
+    SingleColumnFormComponent,
     ContentComponent,
     HeaderComponent,
     ButtonComponent,

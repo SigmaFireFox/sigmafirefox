@@ -1,9 +1,9 @@
 import {
-  FormConfig,
   FieldType,
   LabelPosition,
   FormButtonAlignment,
   FooterConfig,
+  SingleColumnFormConfig,
 } from '@sigmafirefox/components';
 import { RouteRelationshipType } from '@sigmafirefox/services';
 import {
@@ -52,7 +52,7 @@ export const thirdPartyButtons: ButtonConfig[] = [
   // }
 ];
 
-export const formConfig: FormConfig = {
+export const formConfig: SingleColumnFormConfig = {
   fields: [
     {
       name: 'email',

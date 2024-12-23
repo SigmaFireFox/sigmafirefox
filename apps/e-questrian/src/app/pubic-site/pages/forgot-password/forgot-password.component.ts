@@ -20,7 +20,7 @@ import {
   imageConfig,
   topContent,
 } from './forgot-password.config';
-import { FooterComponent, FormComponent } from '@sigmafirefox/components';
+import { FooterComponent, SingleColumnFormComponent } from '@sigmafirefox/components';
 import { FormGroup } from '@angular/forms';
 import {
   AuthenticationService,
@@ -39,7 +39,7 @@ import { AlternativeActions, ForgotPasswordForm } from './forgot-password.model'
     ContentComponent,
     HeaderComponent,
     ButtonComponent,
-    FormComponent,
+    SingleColumnFormComponent,
   ],
   templateUrl: './forgot-password.component.html',
   styleUrl: './forgot-password.component.scss',

@@ -1,9 +1,9 @@
 import {
-  FormConfig,
   FieldType,
   LabelPosition,
   FormButtonAlignment,
   FooterConfig,
+  SingleColumnFormConfig,
 } from '@sigmafirefox/components';
 import { RouteRelationshipType } from '@sigmafirefox/services';
 import {
@@ -36,7 +36,7 @@ export const header: HeaderConfig = {
   content: 'Forgotten password',
 };
 
-export const formConfig: FormConfig = {
+export const formConfig: SingleColumnFormConfig = {
   fields: [
     {
       name: 'email',

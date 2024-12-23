@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormComponent, FooterComponent } from '@sigmafirefox/components';
+import {
+  FooterComponent,
+  SingleColumnFormComponent,
+} from '@sigmafirefox/components';
 import {
   ImageComponent,
   ContentComponent,
@@ -39,7 +42,7 @@ import {
   imports: [
     CommonModule,
     ImageComponent,
-    FormComponent,
+    SingleColumnFormComponent,
     ContentComponent,
     HeaderComponent,
     ButtonComponent,

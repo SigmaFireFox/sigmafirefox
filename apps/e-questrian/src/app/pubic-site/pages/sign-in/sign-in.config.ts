@@ -1,4 +1,4 @@
-import { FormConfig, FieldType, LabelPosition, FormButtonAlignment, FooterConfig } from "@sigmafirefox/components";
+import { FieldType, LabelPosition, FormButtonAlignment, FooterConfig, SingleColumnFormConfig } from "@sigmafirefox/components";
 import { RouteRelationshipType } from "@sigmafirefox/services";
 import { ButtonConfig, ButtonSize, ButtonType, ContentConfig, ContentFontSize, HeaderConfig, HeaderFontSize, ImageConfig } from "@sigmafirefox/widgets";
 import { ThirdPartyAuthProviders } from "./sign-in.model";
@@ -37,7 +37,7 @@ export const thirdPartyButtons: ButtonConfig[] = [
   // }
 ];
 
-export const formConfig: FormConfig = {
+export const formConfig: SingleColumnFormConfig = {
   fields: [
     {
       name: 'email',
