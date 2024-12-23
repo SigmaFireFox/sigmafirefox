@@ -8,4 +8,5 @@ export interface ContentConfig {
   size: ContentFontSize
   content: string[]
   isNavLink?: boolean
-}
+  skipMargin?: boolean
+  }

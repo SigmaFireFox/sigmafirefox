@@ -1,3 +1,10 @@
-<div class="font" *ngIf="config">
-  <div [ngClass]="config.isNavLink ? 'content navlink': 'content'" [ngStyle]="customStyling" *ngFor="let para of config.content">{{para}}</div>
+<div 
+  class="font" 
+  *ngIf="config">
+  <div 
+    [ngClass]="config.isNavLink ? 'content navlink': !config.skipMargin? 'content' : '' " 
+    [ngStyle]="customStyling" 
+    *ngFor="let para of config.content">
+    {{para}}
+  </div>
 </div>

@@ -1,6 +1,7 @@
 import {
   NavbarConfig,
   NavigationMenuItemConfig,
+  ProfileCardSize,
 } from '@sigmafirefox/components';
 import { RouteRelationshipType } from '@sigmafirefox/services';
 import { HeaderFontSize } from '@sigmafirefox/widgets';
@@ -19,9 +20,10 @@ export const navbarConfig: NavbarConfig = {
   },
   navlinks: [],
   profileCard: {
+    profileCardSize: ProfileCardSize.Small,
     firstName: 'Dude',
     lastName: 'McGee',
-    userDetails: ['dude@mcgee.com'],
+    profileContent: ['dude@mcgee.com'],
     clickRoute: {
       relationship: RouteRelationshipType.Absolute,
       route: 'platform/profile',

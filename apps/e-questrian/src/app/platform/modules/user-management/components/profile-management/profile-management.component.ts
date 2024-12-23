@@ -15,6 +15,7 @@ import {
   MultipleColumnFormConfig,
   ProfileCardComponent,
   ProfileCardConfig,
+  ProfileCardSize,
 } from '@sigmafirefox/components';
 import { FormGroup } from '@angular/forms';
 
@@ -159,9 +160,10 @@ export class ProfileManagementComponent {
   };
 
   profileCardConfig: ProfileCardConfig = {
+      profileCardSize: ProfileCardSize.Large,
       firstName: 'Dude',
       lastName: 'McGee',
-      userDetails: ['dude@macgee.com']
+      profileContent: ['My Ride Equestrian School', 'UserID: 12398724598275']
   }
 
   onFormSubmitted(form: FormGroup) {

@@ -11,8 +11,11 @@
     </sff-icon>
   </div>
   <div class="profile-content-container">
+    <sff-header 
+      *ngIf="headerConfig" 
+      [config]="headerConfig">
+    </sff-header>
     <sff-content 
-      #name 
       *ngIf="contentConfig" 
       [config]="contentConfig">
     </sff-content>
