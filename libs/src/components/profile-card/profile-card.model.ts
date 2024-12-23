@@ -4,6 +4,6 @@ export interface ProfileCardConfig {
   profilePicUrl?: string
   firstName: string,
   lastName: string,
-  emailAddress: string
+  userDetails: string[]
   clickRoute?: NavlinkConfig
 }

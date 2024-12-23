@@ -161,7 +161,7 @@ export class ProfileManagementComponent {
   profileCardConfig: ProfileCardConfig = {
       firstName: 'Dude',
       lastName: 'McGee',
-      emailAddress: 'dude@macgee.com'
+      userDetails: ['dude@macgee.com']
   }
 
   onFormSubmitted(form: FormGroup) {

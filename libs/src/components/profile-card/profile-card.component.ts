@@ -31,7 +31,7 @@ export class ProfileCardComponent implements OnInit {
     if (!this.config) return
     this.contentConfig = {
       size: ContentFontSize.Small,
-      content: [`${this.config.firstName} ${this.config.lastName}`, this.config.emailAddress]
+      content: [`${this.config.firstName} ${this.config.lastName}`, ...this.config.userDetails]
     }
     if (!this.config.profilePicUrl) return
     this.profilePicConfig = {

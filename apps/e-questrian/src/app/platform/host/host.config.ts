@@ -21,7 +21,7 @@ export const navbarConfig: NavbarConfig = {
   profileCard: {
     firstName: 'Dude',
     lastName: 'McGee',
-    emailAddress: 'dude@mcgee.com',
+    userDetails: ['dude@mcgee.com'],
     clickRoute: {
       relationship: RouteRelationshipType.Absolute,
       route: 'platform/profile',
